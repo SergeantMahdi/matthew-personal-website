@@ -1,0 +1,8 @@
+:root{
+    --navbar-color: linear-gradient(180deg, rgb(4, 4, 4) 50%, rgba(4,4,4, 0.6) 80%, rgba(4,4,4,0) 100% );
+    --button-color: rgb(193, 75, 9); 
+}
+
+.navbar{
+    background-color: var(--navbar-color) ;
+}
