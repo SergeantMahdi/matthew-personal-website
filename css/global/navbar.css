@@ -14,12 +14,13 @@
     padding: 5px;
     display: flex;
     z-index: 999;
+    position: fixed;
 }
 
-.nav-logo{
+#nav-logo{
     width: 100px;
     height: 100px;
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
 /*ul container*/
@@ -41,20 +42,104 @@
 .nav-item:nth-child(1){
 margin-left: auto;
 }
-
-/*About Page*/
+/*---------Contact Button-----------*/
 .nav-item:nth-last-child(1){
     margin-left: auto;
     margin-right: 30px;
+    font-weight: 900;
+    padding: 0.5rem 1.3rem;
+    border: 2px solid var(--button-color);
+    border-radius: 30px;
 }
-
-/*Contact link*/
+.nav-item:nth-last-child(1):hover{
+    background-color: var(--button-color);
+    transition:ease-in-out 0.5s ;
+}
 .nav-item:hover:not(:last-child){
     color: var(--button-color);
-    box-shadow: 0px 3px 0px rgb(193, 75, 9) , 0 0 20px rgb(189, 93, 38), 0 0 30px rgb(187, 121, 83);
+    box-shadow: 0px 3px 0px rgb(193, 75, 9) , 0 0 20px rgb(186, 84, 25), 0 0 30px rgb(182, 100, 53);
     border-radius: 30px;
     border-bottom: var(--button-color) 20px;
+    transition: 0.5s;
 }
 
 /*-------------------------------------------*/
 /*-----------------Burger-nav----------------*/
+.burger{
+    display: none;
+}
+@media (max-width: 800px){
+    .burger{
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        top: 25px;
+        right: 0;
+        z-index:200;
+        background: none;
+        border: none;  
+        margin-right: 30px;
+      
+    }
+    .burger svg{
+        width: 60px;
+        height: 60px;
+    }
+
+.navbar{
+    flex-wrap: wrap;
+    height: 110px;
+    position: fixed
+
+}
+
+#nav-logo{
+margin-left: 5px;
+
+}
+
+.nav-container
+{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*li items*/
+.nav-item{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 25px 0;
+    text-align: center;
+
+}
+.nav-item:nth-child(1){
+    margin-left: 0;
+    }
+    
+    /*About Page*/
+    .nav-item:nth-last-child(1){
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        border:none;
+        border-radius: 0;
+        padding: 20px;
+        background-color: var(--button-color);
+    }
+
+    .nav-item:nth-last-child(1):hover{
+        transition: none ;
+        background-color: none;
+    }
+    /*Contact link*/
+    .nav-item:hover:not(:last-child){
+        color: var(--text-color);
+        box-shadow: none;
+        border-radius: 30px;
+        border-bottom:none;
+        transition:0;
+    }
+}
