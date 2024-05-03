@@ -1,4 +1,10 @@
 
+:root{
+    --navbar-color: linear-gradient(180deg, rgb(4, 4, 4) 70%, rgba(4,4,4, 0.6) 90%,  rgba(4,4,4, 0.4) 95%, rgba(4,4,4,0) 100% );
+    --button-color: rgb(193, 75, 9);
+    --text-color: rgb(255, 255, 255);
+}
+
 @font-face {
     font-family: 'Inter';
     src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf');
@@ -6,4 +12,20 @@
 
 body{
     font-family: Inter;
+}
+
+a{
+    cursor: pointer;
+}
+
+.btn{
+    font-weight: 900;
+    padding: 0.5rem 1.3rem;
+    border: 2px solid var(--button-color);
+    border-radius: 30px;
+}
+
+.btn:hover{
+    background-color: var(--button-color);
+    transition:ease-in-out 0.5s ;
 }
