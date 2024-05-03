@@ -13,11 +13,13 @@
     height: 110px;
     padding: 5px;
     display: flex;
+    z-index: 999;
 }
 
 .nav-logo{
     width: 100px;
     height: 100px;
+    margin-left: 50px;
 }
 
 /*ul container*/
@@ -30,8 +32,9 @@
 }
 
 .nav-item{
-    width: 100px;
+    width: 140px;
     margin: 20px;
+    font-size: 1.5rem;
 }
 
 .nav-item:nth-child(1){
@@ -40,4 +43,12 @@ margin-left: auto;
 
 .nav-item:nth-last-child(1){
     margin-left: auto;
+    margin-right: 30px;
+}
+
+.nav-item:hover:not(:last-child){
+    color: var(--button-color);
+    box-shadow: 0px 3px 0px rgb(193, 75, 9) , 0 0 20px rgb(189, 93, 38), 0 0 30px rgb(187, 121, 83);
+    border-radius: 30px;
+    border-bottom: var(--button-color) 20px;
 }
