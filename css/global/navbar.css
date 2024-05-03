@@ -31,6 +31,7 @@
     align-items: center;
 }
 
+/*li items*/
 .nav-item{
     width: 140px;
     margin: 20px;
@@ -41,14 +42,19 @@
 margin-left: auto;
 }
 
+/*About Page*/
 .nav-item:nth-last-child(1){
     margin-left: auto;
     margin-right: 30px;
 }
 
+/*Contact link*/
 .nav-item:hover:not(:last-child){
     color: var(--button-color);
     box-shadow: 0px 3px 0px rgb(193, 75, 9) , 0 0 20px rgb(189, 93, 38), 0 0 30px rgb(187, 121, 83);
     border-radius: 30px;
     border-bottom: var(--button-color) 20px;
 }
+
+/*-------------------------------------------*/
+/*-----------------Burger-nav----------------*/
