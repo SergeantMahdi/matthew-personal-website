@@ -15,6 +15,7 @@
     display: flex;
     z-index: 999;
     position: fixed;
+    margin-top: -110px;
 }
 
 #nav-logo{
@@ -116,7 +117,8 @@ margin-left: 5px;
 
 }
 .nav-item:nth-child(1){
-    margin-left: 0;
+    margin-right: 0;
+
     }
     
     .nav-item:nth-last-child(1){
@@ -140,5 +142,17 @@ margin-left: 5px;
         border-radius: 30px;
         border-bottom:none;
         transition:0;
+    }
+}
+
+@media (orientation: landscape){
+    .navbar{
+       
+        overflow-y:scroll;
+    }
+
+    .nav-container{
+        height: 120%;
+    
     }
 }
