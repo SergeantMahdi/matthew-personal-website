@@ -69,6 +69,25 @@ margin-left: auto;
 .burger{
     display: none;
 }
+
+/*-----------Mobile Orientation--------------*/
+@media (max-width: 1000px) and (orientation: landscape){
+    .navbar{
+       height: 70px;
+        overflow-y:scroll;
+        overflow-x: hidden ;
+    }
+
+    #nav-logo{
+        width: 65px;
+        height: 65px;
+    }
+    .nav-container{
+        height: 120%;
+    
+    }
+}
+
 @media (max-width: 800px){
     .burger{
         display: flex;
@@ -145,19 +164,3 @@ margin-left: 5px;
     }
 }
 
-@media (orientation: landscape){
-    .navbar{
-       height: 70px;
-        overflow-y:scroll;
-        overflow-x: hidden ;
-    }
-
-    #nav-logo{
-        width: 65px;
-        height: 65px;
-    }
-    .nav-container{
-        height: 120%;
-    
-    }
-}
