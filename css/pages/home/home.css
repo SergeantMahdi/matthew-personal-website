@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .main-hero-text{
@@ -15,6 +16,7 @@
     text-align: left;
     margin-right:4em;
     text-shadow: rgb(0, 0, 0) 10px 0 10px;
+    z-index: 1;
 }
 .secondary-hero-text{
     width: 30rem;
@@ -25,5 +27,35 @@
     margin-top: 1em;
     text-align: left;
     text-shadow: rgb(0, 0, 0) 10px 0 10px;
+    z-index: 1;
+
 }
 
+
+/*Animations*/
+.characterAnimation div{
+    display: inline;
+    position:absolute;
+    animation-name: makeRandText;
+    animation-timing-function:linear;
+    animation-duration: 3s;
+    font-size: 1.3rem;
+    filter: blur(2.3px);
+}
+
+/*KeyFrames*/
+@keyframes makeRandText{
+    0%{
+        color: rgba(255,255,255,0);
+
+    }
+    50%{
+        color: rgba(255,255,255,1);
+  
+    }
+
+    100%{
+        color: rgba(255,255,255,0);
+  
+    }
+}
