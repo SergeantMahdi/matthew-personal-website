@@ -33,17 +33,74 @@
 
 
 /*Animations*/
+.characterAnimation{
+    width: 90%;
+    height: 80%;
+    position: absolute;
+    overflow: hidden;
+}
 .characterAnimation div{
-    display: inline;
+
+    display: inline-block;
     position:absolute;
     animation-name: makeRandText;
     animation-timing-function:linear;
     animation-duration: 3s;
     font-size: 1.3rem;
     filter: blur(2.3px);
+    user-select: none;
+}
+/*.characterAnimation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+/*.characterAnimation div{
+    offset-path: path("m50,0 a50,50,0,0,0,0,100 a-50,-50,0,0,0,0,-100");
+    offset-position: left top bottom right;
+    width: 50%;
+    height: 30%;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    position: absolute;
+    animation: move 3000ms infinite alternate ease-in-out;
+    animation-duration: 3s;
+    font-size: 1.3rem;
+    filter: blur(2.3px);
+}*/
+
+/*Mobile screen*/
+@media (max-width:  800px){
+    .main-hero-text{
+        width: 80%;
+        height: 10rem;
+        font-size: 2.5rem;
+        margin-right:0;
+    }
+    .secondary-hero-text{
+        width: 80%;
+        font-size: 1.5rem;
+        margin-left:0;
+        margin-top: 0;
+    
+    }
+    
 }
 
 /*KeyFrames*/
+
+/*@keyframes move {
+    0%,
+    20% {
+      offset-distance: 0%;
+    }
+    80%,
+    100% {
+      offset-distance: 100%;
+    }
+}*/
+
 @keyframes makeRandText{
     0%{
         color: rgba(255,255,255,0);
