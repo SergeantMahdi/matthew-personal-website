@@ -1,5 +1,7 @@
 const animationSection = document.querySelector('.characterAnimation');
-const charactersArray = ["</>", "#C14B09", "TRUE", "function", "||", "&&", "HTML5", "STD::THREAD", "Const", "Math.random()", "EVENT", "STD::COUT", "DIV"];
+const charactersArray = ["</>", "#C14B09", "TRUE", "function", "||",
+    "&&", "HTML5", "STD::THREAD", "Const", "Math.random()",
+    "EVENT", "STD::COUT", "DIV"];
 
 
 let randomTextAnimation = () => {
@@ -27,4 +29,4 @@ let randomTextAnimation = () => {
     }, 2900)
 }
 
-setInterval(randomTextAnimation, 300);
+setInterval(randomTextAnimation, 200);
