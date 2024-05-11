@@ -39,7 +39,45 @@ a{
     border-radius: 30px;
 }
 
+.wrapper{
+    margin: 0 auto;
+}
+
+.title{
+    width: fit-content;
+    height: fit-content;
+    text-wrap:nowrap;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.text{
+    font-size: 1.5rem;
+}
+
+.section-btn{
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+    background-color: var(--button-color);
+    border-radius: 30px;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 50px;
+}
+
+
+/*--------HOVER---------*/
 .btn:hover{
     background-color: var(--button-color);
     transition:ease-in-out 0.5s ;
+}
+
+.section-btn:hover{
+    box-shadow: 0 0 20px rgb(193, 75, 9),
+     0 0 30px rgb(178, 84, 29),
+     0 0 40px rgb(190, 112, 68),
+     0 0 50px rgb(190, 144, 118);
+     transition:0.5s ease-in-out ;
 }
