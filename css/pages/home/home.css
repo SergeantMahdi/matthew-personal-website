@@ -37,9 +37,9 @@
 /*---------------Skill Overview Section---------------*/
 
 .skillOverview{
-    width: 80%;
-    height: 800px;
-    margin-top: 150px;
+    width: 100%;
+    height: 700px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
 }
@@ -48,7 +48,7 @@
     width: 50%;
     display: flex;
     justify-content: right;
-    margin-right: 80px;
+ 
 
 }
 
@@ -56,26 +56,60 @@
     width: 480px;
     height: 800px;
 }
-
-.skills{
-    width: 70px;
-    height: 70px;
-    
-}
 .overview-text{
-    width: 50%;
+    width: 40%;
     display: flex;
-    justify-items: auto;
     flex-direction: column;
     margin-top: 150px;
-    font-size: 2rem;
     font-weight: 300;
 }
 
 .overview-description{
-    width: 30rem ;
     height: fit-content;
     margin-top: 40px;
+
+}
+.skills{
+    width: 40%;
+    height: fit-content;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    
+}
+.skills svg{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin-top: 30px;
+    
+}
+.mongoDB-logo{
+    top: 10px;
+    right: 30%;
+}
+.js-logo{
+    right: 10%;
+    bottom: 10px;
+}
+.react-logo{
+    right: 35%;
+    bottom: 30px;
+
+}
+.cpp-logo{
+    right: 40%;
+}
+.html-logo{
+    top: 10px;
+    right: 30% ;
+
+}
+.css-logo{
+    bottom: 30px;
+    right: 50%;
 }
 
 /*---------------Animations---------------*/
@@ -99,6 +133,25 @@
 
 
 /*---------------Mobile screen---------------*/
+@media (max-width: 1291px) {
+    .skills{
+        display: none;
+    }
+
+    
+}
+@media (max-width: 932px) {
+    .images{
+        display: none;
+    }
+    .overview-text{
+        margin: 0 20px;
+        width: 100%;
+    }
+    .skillOverview{
+        height:600px;
+    }
+}
 @media (max-width:  800px){
     .main-hero-text{
         width: 80%;
@@ -113,7 +166,6 @@
         margin-top: 0;
     
     }
-    
 }
 
 /*---------------KeyFrames---------------*/
