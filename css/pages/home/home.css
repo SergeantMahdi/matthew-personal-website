@@ -1,11 +1,15 @@
+/*---------------Hero Section---------------*/
 .hero{
     width: 100%;
     height: 85vh;
     background-image: url("../../../images/Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .main-hero-text{
@@ -15,6 +19,7 @@
     text-align: left;
     margin-right:4em;
     text-shadow: rgb(0, 0, 0) 10px 0 10px;
+    z-index: 1;
 }
 .secondary-hero-text{
     width: 30rem;
@@ -25,5 +30,159 @@
     margin-top: 1em;
     text-align: left;
     text-shadow: rgb(0, 0, 0) 10px 0 10px;
+    z-index: 1;
+
 }
 
+/*---------------Skill Overview Section---------------*/
+
+.skillOverview{
+    width: 100%;
+    height: 700px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.images{
+    width: 50%;
+    display: flex;
+    justify-content: right;
+ 
+
+}
+
+.astronaut{
+    width: 480px;
+    height: 800px;
+}
+.overview-text{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    font-weight: 300;
+}
+
+.overview-description{
+    height: fit-content;
+    margin-top: 40px;
+
+}
+.skills{
+    width: 40%;
+    height: fit-content;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    
+}
+.skills svg{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin-top: 30px;
+    
+}
+.mongoDB-logo{
+    top: 10px;
+    right: 30%;
+}
+.js-logo{
+    right: 10%;
+    bottom: 10px;
+}
+.react-logo{
+    right: 35%;
+    bottom: 30px;
+
+}
+.cpp-logo{
+    right: 40%;
+}
+.html-logo{
+    top: 10px;
+    right: 30% ;
+
+}
+.css-logo{
+    bottom: 30px;
+    right: 50%;
+}
+
+/*---------------Animations---------------*/
+.characterAnimation{
+    width: 90%;
+    height: 80%;
+    position: absolute;
+    overflow: hidden;
+}
+.characterAnimation div{
+
+    display: inline-block;
+    position:absolute;
+    animation-name: makeRandText;
+    animation-timing-function:linear;
+    animation-duration: 3s;
+    font-size: 1.3rem;
+    filter: blur(3px);
+    user-select: none;
+}
+
+
+/*---------------Mobile screen---------------*/
+@media (max-width: 1291px) {
+    .skills{
+        display: none;
+    }
+
+    
+}
+@media (max-width: 932px) {
+    .images{
+        display: none;
+    }
+    .overview-text{
+        margin: 0 20px;
+        width: 100%;
+    }
+    .skillOverview{
+        height:600px;
+    }
+}
+@media (max-width:  800px){
+    .main-hero-text{
+        width: 80%;
+        height: 16rem;
+        font-size: 2.5rem;
+        margin-right:0;
+    }
+    .secondary-hero-text{
+        width: 80%;
+        font-size: 1.5rem;
+        margin-left:0;
+        margin-top: 0;
+    
+    }
+}
+
+/*---------------KeyFrames---------------*/
+
+
+@keyframes makeRandText{
+    0%{
+        color: rgba(255,255,255,0);
+
+    }
+    50%{
+        color: rgba(255,255,255,1);
+  
+    }
+
+    100%{
+        color: rgba(255,255,255,0);
+  
+    }
+}
