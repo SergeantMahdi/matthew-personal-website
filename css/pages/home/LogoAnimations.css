@@ -1,3 +1,12 @@
+/*---------SKILLSTEXT HOVER------------------*/
+.overview-text .highlight:hover{
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
 /*------ HOVER TEXT-----------*/
 body:has(.cpp-t:hover) .cpp-logo{
     animation:cppAnimate 1s alternate infinite ease-in-out;
@@ -31,7 +40,41 @@ body:has(.mongo-t:hover) .mongo-logo{
 
 /*-------HOVER ICONS*/
 
-
+body:has(.cpp-logo:hover) .cpp-t{
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
+    transition: all 0.5s ease-in-out;
+}
+body:has(.js-logo:hover) .js-t{
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
+    transition: all 0.5s ease-in-out;
+}
+body:has(.html-logo:hover) .html-t{
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
+    transition: all 0.5s ease-in-out;
+}
+body:has(.css-logo:hover) .css-t{
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
+    transition: all 0.5s ease-in-out;
+}
+body:has(.react-logo:hover) .react-t{
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
+    transition: all 0.5s ease-in-out;
+}
+body:has(.express-logo:hover) .express-t{
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
+    transition: all 0.5s ease-in-out;
+}
+body:has(.mongo-logo:hover) .mongo-t{
+    color: rgb(255,255,255);
+    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
+    transition: all 0.5s ease-in-out;
+}
 
 /*------ICONS ANIMATION*/
 @keyframes cppAnimate{
@@ -137,4 +180,52 @@ body:has(.mongo-t:hover) .mongo-logo{
        drop-shadow(0 0 25px rgb(83, 149, 71))
        drop-shadow(0 0 30px rgb(89, 143, 80));
     }
+}
+
+@media (max-width: 1100px) {
+    .skills{
+        display: none;
+    }
+    .overview-text .highlight:hover{
+        color: var(--highlight-color);
+        text-shadow: none;
+        transition: none;
+        cursor:auto;
+    }
+    body:has(.cpp-t:hover) .cpp-logo{
+
+        filter: none;
+        animation:none;
+    }
+    body:has(.js-t:hover) .js-logo{
+
+        filter: none;
+        animation:none;
+    }
+    body:has(.html-t:hover) .html-logo{
+
+        filter: none;
+        animation:none;
+    }
+    body:has(.css-t:hover) .css-logo{
+
+        filter: none;
+        animation:none;
+    }
+    body:has(.react-t:hover) .react-logo{
+
+        filter: none;
+        animation:none;
+    }
+    body:has(.express-t:hover) .express-logo{
+
+        filter: none;
+        animation:none;
+    }
+    body:has(.mongo-t:hover) .mongo-logo{
+
+        filter: none;
+        animation:none;
+    }
+    
 }
