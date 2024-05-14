@@ -1,0 +1,140 @@
+/*------ HOVER TEXT-----------*/
+body:has(.cpp-t:hover) .cpp-logo{
+    animation:cppAnimate 1s alternate infinite ease-in-out;
+    stroke: black;
+}
+body:has(.js-t:hover) .js-logo{
+    animation:jsAnimate 1s alternate infinite ease-in-out;
+    stroke: black;
+}
+body:has(.html-t:hover) .html-logo{
+    animation:htmlAnimate 1s alternate infinite ease-in-out;
+    stroke: black;
+}
+body:has(.css-t:hover) .css-logo{
+    animation:cssAnimate 1s alternate infinite ease-in-out;
+    stroke: black;
+}
+body:has(.react-t:hover) .react-logo{
+    animation:cppAnimate 1s alternate infinite ease-in-out;
+    stroke: black;
+}
+body:has(.express-t:hover) .express-logo{
+    animation:jsAnimate 1s alternate infinite ease-in-out;
+    stroke: black;
+}
+body:has(.mongo-t:hover) .mongo-logo{
+    animation:mongoAnimate 1s alternate infinite ease-in-out;
+    stroke: black;
+}
+
+
+/*-------HOVER ICONS*/
+
+
+
+/*------ICONS ANIMATION*/
+@keyframes cppAnimate{
+    0%{
+        transform: scale(0.8);
+        filter: drop-shadow(0 0 1px rgb(5, 125, 195))
+         drop-shadow(0 0 5px rgb(6, 145, 225))
+         drop-shadow(0 0 10px  rgb(7, 158, 245))
+         drop-shadow(0 0 15px rgb(128, 202, 223));
+    }
+    100%{
+    transform: scale(1.1);
+       filter:drop-shadow(0 0 10px rgb(5, 125, 195))
+       drop-shadow(0 0 20px rgb(6, 145, 225))
+       drop-shadow(0 0 25px rgb(7, 158, 245))
+       drop-shadow(0 0 30px rgb(128, 202, 223));
+    }
+}
+
+@keyframes jsAnimate{
+    0%{
+        transform: scale(0.8);
+        filter: drop-shadow(0 0 1px rgb(171, 147, 7))
+         drop-shadow(0 0 5px  rgb(195, 167, 5))
+         drop-shadow(0 0 10px rgb(234, 200, 9))
+         drop-shadow(0 0 15px rgb(250, 214, 9));
+    }
+
+    100%{
+    transform: scale(1.1);
+       filter: drop-shadow(0 0 10px rgb(171, 147, 7))
+       drop-shadow(0 0 20px rgb(195, 167, 5))
+       drop-shadow(0 0 25px rgb(234, 200, 9))
+       drop-shadow(0 0 30px rgb(250, 214, 9));
+    }
+}
+
+@keyframes htmlAnimate{
+    0%{
+        transform: scale(0.8);
+        filter: drop-shadow(0 0 1px rgb(228, 77, 38))
+         drop-shadow(0 0 5px  rgb(222, 90, 57))
+         drop-shadow(0 0 10px rgb(202, 93, 66))
+         drop-shadow(0 0 15px rgb(196, 100, 76));
+    }
+
+    100%{
+    transform: scale(1.1);
+       filter: drop-shadow(0 0 10px rgb(228, 77, 38))
+       drop-shadow(0 0 20px rgb(222, 90, 57))
+       drop-shadow(0 0 25px rgb(202, 93, 66))
+       drop-shadow(0 0 30px rgb(196, 100, 76));
+    }
+}
+
+@keyframes cssAnimate{
+    0%{
+        transform: scale(0.8);
+        filter: drop-shadow(0 0 1px rgb(21, 114, 182))
+         drop-shadow(0 0 5px  rgb(37, 117, 175))
+         drop-shadow(0 0 10px rgb(59, 123, 168))
+         drop-shadow(0 0 15px rgb(78, 124, 158));
+    }
+
+    100%{
+    transform: scale(1.1);
+       filter: drop-shadow(0 0 10px rgb(21, 114, 182))
+       drop-shadow(0 0 20px rgb(37, 117, 175))
+       drop-shadow(0 0 25px rgb(59, 123, 168))
+       drop-shadow(0 0 30px rgb(78, 124, 158));
+    }
+}
+@keyframes cssAnimate{
+    0%{
+        transform: scale(0.8);
+        filter: drop-shadow(0 0 1px rgb(21, 114, 182))
+         drop-shadow(0 0 5px  rgb(37, 117, 175))
+         drop-shadow(0 0 10px rgb(59, 123, 168))
+         drop-shadow(0 0 15px rgb(78, 124, 158));
+    }
+
+    100%{
+    transform: scale(1.1);
+       filter: drop-shadow(0 0 10px rgb(21, 114, 182))
+       drop-shadow(0 0 20px rgb(37, 117, 175))
+       drop-shadow(0 0 25px rgb(59, 123, 168))
+       drop-shadow(0 0 30px rgb(78, 124, 158));
+    }
+}
+@keyframes mongoAnimate{
+    0%{
+        transform: scale(0.8);
+        filter: drop-shadow(0 0 1px rgb(67, 153, 52))
+         drop-shadow(0 0 5px  rgb(74, 152, 61))
+         drop-shadow(0 0 10px rgb(83, 149, 71))
+         drop-shadow(0 0 15px rgb(89, 143, 80));
+    }
+
+    100%{
+    transform: scale(1.1);
+       filter: drop-shadow(0 0 10px rgb(67, 153, 52))
+       drop-shadow(0 0 20px rgb(74, 152, 61))
+       drop-shadow(0 0 25px rgb(83, 149, 71))
+       drop-shadow(0 0 30px rgb(89, 143, 80));
+    }
+}

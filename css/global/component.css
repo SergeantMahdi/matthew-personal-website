@@ -30,6 +30,7 @@ a{
 .highlight{
     color: var(--highlight-color);
     font-weight: 900;
+    border-radius: 30px;
 }
 
 .btn{
