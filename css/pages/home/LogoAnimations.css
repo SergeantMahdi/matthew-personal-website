@@ -38,42 +38,103 @@ body:has(.mongo-t:hover) .mongo-logo{
 }
 
 
-/*-------HOVER ICONS*/
+/*-------HOVER ICONS----------*/
 
 body:has(.cpp-logo:hover) .cpp-t{
+    display: inline-block;
+    transform:scale(1.2);
+    background-color: rgb(182, 100, 53);
+    padding: 0 3px;
     color: rgb(255,255,255);
     text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
     transition: all 0.5s ease-in-out;
 }
 body:has(.js-logo:hover) .js-t{
+    display: inline-block;
+    transform:scale(1.2);
+    background-color: rgb(182, 100, 53);
+    padding: 0 3px;
     color: rgb(255,255,255);
     text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
     transition: all 0.5s ease-in-out;
 }
 body:has(.html-logo:hover) .html-t{
+    display: inline-block;
+    transform:scale(1.2);
+    background-color: rgb(182, 100, 53);
+    padding: 0 3px;
     color: rgb(255,255,255);
     text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
     transition: all 0.5s ease-in-out;
 }
 body:has(.css-logo:hover) .css-t{
+    display: inline-block;
+    transform:scale(1.2);
+    background-color: rgb(182, 100, 53);
+    padding: 0 3px;
     color: rgb(255,255,255);
     text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
     transition: all 0.5s ease-in-out;
 }
 body:has(.react-logo:hover) .react-t{
+    display: inline-block;
+    transform:scale(1.2);
+    background-color: rgb(182, 100, 53);
+    padding: 0 3px;
     color: rgb(255,255,255);
     text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
     transition: all 0.5s ease-in-out;
 }
 body:has(.express-logo:hover) .express-t{
+    display: inline-block;
+    transform:scale(1.2);
+    background-color: rgb(182, 100, 53);
+    padding: 0 3px;
     color: rgb(255,255,255);
     text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
     transition: all 0.5s ease-in-out;
 }
 body:has(.mongo-logo:hover) .mongo-t{
+    display: inline-block;
+    transform:scale(1.2);
+    background-color: rgb(182, 100, 53);
+    padding: 0 3px;
     color: rgb(255,255,255);
     text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
     transition: all 0.5s ease-in-out;
+}
+
+/*---------------LOGO HOVER---------------*/
+.mongo-logo:hover{
+    rotate: 360deg;
+    transition: 1s;
+    
+}
+.js-logo:hover{
+    rotate: 360deg;
+    transition: 1s;
+}
+.react-logo:hover{
+    rotate: 360deg;
+    transition: 1s;
+
+}
+.cpp-logo:hover{
+    rotate: 360deg;
+    transition: 1s;
+}
+.html-logo:hover{
+    rotate: 360deg;
+    transition: 1s;
+
+}
+.css-logo:hover{
+    rotate: 360deg;
+    transition: 1s;
+}
+.express-logo:hover{
+    rotate: 360deg;
+    transition: 1s;
 }
 
 /*------ICONS ANIMATION*/
@@ -191,6 +252,7 @@ body:has(.mongo-logo:hover) .mongo-t{
         text-shadow: none;
         transition: none;
         cursor:auto;
+        transform: none;
     }
     body:has(.cpp-t:hover) .cpp-logo{
 
