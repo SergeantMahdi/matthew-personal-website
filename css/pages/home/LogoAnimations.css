@@ -31,16 +31,6 @@ body:has(.mongo-t:hover) .mongo-logo{
 
 /*-------HOVER ICONS----------*/
 
-.Text-hover-effect{
-    display: inline-block;
-    transform:scale(1.2);
-    background-color: rgb(182, 100, 53);
-    padding: 0 3px;
-    color: rgb(255,255,255);
-    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
-    transition: all 0.5s ease-in-out;
-}
-
 body:has(.cpp-logo:hover) .cpp-t,
 body:has(.js-logo:hover) .js-t,
 body:has(.html-logo:hover) .html-t,
@@ -49,7 +39,6 @@ body:has(.react-logo:hover) .react-t,
 body:has(.express-logo:hover) .express-t,
 body:has(.mongo-logo:hover) .mongo-t{
     display: inline-block;
-    transform:scale(1.2);
     background-color: rgb(182, 100, 53);
     padding: 0 3px;
     color: rgb(255,255,255);
@@ -69,27 +58,26 @@ body:has(.mongo-logo:hover) .mongo-t{
     transition: 1s;
 }
 
-/*------ICONS ANIMATION*/
+/*------ICONS ANIMATION------------*/
 @keyframes cppAnimate{
     0%{
-        transform: scale(0.8);
+        transform: scale(1);
         filter: drop-shadow(0 0 1px rgb(5, 125, 195))
          drop-shadow(0 0 3px rgb(6, 145, 225))
          drop-shadow(0 0 5px  rgb(7, 158, 245))
          drop-shadow(0 0 10px rgb(128, 202, 223));
     }
     100%{
-    transform: scale(1);
+    transform: scale(0.8);
        filter:drop-shadow(0 0 3px rgb(5, 125, 195))
        drop-shadow(0 0 5px rgb(6, 145, 225))
        drop-shadow(0 0 10px rgb(7, 158, 245))
        drop-shadow(0 0 15px rgb(128, 202, 223));
     }
 }
-
 @keyframes jsAnimate{
     0%{
-        transform: scale(0.8);
+        transform: scale(1);
         filter: drop-shadow(0 0 1px rgb(171, 147, 7))
          drop-shadow(0 0 3px  rgb(195, 167, 5))
          drop-shadow(0 0 5px rgb(234, 200, 9))
@@ -97,17 +85,16 @@ body:has(.mongo-logo:hover) .mongo-t{
     }
 
     100%{
-    transform: scale(1);
+    transform: scale(0.8);
        filter: drop-shadow(0 0 3px rgb(171, 147, 7))
        drop-shadow(0 0 5px rgb(195, 167, 5))
        drop-shadow(0 0 10px rgb(234, 200, 9))
        drop-shadow(0 0 15px rgb(250, 214, 9));
     }
 }
-
 @keyframes htmlAnimate{
     0%{
-        transform: scale(0.8);
+        transform: scale(1);
         filter: drop-shadow(0 0 1px rgb(228, 77, 38))
          drop-shadow(0 0 3px  rgb(222, 90, 57))
          drop-shadow(0 0 5px rgb(202, 93, 66))
@@ -115,51 +102,16 @@ body:has(.mongo-logo:hover) .mongo-t{
     }
 
     100%{
-    transform: scale(1);
+    transform: scale(0.8);
        filter: drop-shadow(0 0 3px rgb(228, 77, 38))
        drop-shadow(0 0 5px rgb(222, 90, 57))
        drop-shadow(0 0 10px rgb(202, 93, 66))
        drop-shadow(0 0 15px rgb(196, 100, 76));
     }
 }
-
-@keyframes cssAnimate{
-    0%{
-        transform: scale(0.8);
-        filter: drop-shadow(0 0 1px rgb(21, 114, 182))
-         drop-shadow(0 0 3px  rgb(37, 117, 175))
-         drop-shadow(0 0 5px rgb(59, 123, 168))
-         drop-shadow(0 0 10px rgb(78, 124, 158));
-    }
-
-    100%{
-    transform: scale(1);
-       filter: drop-shadow(0 0 3px rgb(21, 114, 182))
-       drop-shadow(0 0 5px rgb(37, 117, 175))
-       drop-shadow(0 0 10px rgb(59, 123, 168))
-       drop-shadow(0 0 15px rgb(78, 124, 158));
-    }
-}
-@keyframes cssAnimate{
-    0%{
-        transform: scale(0.8);
-        filter: drop-shadow(0 0 1px rgb(21, 114, 182))
-         drop-shadow(0 0 3px  rgb(37, 117, 175))
-         drop-shadow(0 0 5px rgb(59, 123, 168))
-         drop-shadow(0 0 10px rgb(78, 124, 158));
-    }
-
-    100%{
-    transform: scale(1);
-       filter: drop-shadow(0 0 3px rgb(21, 114, 182))
-       drop-shadow(0 0 5px rgb(37, 117, 175))
-       drop-shadow(0 0 10px rgb(59, 123, 168))
-       drop-shadow(0 0 15px rgb(78, 124, 158));
-    }
-}
 @keyframes mongoAnimate{
     0%{
-        transform: scale(0.8);
+        transform: scale(1);
         filter: drop-shadow(0 0 1px rgb(67, 153, 52))
          drop-shadow(0 0 3px  rgb(74, 152, 61))
          drop-shadow(0 0 5px rgb(83, 149, 71))
@@ -167,7 +119,7 @@ body:has(.mongo-logo:hover) .mongo-t{
     }
 
     100%{
-    transform: scale(1);
+    transform: scale(0.8);
        filter: drop-shadow(0 0 3px rgb(67, 153, 52))
        drop-shadow(0 0 5px rgb(74, 152, 61))
        drop-shadow(0 0 10px rgb(83, 149, 71))
