@@ -8,26 +8,17 @@
 
 
 /*------ HOVER TEXT-----------*/
-body:has(.cpp-t:hover) .cpp-logo{
-    animation:cppAnimate 1.5s alternate infinite ease-in-out;
-    stroke: black;
-}
-body:has(.js-t:hover) .js-logo{
-    animation:jsAnimate 1.5s alternate infinite ease-in-out;
-    stroke: black;
-}
 body:has(.html-t:hover) .html-logo{
     animation:htmlAnimate 1.5s alternate infinite ease-in-out;
     stroke: black;
 }
+body:has(.react-t:hover) .react-logo,
+body:has(.cpp-t:hover) .cpp-logo,
 body:has(.css-t:hover) .css-logo{
-    animation:cssAnimate 1.5s alternate infinite ease-in-out;
-    stroke: black;
-}
-body:has(.react-t:hover) .react-logo{
     animation:cppAnimate 1.5s alternate infinite ease-in-out;
     stroke: black;
 }
+body:has(.js-t:hover) .js-logo,
 body:has(.express-t:hover) .express-logo{
     animation:jsAnimate 1.5s alternate infinite ease-in-out;
     stroke: black;
@@ -40,7 +31,7 @@ body:has(.mongo-t:hover) .mongo-logo{
 
 /*-------HOVER ICONS----------*/
 
-body:has(.cpp-logo:hover) .cpp-t{
+.Text-hover-effect{
     display: inline-block;
     transform:scale(1.2);
     background-color: rgb(182, 100, 53);
@@ -49,51 +40,13 @@ body:has(.cpp-logo:hover) .cpp-t{
     text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
     transition: all 0.5s ease-in-out;
 }
-body:has(.js-logo:hover) .js-t{
-    display: inline-block;
-    transform:scale(1.2);
-    background-color: rgb(182, 100, 53);
-    padding: 0 3px;
-    color: rgb(255,255,255);
-    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
-    transition: all 0.5s ease-in-out;
-}
-body:has(.html-logo:hover) .html-t{
-    display: inline-block;
-    transform:scale(1.2);
-    background-color: rgb(182, 100, 53);
-    padding: 0 3px;
-    color: rgb(255,255,255);
-    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
-    transition: all 0.5s ease-in-out;
-}
-body:has(.css-logo:hover) .css-t{
-    display: inline-block;
-    transform:scale(1.2);
-    background-color: rgb(182, 100, 53);
-    padding: 0 3px;
-    color: rgb(255,255,255);
-    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
-    transition: all 0.5s ease-in-out;
-}
-body:has(.react-logo:hover) .react-t{
-    display: inline-block;
-    transform:scale(1.2);
-    background-color: rgb(182, 100, 53);
-    padding: 0 3px;
-    color: rgb(255,255,255);
-    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
-    transition: all 0.5s ease-in-out;
-}
-body:has(.express-logo:hover) .express-t{
-    display: inline-block;
-    transform:scale(1.2);
-    background-color: rgb(182, 100, 53);
-    padding: 0 3px;
-    color: rgb(255,255,255);
-    text-shadow: 0px 0px 20px rgb(193, 75, 9) , 0 0  30px rgb(186, 84, 25), 0 0 40px rgb(182, 100, 53);
-    transition: all 0.5s ease-in-out;
-}
+
+body:has(.cpp-logo:hover) .cpp-t,
+body:has(.js-logo:hover) .js-t,
+body:has(.html-logo:hover) .html-t,
+body:has(.css-logo:hover) .css-t,
+body:has(.react-logo:hover) .react-t,
+body:has(.express-logo:hover) .express-t,
 body:has(.mongo-logo:hover) .mongo-t{
     display: inline-block;
     transform:scale(1.2);
@@ -105,33 +58,12 @@ body:has(.mongo-logo:hover) .mongo-t{
 }
 
 /*---------------LOGO HOVER---------------*/
-.mongo-logo:hover{
-    rotate: 360deg;
-    transition: 1s;
-    
-}
-.js-logo:hover{
-    rotate: 360deg;
-    transition: 1s;
-}
-.react-logo:hover{
-    rotate: 360deg;
-    transition: 1s;
-
-}
-.cpp-logo:hover{
-    rotate: 360deg;
-    transition: 1s;
-}
-.html-logo:hover{
-    rotate: 360deg;
-    transition: 1s;
-
-}
-.css-logo:hover{
-    rotate: 360deg;
-    transition: 1s;
-}
+.mongo-logo:hover,
+.js-logo:hover,
+.react-logo:hover,
+.cpp-logo:hover,
+.html-logo:hover,
+.css-logo:hover,
 .express-logo:hover{
     rotate: 360deg;
     transition: 1s;
@@ -254,36 +186,12 @@ body:has(.mongo-logo:hover) .mongo-t{
         cursor:auto;
         transform: none;
     }
-    body:has(.cpp-t:hover) .cpp-logo{
-
-        filter: none;
-        animation:none;
-    }
-    body:has(.js-t:hover) .js-logo{
-
-        filter: none;
-        animation:none;
-    }
-    body:has(.html-t:hover) .html-logo{
-
-        filter: none;
-        animation:none;
-    }
-    body:has(.css-t:hover) .css-logo{
-
-        filter: none;
-        animation:none;
-    }
-    body:has(.react-t:hover) .react-logo{
-
-        filter: none;
-        animation:none;
-    }
-    body:has(.express-t:hover) .express-logo{
-
-        filter: none;
-        animation:none;
-    }
+    body:has(.cpp-t:hover) .cpp-logo,
+    body:has(.js-t:hover) .js-logo,
+    body:has(.html-t:hover) .html-logo,
+    body:has(.css-t:hover) .css-logo,
+    body:has(.react-t:hover) .react-logo,
+    body:has(.express-t:hover) .express-logo,
     body:has(.mongo-t:hover) .mongo-logo{
 
         filter: none;
