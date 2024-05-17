@@ -85,34 +85,182 @@ body:has(.mongo-logo:hover) .mongo-t{
     0%{
         transform: scale(1);
         filter: drop-shadow(0 0 1px rgb(228, 77, 38))
-         drop-shadow(0 0 3px  rgb(222, 90, 57))
-         drop-shadow(0 0 5px rgb(202, 93, 66))
-         drop-shadow(0 0 10px rgb(196, 100, 76));
+        drop-shadow(0 0 3px  rgb(222, 90, 57))
+        drop-shadow(0 0 5px rgb(202, 93, 66))
+        drop-shadow(0 0 10px rgb(196, 100, 76));
     }
 
     100%{
     transform: scale(0.8);
-       filter: drop-shadow(0 0 3px rgb(228, 77, 38))
-       drop-shadow(0 0 5px rgb(222, 90, 57))
-       drop-shadow(0 0 10px rgb(202, 93, 66))
-       drop-shadow(0 0 15px rgb(196, 100, 76));
+        filter: drop-shadow(0 0 3px rgb(228, 77, 38))
+        drop-shadow(0 0 5px rgb(222, 90, 57))
+        drop-shadow(0 0 10px rgb(202, 93, 66))
+        drop-shadow(0 0 15px rgb(196, 100, 76));
     }
 }
 @keyframes mongoAnimate{
     0%{
         transform: scale(1);
         filter: drop-shadow(0 0 1px rgb(67, 153, 52))
-         drop-shadow(0 0 3px  rgb(74, 152, 61))
-         drop-shadow(0 0 5px rgb(83, 149, 71))
-         drop-shadow(0 0 10px rgb(89, 143, 80));
+        drop-shadow(0 0 3px  rgb(74, 152, 61))
+        drop-shadow(0 0 5px rgb(83, 149, 71))
+        drop-shadow(0 0 10px rgb(89, 143, 80));
     }
 
     100%{
     transform: scale(0.8);
-       filter: drop-shadow(0 0 3px rgb(67, 153, 52))
-       drop-shadow(0 0 5px rgb(74, 152, 61))
-       drop-shadow(0 0 10px rgb(83, 149, 71))
-       drop-shadow(0 0 15px rgb(89, 143, 80));
+        filter: drop-shadow(0 0 3px rgb(67, 153, 52))
+        drop-shadow(0 0 5px rgb(74, 152, 61))
+        drop-shadow(0 0 10px rgb(83, 149, 71))
+        drop-shadow(0 0 15px rgb(89, 143, 80));
+    }
+}
+
+
+/**************** HOVER MONGO LOGO ANIMATION *************/
+.mongo-logo:hover{
+    filter: drop-shadow(0 0 1px rgb(67, 153, 52))
+    drop-shadow(0 0 3px  rgb(74, 152, 61))
+    drop-shadow(0 0 5px rgb(83, 149, 71))
+    drop-shadow(0 0 10px rgb(89, 143, 80));
+    transform: rotate(90deg);
+    transition: 0.5s ease-in-out;
+    animation: mongoMove 1.5s alternate infinite ;
+}
+@keyframes mongoMove {
+    from{
+        transform: rotate(45deg);
+    }
+    to{
+        transform: rotate(120deg);
+    }
+}
+
+/*************HOVER JS AND EXPRESS LOGO ANIMATION***************/
+.js-logo:hover{
+    filter: drop-shadow(0 0 1px rgb(171, 147, 7))
+    drop-shadow(0 0 3px  rgb(195, 167, 5))
+    drop-shadow(0 0 5px rgb(234, 200, 9))
+    drop-shadow(0 0 10px rgb(250, 214, 9));
+}
+.js-logo:hover > #js{
+    animation: downUp 1s alternate ease-in-out;
+}
+.express-logo:hover{
+    filter: drop-shadow(0 0 1px rgb(171, 147, 7))
+    drop-shadow(0 0 3px  rgb(195, 167, 5))
+    drop-shadow(0 0 5px rgb(234, 200, 9))
+    drop-shadow(0 0 10px rgb(250, 214, 9));
+}
+.express-logo:hover > #express{
+    animation: upDown 1s alternate ease-in-out;
+}
+.react-logo:hover{
+    filter: drop-shadow(0 0 1px rgb(5, 125, 195))
+        drop-shadow(0 0 3px rgb(6, 145, 225))
+        drop-shadow(0 0 5px  rgb(7, 158, 245))
+        drop-shadow(0 0 10px rgb(128, 202, 223));
+    animation: spin 0.1s forwards infinite;
+
+}
+/******HOVER CSS LOGO ANIMATION******/
+.cpp-logo:hover{
+    filter: drop-shadow(0 0 1px rgb(5, 125, 195))
+        drop-shadow(0 0 3px rgb(6, 145, 225))
+        drop-shadow(0 0 5px  rgb(7, 158, 245))
+        drop-shadow(0 0 10px rgb(128, 202, 223));
+}
+.cpp-logo:hover > #bg-plusplus{
+    animation: cpp-bg 0.6s alternate ease-in ;
+}
+.cpp-logo:hover > #plusplus{
+    animation: cpp 1.2s alternate ease-in ;
+}
+
+@keyframes cpp{
+    0%{
+
+        fill: transparent;
+        transform: scale(2);
+    }
+    100%{
+
+        fill: rgb(255, 255, 255);
+        transform: scale(1);
+    }
+}
+@keyframes cpp-bg{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/******HOVER HTML LOGO ANIMATION******/
+.html-logo:hover > #html5{
+    animation: upDown 2s alternate ease-in-out ;
+}
+.html-logo:hover > #html5-bg{
+    animation: upDown 1s alternate ease-in-out ;
+}
+.html-logo:hover{
+    filter: drop-shadow(0 0 1px rgb(228, 77, 38))
+        drop-shadow(0 0 3px  rgb(222, 90, 57))
+        drop-shadow(0 0 5px rgb(202, 93, 66))
+        drop-shadow(0 0 10px rgb(196, 100, 76));
+}
+.html-logo:hover > #html5-bg2{
+    animation: downUp 1s alternate ease-in-out ;
+}
+
+/*****HOVER CSS LOGO ANIMATION********/
+.css-logo:hover{
+    filter: drop-shadow(0 0 1px rgb(5, 125, 195))
+        drop-shadow(0 0 3px rgb(6, 145, 225))
+        drop-shadow(0 0 5px  rgb(7, 158, 245))
+        drop-shadow(0 0 10px rgb(128, 202, 223));
+}
+.css-logo:hover > #css3{
+    animation: colorChange 1.5s alternate ease-in-out;
+}
+.css-logo:hover > #css3-bg{
+    animation: colorChange 0.5s alternate ease-in-out;
+}
+
+
+
+/*-------LOGO HOVER ANIMATION------*/
+
+@keyframes upDown{
+    0%{
+        transform: translateY(-150px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes downUp{
+    0%{
+        transform: translateY(150px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes colorChange {
+    0%{
+        fill: #000 ;
+    }
+    50%{
+        fill: initial ;
+    }
+}
+@keyframes spin {
+    to{
+        transform: rotate(360deg) ;
     }
 }
 
