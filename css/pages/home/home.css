@@ -1,5 +1,5 @@
 /*---------------Hero Section---------------*/
-.hero{
+.hero {
     width: 100%;
     height: 85vh;
     background-image: url("../../../images/Background.png");
@@ -12,21 +12,22 @@
     overflow: hidden;
 }
 
-.main-hero-text{
+.main-hero-text {
     width: 34rem;
     height: 8rem;
     font-size: 3rem;
     text-align: left;
-    margin-right:4em;
+    margin-right: 4em;
     text-shadow: rgb(0, 0, 0) 10px 0 10px;
     z-index: 1;
 }
-.secondary-hero-text{
+
+.secondary-hero-text {
     width: 30rem;
     height: 10rem;
     font-weight: 300;
     font-size: 2rem;
-    margin-left:10em;
+    margin-left: 10em;
     margin-top: 1em;
     text-align: left;
     text-shadow: rgb(0, 0, 0) 10px 0 10px;
@@ -34,18 +35,19 @@
 
 }
 
-.characterAnimation{
+.characterAnimation {
     width: 90%;
     height: 80%;
     position: absolute;
     overflow: hidden;
 }
-.characterAnimation div{
+
+.characterAnimation div {
 
     display: inline-block;
-    position:absolute;
+    position: absolute;
     animation-name: makeRandText;
-    animation-timing-function:linear;
+    animation-timing-function: linear;
     animation-duration: 3s;
     font-size: 1.3rem;
     filter: blur(3px);
@@ -54,7 +56,7 @@
 
 /*---------------Skill Overview Section---------------*/
 
-.skillOverview{
+.skillOverview {
     width: 100%;
     height: fit-content;
     margin-top: 100px;
@@ -62,15 +64,15 @@
     justify-content: center;
 }
 
-.images{
+.images {
     width: 50%;
     display: flex;
     justify-content: right;
- 
+
 
 }
 
-.overview-text{
+.overview-text {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -78,157 +80,215 @@
     font-weight: 300;
 }
 
-.overview-description{
+.overview-description {
     height: fit-content;
     margin-top: 40px;
-    
+
 }
-.astronaut{
+
+.overview-text .highlight{
+    transition: all 0.5s ease-in-out;
+}
+
+.astronaut {
     width: 480px;
     height: 800px;
 }
-.skills{
+
+.skills {
     width: 40%;
     height: fit-content;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
-.skills svg{
+
+.skills svg {
     width: 70px;
     height: 70px;
     position: relative;
     margin-top: 30px;
-    
+
 }
-.mongo-logo{
+
+.mongo-logo {
     top: 10px;
     right: 20%;
-    
+    transition: all 0.5s ease-in-out;
 }
-.js-logo{
+
+.js-logo {
     left: 30%;
     bottom: 10px;
+    transition: all 0.5s ease-in-out;
 }
-.react-logo{
+
+.react-logo {
     right: 20%;
     bottom: 5px;
-
+    transition: all 0.5s ease-in-out;
 }
-.cpp-logo{
+
+.cpp-logo {
     left: 30%;
+    transition: all 0.5s ease-in-out;
 }
-.html-logo{
-    top: 10px;
-    right: 5% ;
 
+.html-logo {
+    top: 10px;
+    right: 5%;
+    transition: all 0.5s ease-in-out;
 }
-.css-logo{
+
+.css-logo {
     bottom: px;
     right: 50%;
+    transition: all 0.5s ease-in-out;
 }
-.express-logo{
+
+.express-logo {
     background-color: #F0DB4F;
     padding: 5px;
+    transition: all 0.5s ease-in-out;
 }
 
 /*---------------Project-Action---------------*/
-/* .projectSecion{
-    width: 80%;
+.projectSecion {
     margin-top: 100px;
-    height: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+
 }
-.allProjectsLinks{
-    height:fit-content;
+
+.projectSecion .title{
+    margin: 0 auto;
+}
+
+.project-cards {
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.projectSecion .title{
-    justify-content: start;
-    margin-bottom: 30px;
-    margin-left: 12%;
+    flex-wrap: wrap;
 }
 
-.latestProject{
-    background-color: var(--button-color);
-    width: 45%;
-    height: 300px;
+.project {
+    margin: 20px;
+    border: 2px solid linear-gradient();
+    width: 29%;
+    height: 20em;
     display: flex;
-    align-items: center;
+    text-align: center;
     justify-content: center;
-    text-align: center;
-}
-.olderProject{
-    width: 30%;
-    margin: 10px;
-    display: flex;
-    text-align: center;
+    align-items: center;
     flex-direction: column;
+    box-shadow: inset 0 30em 6em rgba(0, 0, 0, 0.8);
+    transition: all 0.5s;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-.project{
-    width: 100%;
-    height: calc(290px / 3) ;
-    background-color: var(--button-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.project:not(:nth-child(3)){
-    margin-bottom: 5px ;
-} */
 
+.project h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    transition: 0.5s ease-in-out;
+}
+
+.project p {
+    font-size: 1rem;
+    font-weight: 400;
+    width: 80%;
+    height: fit-content;
+    transition: 0.5s ease-in-out;
+}
+.project:hover p,.project:hover h3 {
+    transform: scale(1.1);
+    text-shadow: 5px -10px 10px rgba(0, 0, 0, 0.75),
+    -3px -10px 12px rgba(0, 0, 0, 0.75);
+    
+}
+.project:hover {
+    box-shadow: inset 10em 5em 10em rgba(0, 0, 0, 0.8), 0 0 15px rgb(193, 75, 9);
+}
 
 /*---------------Mobile screen---------------*/
-
-@media (max-width: 932px) {
-    .images{
-        display: none;
-    }
-    .overview-text{
-        margin: 0 20px;
-        width: 100%;
-    }
-    .skillOverview{
-        height:600px;
+@media (max-width:1042px) {
+    .project-cards {
+        justify-content: center;
     }
 }
-@media (max-width:  800px){
-    .main-hero-text{
+@media (max-width: 932px) {
+    .images {
+        display: none;
+    }
+
+    .overview-text {
+        margin: 0 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .overview-text .text{
+        font-size: 1.2rem;
+    }
+
+    .skillOverview {
+        height: fit-content;
+    }
+    .project:hover p,.project:hover h3 {
+        transform: none;
+        text-shadow: none;
+        
+    }
+    .project:hover {
+        box-shadow: none;
+    }
+    .project{
+        width: 50%;
+    }
+    .projectSecion {
+        align-items: center;
+        justify-content: center;
+    
+    }
+}
+
+@media (max-width: 800px) {
+    .main-hero-text {
         width: 80%;
         height: 16rem;
         font-size: 2.5rem;
-        margin-right:0;
+        margin-right: 0;
     }
-    .secondary-hero-text{
+
+    .secondary-hero-text {
         width: 80%;
         font-size: 1.5rem;
-        margin-left:0;
+        margin-left: 0;
         margin-top: 0;
-    
+
     }
 }
 
 /*---------------KeyFrames---------------*/
 
-@keyframes makeRandText{
-    0%{
-        color: rgba(255,255,255,0);
+@keyframes makeRandText {
+    0% {
+        color: rgba(255, 255, 255, 0);
 
     }
-    50%{
-        color: rgba(255,255,255,1);
-  
+
+    50% {
+        color: rgba(255, 255, 255, 1);
+
     }
 
-    100%{
-        color: rgba(255,255,255,0);
-  
+    100% {
+        color: rgba(255, 255, 255, 0);
+
     }
 }
