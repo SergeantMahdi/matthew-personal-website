@@ -176,7 +176,6 @@
 
 .project {
     margin: 20px;
-    border: 2px solid linear-gradient();
     width: 29%;
     height: 20em;
     display: flex;
@@ -245,10 +244,12 @@
         
     }
     .project:hover {
-        box-shadow: none;
+        box-shadow: inset 0em 20em 10em rgba(0, 0, 0, 0.8);
     }
     .project{
         width: 50%;
+        box-shadow: inset 0em 20em 10em rgba(0, 0, 0, 0.8);
+    
     }
     .projectSecion {
         align-items: center;
