@@ -7,6 +7,7 @@
 .background-section .image .astronaut-bg-shape{
 
     animation: mybackground-astronaut 0.5s alternate infinite ease-in-out;
+    filter: blur(5px);
 
 }
 
@@ -39,3 +40,16 @@
     }
 }
 
+@media(max-width:1280px){
+    .background-section .image svg{
+        width: 400px;
+    }
+    
+}
+
+@media (max-width:800px) {
+    .background-section .image {
+    display: none;
+}
+    
+}

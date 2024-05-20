@@ -52,12 +52,12 @@ a {
     height: fit-content;
     text-wrap: nowrap;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
 }
 
 .text {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 .section-btn {
