@@ -1,0 +1,41 @@
+.background-section .image svg{
+    width: 495px;
+    height: fit-content;
+    transition: 0.7s ease-in-out ;
+}
+
+.background-section .image .astronaut-bg-shape{
+
+    animation: mybackground-astronaut 0.5s alternate infinite ease-in-out;
+
+}
+
+.background-section .image .astronaut-glass{
+
+    animation: glow-glass 0.5s alternate infinite ease-in-out;
+}
+
+@keyframes glow-glass {
+    0%{
+        filter: drop-shadow(0 0 1px rgb(228, 77, 38))
+        drop-shadow(0 0 10px  rgb(222, 90, 57))
+        drop-shadow(0 0 15px rgb(202, 93, 66))
+        drop-shadow(0 0 20px rgb(196, 100, 76));
+    }
+    100%{
+        filter: drop-shadow(0 0 1px rgb(228, 77, 38))
+        drop-shadow(0 0 3px  rgb(222, 90, 57))
+        drop-shadow(0 0 5px rgb(202, 93, 66))
+        drop-shadow(0 0 10px rgb(196, 100, 76));
+    }
+}
+
+@keyframes mybackground-astronaut{
+    from{
+        transform: translateX(-10px);
+    }
+    to{
+        transform: translateX(10px);
+    }
+}
+
