@@ -22,6 +22,7 @@ main {
     height: fit-content;
     margin-top: 110px;
     margin-bottom: 70px;
+    overflow-x: hidden;
 }
 
 a {
@@ -72,7 +73,20 @@ a {
     transition: all 0.5s ease-in-out;
 }
 
-
+.left-right{
+    transform: translateX(-100%);
+}
+.right-left{
+    transform: translateX(100%);
+}
+.hidden{
+    opacity: 0;
+    transition: all 1s ease-in;
+}
+.show{
+    transform: translateX(0);
+    opacity: 1;
+}
 /*--------HOVER---------*/
 .btn:hover {
     background-color: var(--button-color);
@@ -86,6 +100,13 @@ a {
         0 0 40px rgb(190, 112, 68),
         0 0 50px rgb(190, 144, 118);
 
+}
+
+@media (prefers-reduced-motion) {
+    .hidden{
+        transition: none;
+    }
+    
 }
 
 @media (max-width: 932px) {
