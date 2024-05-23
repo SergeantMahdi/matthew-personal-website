@@ -1,5 +1,5 @@
 .skillSection {
-    margin-top: 100px;
+    margin-top: 200px;
     color: white;
     display: flex;
     flex-wrap: wrap;
@@ -19,9 +19,8 @@
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    color: #656565;
-    box-shadow: 4px 5px 10px 1px #fff,
-        -2px -2px 5px 2px;
+    color: #8d8c8c;
+    box-shadow: 2px 3px 10px 1px #ffffff;
 }
 
 .inner-circle {

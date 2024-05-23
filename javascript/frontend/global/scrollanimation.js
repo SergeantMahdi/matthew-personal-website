@@ -1,4 +1,4 @@
-let index = 0;
+
 const observe = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
