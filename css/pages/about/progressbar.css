@@ -1,0 +1,55 @@
+.skillSection {
+    margin-top: 100px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.skill-card {
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.outer-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    color: #656565;
+    box-shadow: 4px 5px 10px 1px #fff,
+        -2px -2px 5px 2px;
+}
+
+.inner-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 130px;
+    height: 130px;
+    padding: 5px;
+    background-color: rgb(0, 3, 9);
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 10px 1px #c14b09;
+}
+
+.skill {
+    margin: 0;
+    transition: scale 0.5s ease-in-out;
+}
+
+.progress-number {
+    font-size: 2rem;
+    margin: 0;
+    transition: scale 0.5s ease-in-out;
+}
+
+.outer-circle:hover .progress-number,
+.outer-circle:hover .skill {
+    scale: 1.2;
+    color: #fff;
+}

@@ -15,6 +15,7 @@
 
 .footerSection p{
     border-bottom: 2px solid white ;
+    margin: 5px;
 }
 
 .footerSection .highlight{

@@ -53,12 +53,12 @@ a {
     height: fit-content;
     text-wrap: nowrap;
     display: inline-block;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 .text {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .section-btn {
@@ -81,7 +81,7 @@ a {
 }
 .hidden{
     opacity: 0;
-    transition: all 1s ease-in;
+    transition:transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 .show{
     transform: translateX(0);
