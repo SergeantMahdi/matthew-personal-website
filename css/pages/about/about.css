@@ -1,4 +1,4 @@
-.background-section{
+.background-section {
     width: 70%;
     display: flex;
     flex-direction: row;
@@ -6,40 +6,94 @@
     align-items: center;
 
 }
-.background-text{
+
+.background-text {
     width: 40%;
     height: fit-content;
     display: flex;
     flex-direction: column;
 }
-.background-text .title{
-    margin-bottom: 40px;
+
+.skillSection {
+    margin-top: 200px;
+    color: white;
+    display: flex;
+    justify-content: center;
 }
 
+.skills {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.detail-box {
+    margin-left: 20px;
+    width: 50%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.detail {
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 @media (max-width: 1100px) {
-    .text{
+    .text {
         font-size: 1.2rem;
-        
     }
-    .title{
+
+    .detail-box {
+        display: none;
+    }
+
+    .skillSection {
+        align-items: center;
+    }
+
+    .skills {
+        width: 100%;
+    }
+
+    .title {
         font-size: 2rem;
     }
 }
-@media (max-width: 800px){
-    .background-section{
+
+@media (max-width: 800px) {
+    .background-section {
         width: 100%;
         display: flex;
         justify-content: center;
-    
+
     }
-    .background-text{
+
+    .background-text {
         width: 90%;
         height: fit-content;
         text-align: left;
         justify-content: center;
         align-items: center;
     }
-    .background-text .title{
+
+    .background-text .title {
         margin-bottom: 40px;
+    }
+
+    .skillSection {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skills {
+        grid-template-columns: 1fr 1fr;
     }
 }

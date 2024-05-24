@@ -1,15 +1,9 @@
-.skillSection {
-    margin-top: 200px;
-    color: white;
-    display: flex;
-    flex-wrap: wrap;
-
-}
 
 .skill-card {
     padding: 10px;
     width: fit-content;
     height: fit-content;
+    cursor: pointer;
 }
 
 .outer-circle {

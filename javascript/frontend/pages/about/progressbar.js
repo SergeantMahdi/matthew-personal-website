@@ -26,10 +26,16 @@ function execute(element) {
     Interval(element, progressText, progress, skillText, skill)
 }
 
+let isVisible = false;
 
-document.addEventListener("DOMContentLoaded", (eve) => {
-    circles.forEach((element) => {
-        execute(element)
-    })
-
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            circles.forEach(element =>{
+                execute(element)
+            })
+        }
+    });
 })
+
+observer.observe(document.querySelector('.skillSection'))
