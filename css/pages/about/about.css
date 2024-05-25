@@ -35,16 +35,18 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background-image: url('../../../images/skillDescriptionBg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .detail {
     width: 60%;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+.detail .text{
+    font-size: 1rem;
+}
 
 @media (max-width: 1100px) {
     .text {
