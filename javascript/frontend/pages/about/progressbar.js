@@ -27,12 +27,13 @@ function execute(element) {
 }
 
 let isVisible = false;
-
+let isWatched = true;
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && isWatched) {
             circles.forEach(element =>{
                 execute(element)
+                isWatched = false;
             })
         }
     });
