@@ -1,42 +1,33 @@
 const detail = document.querySelector('.detail');
-const js = document.querySelector('.js');
-const css = document.querySelector('.css');
-const html = document.querySelector('.html');
-const cpp = document.querySelector('.cpp');
-const qt = document.querySelector('.qt');
-const react = document.querySelector('.react');
-const mongo = document.querySelector('.mongo');
 
-const root = document.querySelector(':root');
-const rootStyle = getComputedStyle(root);
-
-const texts = [
-    { text: 'JS' },
-    {
-        text: '🌟 My CSS journey kicked off with a Udemy course. Initially, I felt like I was deciphering a secret code! But guess what? I rolled up my sleeves, built my own website from scratch, and voilà! My CSS skills got a major boost. 🚀'
-    },
-    { text: ' the fascinating world of markup languages! 🌟 Containers—the enigmatic puzzle pieces that once left me scratching my head. But fear not! With practice, they transformed from cryptic hieroglyphs into familiar allies. Now, I wield them like a seasoned sorcerer, weaving magic across the digital canvas. 🪄✨' },
-    { text: 'Ah, databases—the beating heart of backend wizardry! ⚡ When I immersed myself in backend development, databases became my compass. Sure, mastering the art of managing and engineering these data realms took time, but oh, was it worth it!' },
-    { text: 'qt' },
-    { text: 'cpp' },
-    { text: 'react' },
-]
-
-const defaultText = 'CLICK ON ONE OF THE SKILLS TO SEE THE DETAIL';
-document.addEventListener("DOMContentLoaded", () => {
-    detail.innerText = defaultText;
-})
-
-
-function onClick(text) {
-    detail.innerText = text;
+const skillText = {
+    js: "jdjdjd",
+    html: "ddda a html",
+    css: "I embarked on my CSS journey through a Udemy course. Initially, navigating the intricacies of CSS posed a formidable challenge. Yet, I persevered by crafting my own website from scratch. This hands-on experience not only honed my CSS skills but also reinforced my understanding of web development",
+    cpp: "cpp",
+    qt: "qt",
+    react: "react",
+    mongo: "mongo",
+    defaultText:'CLICK ON ONE OF THE SKILLS TO SEE THE DETAIL'
 }
 
 
-    js.addEventListener('click', () => { onClick(texts[0].text) });
-    css.addEventListener('click', () => onClick(texts[1].text));
-    html.addEventListener('click', () => onClick(texts[2].text));
-    mongo.addEventListener('click', () => onClick(texts[3].text));
-    qt.addEventListener('click', () => onClick(texts[4].text));
-    cpp.addEventListener('click', () => onClick(texts[5].text));
-    react.addEventListener('click', () => onClick(texts[6].text));
+function importText(text) {
+    detail.innerText = text;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    //Set default text
+    detail.innerText = skillText.defaultText;
+
+    const skillCards = document.querySelectorAll('.skill-card')
+
+    skillCards.forEach(card => {
+        //Get the data-target attribute
+        let target = card.getAttribute('data-target');
+
+        //import the text of every card by it's attribute
+        card.addEventListener('click', () => importText(skillText[target]))
+
+    })
+});

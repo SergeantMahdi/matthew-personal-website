@@ -1,7 +1,25 @@
 
-
 let circles = document.querySelectorAll('.outer-circle');
 
+let isWatched = true;
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && isWatched) {
+            circles.forEach(element =>{
+                execute(element)
+                isWatched = false;
+            })
+        }
+    });
+})
+
+function execute(element) {
+    let progressText = element.querySelector(".progress-number")
+    let skillText = element.querySelector(".skill")
+    let progress = parseInt(element.getAttribute('data-target'))
+    let skill = (element.getAttribute('data-skill'))
+    Interval(element, progressText, progress, skillText, skill)
+}
 
 function Interval(element, progressText, progress, skillText, skill) {
     let counter = 0;
@@ -17,26 +35,5 @@ function Interval(element, progressText, progress, skillText, skill) {
 
     }, 40)
 }
-
-function execute(element) {
-    let progressText = element.querySelector(".progress-number")
-    let skillText = element.querySelector(".skill")
-    let progress = parseInt(element.getAttribute('data-target'))
-    let skill = (element.getAttribute('data-skill'))
-    Interval(element, progressText, progress, skillText, skill)
-}
-
-let isVisible = false;
-let isWatched = true;
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && isWatched) {
-            circles.forEach(element =>{
-                execute(element)
-                isWatched = false;
-            })
-        }
-    });
-})
 
 observer.observe(document.querySelector('.skillSection'))
