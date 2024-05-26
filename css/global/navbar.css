@@ -35,12 +35,17 @@
 
 /*li items*/
 .nav-item{
-    width: 140px;
     margin: 20px;
     font-size: 1.5rem;
-    padding: 0.5rem 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+.nav-item a{
+    width: fit-content;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+}
 .nav-item:nth-child(1){
 margin-left: auto;
 }
@@ -87,6 +92,12 @@ margin-left: auto;
         height: 120%;
     
     }
+
+    .nav-item a{
+        width: fit-content;
+        display: inline-block;
+        padding: 0.2rem 1.1rem;
+    }
 }
 
 @media (max-width: 800px){
@@ -132,8 +143,12 @@ margin-left: 5px;
 .nav-item{
     width: 100%;
     font-size: 1.5rem;
-    padding: 25px 0;
+    padding: 14.5px;
     text-align: center;
+    
+}
+.nav-item a{
+    width: 100%;
 
 }
 .nav-item:nth-child(1){
