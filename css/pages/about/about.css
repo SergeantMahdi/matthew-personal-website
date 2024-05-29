@@ -19,17 +19,24 @@
 }
 
 .skillSection {
-    width: 80%;
+    width: 100%;
+    height: 100vh;
     margin-top: 100px;
     color: white;
     display: flex;
     flex-direction: column;
-    
+    background-image: url('../../../images/bgbackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-
+.skillSection .wrapper{
+    margin-top: 60px;
+    width: 80%;
+}
 .progress {
-    margin-top: 100px;
     width: 100%;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
 }
@@ -48,13 +55,13 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: url('../../../images/skillDescriptionBg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #0000007e;
+    border-radius: 50px;
 }
 
 .detail {
     width: 60%;
+    text-align: center;
 }
 
 .detail .text {
@@ -128,6 +135,9 @@ animation: wave 1s alternate infinite ease-in-out;
 
    100% { transform: translateY(30px)  }
 }
+
+
+
 @media (max-width: 1100px) {
     .text {
         font-size: 1.2rem;
@@ -139,6 +149,7 @@ animation: wave 1s alternate infinite ease-in-out;
 
     .skillSection {
         align-items: center;
+        height: fit-content;
     }
 
     .skills {
@@ -147,6 +158,12 @@ animation: wave 1s alternate infinite ease-in-out;
 
     .title {
         font-size: 2rem;
+    }
+    .goalSection img{
+        width: 400px;
+    }
+    .current-goal .images img{
+        display: none;
     }
 }
 
@@ -161,7 +178,6 @@ animation: wave 1s alternate infinite ease-in-out;
     .background-text {
         width: 90%;
         height: fit-content;
-        text-align: left;
         justify-content: center;
         align-items: center;
     }
@@ -169,13 +185,28 @@ animation: wave 1s alternate infinite ease-in-out;
     .background-text .title {
         margin-bottom: 40px;
     }
-
     .skillSection {
-        justify-content: center;
-        align-items: center;
+        height: fit-content;
     }
-
+    .skillSection .wrapper{
+        width: 100%;
+    }
     .skills {
         grid-template-columns: 1fr 1fr;
+    }
+    .goal-containet{
+        flex-direction: column;
+    }
+    .current-goal{
+        flex-direction: column-reverse;
+    }
+    .goal-containet .text, .current-goal .text{
+        width: 100%;
+    }
+    .goalSection img{
+        width: 300px;
+    }
+    .current-goal .images{
+        flex-direction: column-reverse;
     }
 }

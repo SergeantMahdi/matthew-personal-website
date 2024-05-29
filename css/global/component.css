@@ -79,12 +79,16 @@ a {
 .right-left{
     transform: translateX(100%);
 }
+.pop-up{
+    scale: 0;
+}
 .hidden{
     opacity: 0;
-    transition:transform 1s ease-in-out, opacity 1s ease-in-out;
+    transition:transform 1s ease-in-out, opacity 1s ease-in-out, scale 1s ease-in-out;
 }
 .show{
     transform: translateX(0);
+    scale: 1;
     opacity: 1;
 }
 /*--------HOVER---------*/
