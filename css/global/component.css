@@ -73,6 +73,10 @@ a {
     transition: all 0.5s ease-in-out;
 }
 
+.bold{
+    font-weight:  800;
+}
+
 .left-right{
     transform: translateX(-100%);
 }
