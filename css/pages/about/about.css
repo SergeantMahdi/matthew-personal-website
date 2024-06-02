@@ -151,165 +151,216 @@
     overflow: hidden;
 }
 
-.hobbySection .hobbies {
-    display: flex;
-    flex-direction: column;
-}
-
-.hobbySection .hobbies .text {
-    width: 40%;
-
-}
-.reading{
-    display: flex;
-    align-items: center;
+.hobbySection:nth-child(2){
     justify-content: center;
 }
-/*Book*/
-.reading .card{
-    width: 200px;
-    height: 320px;
-    background-color: #e3e3e3;
-    box-shadow: 5px 0 10px rgba(193, 75, 9, 1),
-    inset 300px 0 50px rgba(0,0,0,0.5);
-    position: relative;
-    border-radius: 10px;
-    transform: perspective(2000px);
-    transform-style: preserve-3d;
-    transition: all 0.5s ease-in-out;
-    cursor: pointer;
+.reading-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
 }
-.reading .card:hover{
-    box-shadow: 5px 0 10px rgba(193, 75, 9, 1),
-    inset 20px 0 50px rgba(0,0,0,0.5);
-}
-.reading .card .cover{
-    position: absolute;
-    border-radius: 10px;
-    transform-origin: left;
-    transform-style: preserve-3d;
-    transition: all 0.5s ease-in-out;
-}
-
-.reading .card:hover  .cover{
-    transform: rotateY(-135deg);
-}
-.reading .card .back{
-display: none;
-}
-.book-text {
-    font-size: 1rem;
-    color: #000;
-    width: 200px;
-    font-weight: 600;
-    user-select: none;
-    text-align: center;
-}
-.reading .book-text .bold{
-    color: #000;
-    font-size: 1.1rem;
-}
-.rocket{
+.spaceship-container {
     width: 90%;
     z-index: -1;
 }
+
 .spaceship {
     offset-path: path('M109.5,53.5c71.9-30,134.7-38.6,176-41c18.8-1.1,109.9-5.5,217,34c56,20.6,110.7,41.7,125,90c1,3.5,9.2,32.7-4,61c-39.9,85.6-247.4,103.6-304,27c-27.8-37.7-0.3-72.6-29-107c-49.9-59.8-210.7-46.8-246,22c-37,72.1,66.1,200.9,168,262c136.5,81.8,340.8,84,379,6c34.9-71.4-60.5-228.1-169-245c-113.8-17.7-182.3,127.9-306,97c-39.2-9.8-92.6-39.5-99-86C11.5,130,48,79.8,109.5,53.5z');
     animation: move 20s infinite normal ease-in-out;
     width: 100px;
     position: absolute;
+}
+
+
+
+.games-container{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+
+}
+.games-container .cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.game-card {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    cursor: pointer;
+    border: 30px;
+    margin: 30px;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.image-box {
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.game-card:hover .image-box {
+    transform: perspective(500px) translateY(-5%) rotateX(25deg);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.game-card:hover .cover-image {
+    opacity: 0.3;
+}
+
+.image-box::after,
+.image-box::before {
+    content: '';
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    position: absolute;
+    border-radius: 30px;
+    left: 0;
+
+}
+
+.image-box::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5), rgb(12, 13, 19)97%);
+}
+
+.image-box::after {
+    bottom: 0;
+    opacity: 0;
+    background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5), rgb(12, 13, 19)97%);
+}
+
+.game-card:hover .image-box::after,
+.image-box::before {
+    opacity: 1;
+}
+
+.character {
+    width: 100%;
+    height: fit-content;
+    opacity: 0;
+    transition: all 0.5s;
+    filter: drop-shadow(2px 2px 2px #000);
+    position: absolute;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.game-card:hover .character {
+    opacity: 1;
+    transform: scale(2) translate3d(5%, -20%, 1px);
+}
+
+@keyframes move {
+    0% {
+        offset-distance: 0%;
     }
 
-    @keyframes move {
-        0% {
-            offset-distance: 0%;
-        }
+    100% {
+        offset-distance: 100%;
+    }
+}
 
-        100% {
-            offset-distance: 100%;
-        }
+
+@media (max-width: 1100px) {
+    .text {
+        font-size: 1.2rem;
     }
 
-
-    @media (max-width: 1100px) {
-        .text {
-            font-size: 1.2rem;
-        }
-
-        .detail-box {
-            display: none;
-        }
-
-        .skillSection {
-            align-items: center;
-        }
-
-        .skills {
-            width: 100%;
-        }
-
-        .title {
-            font-size: 2rem;
-        }
-
-        .goalSection img {
-            width: 400px;
-        }
-
-        .current-goal .images img {
-            display: none;
-        }
+    .detail-box {
+        display: none;
     }
 
-    @media (max-width: 800px) {
-        .background-section {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .background-text {
-            width: 90%;
-            height: fit-content;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .background-text .title {
-            margin-bottom: 40px;
-        }
-
-        .skillSection {
-            height: fit-content;
-        }
-
-        .skillSection .wrapper {
-            width: 100%;
-        }
-
-        .skills {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .goal-containet {
-            flex-direction: column;
-        }
-
-        .current-goal {
-            flex-direction: column-reverse;
-        }
-
-        .goal-containet .text,
-        .current-goal .text {
-            width: 100%;
-        }
-
-        .goalSection img {
-            width: 300px;
-        }
-
-        .current-goal .images {
-            flex-direction: column-reverse;
-        }
+    .skillSection {
+        align-items: center;
     }
+
+    .skills {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .goalSection img {
+        width: 400px;
+    }
+
+    .current-goal .images img {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .background-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .background-text {
+        width: 90%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background-text .title {
+        margin-bottom: 40px;
+    }
+
+    .skillSection {
+        height: fit-content;
+    }
+
+    .skillSection .wrapper {
+        width: 100%;
+    }
+
+    .skills {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .goal-containet {
+        flex-direction: column;
+    }
+
+    .current-goal {
+        flex-direction: column-reverse;
+    }
+
+    .goal-containet .text,
+    .current-goal .text {
+        width: 100%;
+    }
+
+    .goalSection img {
+        width: 300px;
+    }
+
+    .current-goal .images {
+        flex-direction: column-reverse;
+    }
+}
