@@ -27,8 +27,8 @@
     flex-direction: column;
     background-image: url('../../../images/bgbackground.png');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
+    background-position:bottom;
 }
 
 .skillSection .wrapper {
@@ -57,13 +57,14 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #0000007e;
-    border-radius: 50px;
+ 
 }
 
 .detail {
     width: 60%;
     text-align: center;
+    background-color: #0000007e;
+    border-radius: 50px;
 }
 
 .detail .text {
@@ -151,10 +152,9 @@
     overflow: hidden;
 }
 
-.hobbySection:nth-child(2){
-    justify-content: center;
-}
+
 .reading-container{
+
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -166,7 +166,7 @@
 }
 
 .spaceship {
-    offset-path: path('M109.5,53.5c71.9-30,134.7-38.6,176-41c18.8-1.1,109.9-5.5,217,34c56,20.6,110.7,41.7,125,90c1,3.5,9.2,32.7-4,61c-39.9,85.6-247.4,103.6-304,27c-27.8-37.7-0.3-72.6-29-107c-49.9-59.8-210.7-46.8-246,22c-37,72.1,66.1,200.9,168,262c136.5,81.8,340.8,84,379,6c34.9-71.4-60.5-228.1-169-245c-113.8-17.7-182.3,127.9-306,97c-39.2-9.8-92.6-39.5-99-86C11.5,130,48,79.8,109.5,53.5z');
+    offset-path: path();
     animation: move 20s infinite normal ease-in-out;
     width: 100px;
     position: absolute;
