@@ -27,8 +27,8 @@
     flex-direction: column;
     background-image: url('../../../images/bgbackground.png');
     background-repeat: no-repeat;
-    background-size:cover;
-    background-position:bottom;
+    background-size: cover;
+    background-position: bottom;
 }
 
 .skillSection .wrapper {
@@ -57,7 +57,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
- 
+
 }
 
 .detail {
@@ -153,16 +153,83 @@
 }
 
 
-.reading-container{
+.reading-container {
 
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 }
+.hobbySection .text{
+    width: 40%;
+}
+.books{
+    display: flex;
+}
+.book-container{
+    width: 300px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.book {
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateY(-38deg);
+    transition: 1s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    perspective: 400px;
+    animation: bookRotation 1s ease 0s 1;;
+
+}
+.book img{
+    width: 100%;
+    height: 310px;
+    box-shadow: 5px 5px 10px #000000;
+    transform: translateZ(17.5px);
+}
+.book::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 300px;
+    background: #fff;
+    left: 0;
+    transform: translateX(192px) rotateY(73deg);
+}
+.book::after{
+    content: '';
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transform: translateZ(-15px);
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0px 0 20px 10px #c14b09;
+
+}
+.book:hover, .book:focus{
+    transform: rotateY(0);
+}
+
+@keyframes bookRotation {
+    0% {
+        transform: rotateY(-38deg);
+    }
+
+    100% {
+        transform: rotateY(5deg);
+    }
+}
+
 .spaceship-container {
-    width: 90%;
+    width: 100%;
     z-index: -1;
+    display: flex;
+    justify-content: center;
 }
 
 .spaceship {
@@ -174,19 +241,19 @@
 
 
 
-.games-container{
-    width: 50%;
+.games-container {
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: flex-start;
-    align-items: center;
+    align-items: flex-end;
 
 }
-.games-container .cards{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+
+.games-container .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .game-card {
@@ -271,6 +338,21 @@
     transform: scale(2) translate3d(5%, -20%, 1px);
 }
 
+.podcast-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: start;
+}
+
+.podcast-box{
+    display: flex;
+}
+.podcast-box img{
+    width: 300px;
+    margin: 20px;
+}
+
 @keyframes move {
     0% {
         offset-distance: 0%;
@@ -310,6 +392,10 @@
     .current-goal .images img {
         display: none;
     }
+
+    .spaceship-container{
+        display: none;
+    }
 }
 
 @media (max-width: 800px) {
@@ -333,10 +419,15 @@
 
     .skillSection {
         height: fit-content;
+
     }
 
     .skillSection .wrapper {
         width: 100%;
+    }
+
+    .progress {
+        align-items: center;
     }
 
     .skills {
@@ -362,5 +453,52 @@
 
     .current-goal .images {
         flex-direction: column-reverse;
+    }
+    .reading-container{
+        justify-content: center;
+        align-items: center;
+    }
+    .book-container{
+        width: 100px;
+        height: 210px;
+        margin: 20px;
+    }
+    .book {
+        width: 100px;
+        height: 200px;
+        animation: none;
+    
+    }
+    .book img{
+        width: 100%;
+        height: 200px;
+    }
+    .book::before{
+        width: 20px;
+        height: 200px;
+        transform: translateX(90px) rotateY(73deg);
+    }
+    .book::after{
+        width: 100px;
+        height: 200px;
+    
+    }
+
+    .hobbySection .text{
+        width: 100%;
+    }
+   
+    
+    .game-card {
+        width: 95px;
+        height: 195px;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
+        cursor: pointer;
+        border: 30px;
+        margin: 5px;
     }
 }
