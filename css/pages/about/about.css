@@ -145,16 +145,19 @@
 
 .hobbySection {
     margin-top: 100px;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    background-image: url('../../../images/hobbybg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
 .reading-container {
-
+    margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -230,11 +233,11 @@
     z-index: -1;
     display: flex;
     justify-content: center;
+    offset-path: path('M789,106c333-183.5,865.2-57.3,917,159c29.8,124.4-96.1,291.6-242,361c-219.9,104.6-365.5-70-720-41c-278.1,22.8-564.9,161.2-559,261c7.3,123.6,464.3,199.2,675,234c540.1,89.3,872.3,25.6,936,184c20.4,50.8,8.9,113.7-22,153c-36,45.7-136.9,108.5-894-136c-527.9-170.5-554.8-225.5-556-259c-4.3-122.9,327.8-245.4,559-294c462.3-97.2,740.9,54.7,806-63c61.1-110.5-110.6-377.5-270-382c-120.2-3.4-143.4,145.3-316,197c-209.2,62.7-479.3-64.6-489-183C606.6,206.5,751.6,126.6,789,106z');
+    animation: move 25s infinite normal ease-in-out;
 }
 
 .spaceship {
-    offset-path: path();
-    animation: move 20s infinite normal ease-in-out;
     width: 100px;
     position: absolute;
 }
@@ -242,6 +245,7 @@
 
 
 .games-container {
+    margin-top: 100px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -339,6 +343,7 @@
 }
 
 .podcast-container{
+    margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -351,6 +356,17 @@
 .podcast-box img{
     width: 300px;
     margin: 20px;
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    filter: d;
+    border-radius: 40%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    transform-style: preserve-3d;
+}
+.podcast-box img:hover{
+    box-shadow: 0px 0 5px 5px #c14b09;
+    transform: scale(1.1);
+ 
 }
 
 @keyframes move {
