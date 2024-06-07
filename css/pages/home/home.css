@@ -1,3 +1,9 @@
+:root{
+    --secondary-color: rgb(193, 75, 9);
+    --shadow-color: rgb(0, 0, 0);
+}
+
+
 /*---------------Hero Section---------------*/
 .hero {
     width: 100%;
@@ -18,7 +24,7 @@
     font-size: 3rem;
     text-align: left;
     margin-right: 4em;
-    text-shadow: rgb(0, 0, 0) 10px 0 10px;
+    text-shadow: var(--shadow-color) 10px 0 10px;
     z-index: 1;
 }
 
@@ -30,7 +36,7 @@
     margin-left: 10em;
     margin-top: 1em;
     text-align: left;
-    text-shadow: rgb(0, 0, 0) 10px 0 10px;
+    text-shadow: var(--shadow-color) 10px 0 10px;
     z-index: 1;
 
 }
@@ -68,6 +74,7 @@
     width: 50%;
     display: flex;
     justify-content: right;
+    user-select: none;
 
 
 }
@@ -143,7 +150,6 @@
 }
 
 .css-logo {
-    bottom: px;
     right: 50%;
     transition: all 0.5s ease-in-out;
 }
@@ -213,7 +219,7 @@
     
 }
 .project:hover {
-    box-shadow: inset 10em 5em 10em rgba(0, 0, 0, 0.8), 0 0 15px rgb(193, 75, 9);
+    box-shadow: inset 10em 5em 10em rgba(0, 0, 0, 0.8), 0 0 15px var(--secondary-color);
 }
 .projectSecion .section-btn{
     margin-bottom: 50px;
