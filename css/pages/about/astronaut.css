@@ -48,8 +48,8 @@
 }
 
 @media (max-width:800px) {
-    .background-section .image {
-    display: none;
+    .background-section .image svg {
+    width: 200px ;
 }
     
 }

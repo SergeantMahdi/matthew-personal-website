@@ -1,5 +1,21 @@
+:root {
+    --section-width: 80%;
+    --section-margin: 100px;
+    --secondary-color: #c14b09;
+    --background-color: #000309;
+    --transition-all: all 0.5s ease-in-out;
+
+
+    --book-width: 200px;
+    --book-height: 300px;
+
+    --mobile-book-width:150px;
+    --mobile-book-height:250px;
+
+}
+
 .background-section {
-    width: 80%;
+    width: var(--section-width);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,10 +34,12 @@
     margin-bottom: 40px;
 }
 
+/**************Skill Section***************/
+
 .skillSection {
     width: 100%;
     height: fit-content;
-    margin-top: 100px;
+    margin-top: var(--section-margin);
     color: white;
     display: flex;
     flex-direction: column;
@@ -33,18 +51,18 @@
 
 .skillSection .wrapper {
     margin-top: 60px;
-    width: 80%;
+    width: var(--section-width);
 }
 
 .progress {
     width: 100%;
-    margin-top: 100px;
+    margin-top: var(--section-margin);
     display: flex;
     justify-content: center;
 }
 
 .skills {
-    width: 60%;
+    width: var(--section-width);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -71,12 +89,16 @@
     font-size: 1rem;
 }
 
-
+/***************Goal section********************/
 .goalSection {
     margin-top: 100px;
-    width: 80%;
+    width: var(--section-width);
     display: flex;
     flex-direction: column;
+}
+
+.goalSection img {
+    user-select: none;
 }
 
 .goal-containet {
@@ -142,9 +164,9 @@
     }
 }
 
-
+/*******************Hobby Section*******************/
 .hobbySection {
-    margin-top: 100px;
+    margin-top: var(--section-margin);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -155,7 +177,6 @@
     background-size: cover;
 }
 
-
 .reading-container {
     margin-top: 100px;
     display: flex;
@@ -163,25 +184,58 @@
     flex-direction: column;
     align-items: start;
 }
-.hobbySection .text{
+
+.hobbySection .text {
     width: 40%;
 }
-.hobbySection .wrapper{
-    width: 70%;
+
+.hobbySection .wrapper {
+    width: var(--section-width);
 }
-.books{
+
+/*---Spaceship on the background---*/
+
+.spaceship-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    offset-path: path('M753.5,130.5c182.2-68.3,362.8,54.3,408,85c74,50.3,162.2,110.2,153,171c-21.8,143.8-572.3,191.1-769,208c-329.6,28.3-492.8,3-531,90c-33.9,77.1,45.8,207.3,147,269c135.4,82.5,235.8-2.3,517,2c87.3,1.3,480.2,7.4,561,198c26.7,63,18,142.9-23,187c-76.5,82.3-272.2,46.6-367-56c-89-96.4-28-186-98-258c-149.1-153.3-553.9,120.2-660-2c-61.4-70.7-18-268.6,104-369c265.3-218.4,721.8,172.1,977-38c163.5-134.6,150.7-438.6,83-471c-78-37.3-222.7,288.8-493,290c-79.4,0.4-184.8-27.2-203-87C537.5,277.3,646.4,170.7,753.5,130.5z');
+    animation: move 25s infinite normal ease-in-out;
+    user-select: none;
+}
+
+.spaceship {
+    width: 100px;
+    position: absolute;
+}
+
+@keyframes move {
+    0% {
+        offset-distance: 0%;
+    }
+
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+.books {
     display: flex;
 }
-.book-container{
+
+/*---book animation---*/
+.book-container {
     width: 300px;
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
+
 .book {
-    width: 200px;
-    height: 300px;
+    width: var(--book-width);
+    height: var(--book-height);
     transform-style: preserve-3d;
     transform: rotateY(-38deg);
     transition: 1s ease;
@@ -189,35 +243,39 @@
     display: flex;
     align-items: center;
     perspective: 400px;
-    animation: bookRotation 1s ease 0s 1;;
-
+    animation: bookRotation 1s ease 0s 1;
 }
-.book img{
-    width: 100%;
-    height: 310px;
+
+.book img {
+    width: var(--book-width);
+    height: var(--book-height);
     box-shadow: 5px 5px 10px #000000;
     transform: translateZ(17.5px);
 }
-.book::before{
+
+.book::before {
     content: '';
     position: absolute;
     width: 20px;
     height: 300px;
     background: #fff;
     left: 0;
-    transform: translateX(192px) rotateY(73deg);
+    transform: translateX(190px) rotateY(73deg);
 }
-.book::after{
+
+.book::after {
     content: '';
-    width: 200px;
-    height: 300px;
+    width: var(--book-width);
+    height: var(--book-height);
     position: absolute;
     transform: translateZ(-15px);
     border-radius: 0 2px 2px 0;
     box-shadow: 0px 0 20px 10px #c14b09;
 
 }
-.book:hover, .book:focus{
+
+.book:hover,
+.book:focus {
     transform: rotateY(0);
 }
 
@@ -231,21 +289,6 @@
     }
 }
 
-.spaceship-container {
-    width: 100%;
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-    offset-path: path('M753.5,130.5c182.2-68.3,362.8,54.3,408,85c74,50.3,162.2,110.2,153,171c-21.8,143.8-572.3,191.1-769,208c-329.6,28.3-492.8,3-531,90c-33.9,77.1,45.8,207.3,147,269c135.4,82.5,235.8-2.3,517,2c87.3,1.3,480.2,7.4,561,198c26.7,63,18,142.9-23,187c-76.5,82.3-272.2,46.6-367-56c-89-96.4-28-186-98-258c-149.1-153.3-553.9,120.2-660-2c-61.4-70.7-18-268.6,104-369c265.3-218.4,721.8,172.1,977-38c163.5-134.6,150.7-438.6,83-471c-78-37.3-222.7,288.8-493,290c-79.4,0.4-184.8-27.2-203-87C537.5,277.3,646.4,170.7,753.5,130.5z');
-    animation: move 25s infinite normal ease-in-out;
-}
-
-.spaceship {
-    width: 100px;
-    position: absolute;
-}
-
-
 
 .games-container {
     margin-top: 100px;
@@ -255,14 +298,15 @@
     flex-direction: column;
     align-items: flex-start;
     align-items: flex-end;
-
 }
 
 .games-container .cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    user-select: none;
 }
 
+/*---Card animation---*/
 .game-card {
     width: 200px;
     height: 300px;
@@ -283,7 +327,7 @@
 }
 
 .image-box {
-    transition: all 0.5s ease-in-out;
+    transition: var(--transition-all);
     position: absolute;
     width: 100%;
     z-index: -1;
@@ -305,7 +349,7 @@
     opacity: 0;
     width: 100%;
     height: 100%;
-    transition: all 0.5s;
+    transition: var(--transition-all);
     position: absolute;
     border-radius: 30px;
     left: 0;
@@ -333,7 +377,7 @@
     width: 100%;
     height: fit-content;
     opacity: 0;
-    transition: all 0.5s;
+    transition: var(--transition-all);
     filter: drop-shadow(2px 2px 2px #000);
     position: absolute;
     z-index: -1;
@@ -345,7 +389,8 @@
     transform: scale(2) translate3d(5%, -20%, 1px);
 }
 
-.podcast-container{
+/*---podcast images---*/
+.podcast-container {
     margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
@@ -353,35 +398,27 @@
     align-items: start;
 }
 
-.podcast-box{
+.podcast-box {
     display: flex;
+    user-select: none;
 }
-.podcast-box img{
+
+.podcast-box img {
     width: 300px;
     margin: 20px;
     box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
     filter: d;
     border-radius: 40%;
     position: relative;
-    transition: all 0.5s ease-in-out;
+    transition: var(--transition-all);
     transform-style: preserve-3d;
 }
-.podcast-box img:hover{
-    box-shadow: 0px 0 5px 5px #c14b09;
+
+.podcast-box img:hover {
+    box-shadow: 0px 0 5px 5px var(--secondary-color);
     transform: scale(1.1);
- 
+
 }
-
-@keyframes move {
-    0% {
-        offset-distance: 0%;
-    }
-
-    100% {
-        offset-distance: 100%;
-    }
-}
-
 
 @media (max-width: 1100px) {
     .text {
@@ -412,8 +449,13 @@
         display: none;
     }
 
-    .spaceship-container{
+    .spaceship-container {
         display: none;
+    }
+
+    .hobbySection .text{
+        align-self: center;
+        justify-self: center;
     }
 }
 
@@ -422,6 +464,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        flex-direction: column;
 
     }
 
@@ -442,7 +485,7 @@
     }
 
     .skillSection .wrapper {
-        width: 100%;
+        width: 90%;
     }
 
     .progress {
@@ -473,41 +516,47 @@
     .current-goal .images {
         flex-direction: column-reverse;
     }
-    .reading-container{
+
+    .reading-container {
         justify-content: center;
         align-items: center;
     }
-    .book-container{
-        width: 100px;
-        height: 210px;
+
+    .book-container {
+        width: var(--mobile-book-width);
+        height: var(--mobile-book-height);
         margin: 20px;
     }
+
     .book {
-        width: 100px;
-        height: 200px;
+        width: var(--mobile-book-width);
+        height: var(--mobile-book-height);
         animation: none;
-    
-    }
-    .book img{
-        width: 100%;
-        height: 200px;
-    }
-    .book::before{
-        width: 20px;
-        height: 200px;
-        transform: translateX(90px) rotateY(73deg);
-    }
-    .book::after{
-        width: 100px;
-        height: 200px;
-    
+
     }
 
-    .hobbySection .text{
+    .book img {
+        width: var(--mobile-book-width);
+        height: var(--mobile-book-height);
+    }
+
+    .book::before {
+        width: 20px;
+        height: var(--mobile-book-height);
+        transform: translateX(140px) rotateY(73deg);
+    }
+
+    .book::after {
+        width: var(--mobile-book-width);
+        height: var(--mobile-book-height);
+
+    }
+
+    .hobbySection .text {
         width: 100%;
     }
-   
-    
+
+
     .game-card {
         width: 95px;
         height: 195px;
@@ -520,48 +569,60 @@
         border: 30px;
         margin: 5px;
     }
-    
-    .book ,.spaceship-container{
+
+    .book,
+    .spaceship-container {
         animation: none;
         transition: none;
-    } 
-    .podcast-box{
-        align-items: center;
-        justify-content: center;
     }
-    .podcast-box img{
-        margin: 0px;
-        margin-bottom: 30px;
-        border-radius: 50%;
-    }
+
     .games-container {
         flex-direction: column;
         align-items: center;
-    
+
     }
+
     .game-card:hover .image-box {
         transform: none;
         box-shadow: none;
     }
-    
+
     .game-card:hover .cover-image {
         opacity: none;
     }
+
     .game-card:hover .character {
         opacity: 0;
         transform: none;
     }
-    .game-card:hover .image-box::after,
-.image-box::before {
-    opacity: none;
-}
-.game-card:hover .cover-image {
-    opacity: 1;
-}
-.podcast-box img:hover{
-    box-shadow: none;
-    transform: none;
- 
-}
 
+    .game-card:hover .image-box::after,
+    .image-box::before {
+        opacity: none;
+    }
+
+    .game-card:hover .cover-image {
+        opacity: 1;
+    }
+
+    .podcast-box img:hover {
+        box-shadow: none;
+        transform: none;
+
+    }
+
+    .podcast-box {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .podcast-box img {
+        margin: 0px;
+        margin-bottom: 30px;
+        border-radius: 50%;
+    }
+
+    .podcast {
+        margin-right: 20px;
+    }
 }
