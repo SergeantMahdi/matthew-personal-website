@@ -1,3 +1,8 @@
+:root{
+    --secondary-color: rgb(193, 75, 9);
+    --shadow-color: rgb(0, 0, 0);
+}
+
 .projectSecion {
     margin-top: 100px;
     display: flex;
