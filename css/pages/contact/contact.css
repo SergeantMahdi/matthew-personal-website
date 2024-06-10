@@ -1,1 +1,142 @@
+.contactSection {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255,0.1);
+    border-radius: 60px;
+}
 
+.card {
+
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.top-image {
+    width: 100%;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+
+}
+
+.info-form {
+    margin: 20px;
+    width: 50%;
+    height: 100%;
+}
+
+.info-form form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter';
+}
+
+.info-form input {
+    background-color: #dcd8d8;
+    border-radius: 5px;
+    width: 70%;
+    margin: 30px;
+    color: rgb(0, 3, 9);
+    font-weight: 700;
+    padding: 10px;
+}
+
+.info-form .message {
+    width: 70%;
+    height: 200px;
+    margin: 30px;
+    border-radius: 5px;
+    background-color: #dcd8d8;
+    color: rgb(0, 3, 9);
+    font-weight: 700;
+
+}
+
+.info-form label {
+    margin-left: 30px;
+    height: fit-content;
+}
+
+.info-form .btn {
+    margin-left: 30px;
+    width: 130px;
+    height: 40px;
+    padding: auto auto;
+    text-align: center;
+}
+
+.social-media {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
+.social-media img {
+    width: 70px;
+    margin: 20px;
+    transition: all 0.5s ease-in-out;
+}
+.social-media a {
+    transition: all 0.5s ease-in-out;
+}
+
+.social-media a:hover{
+    filter: drop-shadow( 0 0 4px rgb(0, 3, 9))
+    drop-shadow( 0 0 10px #c14b09);
+}
+
+
+@media (max-width:1104px) {
+    .contactSection {
+        width: 90%;
+    }
+    .card {
+        width: 95%;
+        flex-direction: column;
+    }
+    .info-form {
+        width: 100%;
+    }
+    .info-form input {
+        background-color: #dcd8d8;
+        border-radius: 5px;
+        width: 80%;
+        margin: 15px;
+        color: rgb(0, 3, 9);
+        font-weight: 700;
+        padding: 10px;
+    }
+    .info-form label {
+        margin-left: 15px;
+        height: fit-content;
+    }    
+    .info-form .message {
+        width: 80%;
+        margin: 15px;
+    }
+    .info-form .btn {
+        margin-left: 15px;
+    }
+    .social-media {
+        width: 90%;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr ;
+        height: 100%;
+        margin: auto;
+    }
+    
+    .social-media img {
+        width: 60px;
+        margin: 10px;
+        position: relative;
+    }
+    
+.social-media a:hover,.social-media a:focus{
+    filter: none;
+}
+}
