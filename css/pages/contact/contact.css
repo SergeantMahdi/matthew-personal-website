@@ -44,6 +44,7 @@
     color: rgb(0, 3, 9);
     font-weight: 700;
     padding: 10px;
+    transition: all 0.5s ease-in-out;
 }
 
 .info-form .message {
@@ -54,7 +55,11 @@
     background-color: #dcd8d8;
     color: rgb(0, 3, 9);
     font-weight: 700;
+    transition: all 0.5s ease-in-out;
 
+}
+.info-form input:focus ,.info-form .message:focus {
+    box-shadow: 0 0 5px 3px #c14b09 ;
 }
 
 .info-form label {
