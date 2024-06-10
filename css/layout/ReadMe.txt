@@ -1,1 +1,0 @@
-layouts files defining styles for different layout structures, such as grid systems, flexbox layouts, or responsive layouts.
