@@ -31,17 +31,17 @@
         </nav>
     </header>
     <main>
-        <section class="contactSection wrapper">
+        <section class="contactSection wrapper hidden pop-up">
             <img class="top-image" src="../../images/Contactplanet.png" alt="Planet" draggable="false">
             <div class="card">
                 <div class="info-form">
                     <form action="#">
                         <label for="full-name">Full Name</label>
-                        <input class="inputs" type="text" name="full-name" required>
+                        <input class="inputs" type="text" name="full-name" id="full-name" required>
                         <label for="email">Email</label>
-                        <input class="inputs" type="email" name="email" required>
+                        <input class="inputs" type="email" name="email" id="email" required>
                         <label for="message">Message</label>
-                        <textarea class="message" name="message" required></textarea>
+                        <textarea class="message" name="message" id="message" required></textarea>
                         <button class="btn">Submit</button>
                     </form>
                 </div>
@@ -63,6 +63,8 @@
                     href="#">MahdiSartipzadeh.com</a></span>. All Rights Reserved.
         </p>
     </footer>
+    <script defer src="../../javascript/frontend/global/scrollanimation.js"></script>
+    <script src="../../javascript/frontend/global/navbar.js"></script>
 </body>
 
 </html>
