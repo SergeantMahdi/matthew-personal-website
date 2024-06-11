@@ -147,4 +147,9 @@
 .social-media a:hover,.social-media a:focus{
     filter: none;
 }
+.social-media a:hover,.social-media img:hover{
+    filter: none;
+
+    transform: none;
+}
 }
