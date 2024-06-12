@@ -1,1 +1,0 @@
-JavaScript files for animating elements or implementing interactive animations, such as animations.js, scroll.js, etc.
