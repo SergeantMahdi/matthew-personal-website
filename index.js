@@ -27,6 +27,9 @@ app.get('/contact', function(req, res) {
 app.get('/projects', function(req, res) {
     res.render('pages/project');
 });
+app.get('*', function(req, res) {
+    res.render('pages/404page');
+});
 
 app.listen(port,() => {
     console.log(color.green('the app is listening.'))
