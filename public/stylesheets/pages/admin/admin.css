@@ -1,0 +1,53 @@
+.main{
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.main .title{
+    margin: 20px;
+}
+.section{
+    background: rgb(9, 10, 10);
+    width: 40%;
+    margin: 10px;
+}
+
+.section .form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.section .form > *{
+    margin: 20px 0;
+}
+
+.section .form input, textarea{
+background-color: rgb(220, 216, 216);
+color: rgb(0, 3, 9);
+width: 90%;
+border-radius: 10px;
+padding: 10px 5px;
+}
+
+.section .form textarea{
+    height: 100px;
+}
+
+.section .form label{
+    height: fit-content;
+    cursor: pointer;
+}
+
+.section .form .btn{
+    width: 130px;
+    height: 40px;
+    padding: auto auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.section .form #percentage{
+    width: 50px;
+}

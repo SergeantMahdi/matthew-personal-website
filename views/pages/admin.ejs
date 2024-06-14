@@ -1,0 +1,52 @@
+<%layout("partials/template")%>
+    <link rel="stylesheet" href="stylesheets/pages/admin/admin.css">
+    <section class="main wrapper">
+        <section class="section">
+            <h2 class="title">Add New Projects</h2>
+            <form class="form" action="/projects" method="POST">
+                <label for="projectName">Project Name</label>
+                <input class="inputs" type="text" name="project-name" id="project-name" required>
+                <label for="description">Description</label>
+                <textarea name="description" id="description"></textarea>
+                <label for="images">Image Link</label>
+                <input class="inputs" type="text" name="images" id="images" required>
+                <label for="link">Project Link</label>
+                <input class="inputs" type="text" name="link" id="link" required>
+                <button class="btn">Submit</button>
+            </form>
+        </section>
+        <section class="section">
+            <h2 class="title">Add New Skill</h2>
+            <form class="form" action="">
+                <label for="Skill-name">Skill Name</label>
+                <input class="inputs" type="text" name="Skill-name" id="Skill-name" required>
+                <label for="skill-description">Description</label>
+                <textarea name="skill-description" id="skill-description"></textarea>
+                <label for="percentage">Progress Percentage</label>
+                <input class="inputs" type="number" name="percentage" id="percentage" required>
+                <button class="btn">Submit</button>
+            </form>
+        </section>
+        <section class="section">
+            <h2 class="title">Edit Project</h2>
+            <form class="form" action="">
+            </form>
+        </section>
+        <section class="section">
+            <h2 class="title">Edit Skill</h2>
+            <form class="form" action="">
+            </form>
+        </section>
+        <section class="section">
+            <h2 class="title">Delete Skills</h2>
+            <form class="form" action="">
+                <button class="btn">Submit</button>
+            </form>
+        </section>
+        <section class="section">
+            <h2 class="title">Delete Project</h2>
+            <form class="form" action="">
+                <button class="btn">Submit</button>
+            </form>
+        </section>
+    </section>
