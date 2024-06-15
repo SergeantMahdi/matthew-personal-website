@@ -37,6 +37,7 @@
 .skill {
     margin: 0;
     transition: var(--transition-scale);
+    text-transform: capitalize;
 }
 
 .progress-number {
