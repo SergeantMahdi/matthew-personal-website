@@ -27,6 +27,7 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine('ejs', engine);
@@ -42,12 +43,35 @@ app.get('/about', function(req, res) {
 app.get('/contact', function(req, res) {
     res.render('pages/contact');
 });
-app.get('/projects', function(req, res) {
+app.get('/projects', async function (req, res) {
     res.render('pages/project');
 });
+app.get('/api-project/projects', async function (req, res) {
+    try {
+        const data = await projectDB.find({});
+        res.json(data);
+    } catch (err) {
+        res.status(500).send("Error fetching projects");
+    }
+});
+app.get('/api-project/', async function (req, res) {
+    try {
+        const data = await projectDB.find({}).sort({createdAt: -1}).limit(6);
+        res.json(data);
+    } catch (err) {
+        res.status(500).send("Error fetching projects");
+    }
+});
 
-app.post('/projects', function(req, res) {
-    
+app.post('/projects', async function (req, res) {
+    const newProject = new projectDB({
+    name: req.body.projectName,
+    description: req.body.projectDescription,
+    image: req.body.projectImage,
+    link: req.body.projectLink
+    })
+    await newProject.save();
+    res.render('pages/project');
 });
 
 app.get('/admin', function(req, res) {
