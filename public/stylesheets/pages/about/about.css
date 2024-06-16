@@ -83,6 +83,7 @@
     text-align: center;
     background-color: #0000007e;
     border-radius: 50px;
+    text-transform: capitalize;
 }
 
 .detail .text {
