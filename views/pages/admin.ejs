@@ -3,7 +3,7 @@
     <section class="main wrapper">
         <section class="section">
             <h2 class="title">Add New Projects</h2>
-            <form class="form" action="/projects" method="POST">
+            <form class="form newProject" action="/projects" method="POST">
                 <label for="projectName">Project Name</label>
                 <input class="inputs" type="text" name="projectName" id="projectName" required>
                 <label for="projectDescription">Description</label>
@@ -17,19 +17,34 @@
         </section>
         <section class="section">
             <h2 class="title">Add New Skill</h2>
-            <form class="form" action="/about" method="POST">
+            <form class="form newSkill" action="/about" method="POST">
                 <label for="skillName">Skill Name</label>
                 <input class="inputs" type="text" name="skillName" id="skillName" required>
                 <label for="skillDescription">Description</label>
                 <textarea name="skillDescription" id="skillDescription" required></textarea>
                 <label for="skillPercentage">Progress Percentage</label>
-                <input class="inputs" type="number" name="skillPercentage" id="skillPercentage" min="0" max="100" required>
+                <input class="inputs" type="number" name="skillPercentage" id="skillPercentage" min="0" max="100"
+                    required>
                 <button class="btn">Submit</button>
             </form>
         </section>
         <section class="section">
             <h2 class="title">Edit Project</h2>
-            <form class="form" action="">
+            <h3>Choose a Project</h3>
+            <div class="projectSelection">
+
+            </div>
+            <form class="form edit" action="/projects?_method=PUT" method="POST">
+                <input type="text" name="projectId" id="projectId" required>
+                <label for="editName">Project Name</label>
+                <input class="inputs" type="text" name="editName" id="editName" required>
+                <label for="editDescription">Description</label>
+                <textarea name="editDescription" id="editDescription" required></textarea>
+                <label for="editImage">Image Link</label>
+                <input class="inputs" type="text" name="editImage" id="editImage" required>
+                <label for="editLink">Project Link</label>
+                <input class="inputs" type="text" name="editLink" id="editLink" required>
+                <button class="btn">Submit</button>
             </form>
         </section>
         <section class="section">
@@ -37,16 +52,7 @@
             <form class="form" action="">
             </form>
         </section>
-        <section class="section">
-            <h2 class="title">Delete Skills</h2>
-            <form class="form" action="">
-                <button class="btn">Submit</button>
-            </form>
-        </section>
-        <section class="section">
-            <h2 class="title">Delete Project</h2>
-            <form class="form" action="">
-                <button class="btn">Submit</button>
-            </form>
-        </section>
+
     </section>
+
+    <script src="scripts/component/project-edit.js"></script>

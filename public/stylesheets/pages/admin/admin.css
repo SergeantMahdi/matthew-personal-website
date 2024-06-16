@@ -12,6 +12,10 @@
     width: 40%;
     margin: 10px;
 }
+.section h3{
+    margin-left: 20px;
+}
+
 
 .section .form{
     display: flex;
@@ -47,7 +51,28 @@ padding: 10px 5px;
     text-align: center;
     cursor: pointer;
 }
+.section .form #projectId{
+    display: none;
+}
 
 .section .form #percentage{
     width: 100px;
+}
+.section .projectSelection{
+    margin: 20px;
+    display: flex;
+}
+
+.section .projectSelection .projectContainer{
+    margin: 5px 10px;
+}
+.section .projectSelection .selection{
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+}
+.section .projectSelection .selection:checked{
+    background-color: #c14b09;
 }
