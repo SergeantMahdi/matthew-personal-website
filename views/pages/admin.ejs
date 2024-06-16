@@ -7,7 +7,7 @@
                 <label for="projectName">Project Name</label>
                 <input class="inputs" type="text" name="projectName" id="projectName" required>
                 <label for="projectDescription">Description</label>
-                <textarea name="projectDescription" id="projectDescription"></textarea>
+                <textarea name="projectDescription" id="projectDescription" required></textarea>
                 <label for="projectImage">Image Link</label>
                 <input class="inputs" type="text" name="projectImage" id="projectImage" required>
                 <label for="projectLink">Project Link</label>
@@ -17,13 +17,13 @@
         </section>
         <section class="section">
             <h2 class="title">Add New Skill</h2>
-            <form class="form" action="">
-                <label for="Skill-name">Skill Name</label>
-                <input class="inputs" type="text" name="Skill-name" id="Skill-name" required>
-                <label for="skill-description">Description</label>
-                <textarea name="skill-description" id="skill-description"></textarea>
-                <label for="percentage">Progress Percentage</label>
-                <input class="inputs" type="number" name="percentage" id="percentage" required>
+            <form class="form" action="/about" method="POST">
+                <label for="skillName">Skill Name</label>
+                <input class="inputs" type="text" name="skillName" id="skillName" required>
+                <label for="skillDescription">Description</label>
+                <textarea name="skillDescription" id="skillDescription" required></textarea>
+                <label for="skillPercentage">Progress Percentage</label>
+                <input class="inputs" type="number" name="skillPercentage" id="skillPercentage" min="0" max="100" required>
                 <button class="btn">Submit</button>
             </form>
         </section>
