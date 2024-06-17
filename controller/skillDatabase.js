@@ -9,3 +9,13 @@ module.exports.createSkill = async function(req, res) {
     await newSkill.save();
     res.redirect('/about');
 }
+module.exports.editSkill = async function(req, res) {
+    const { _Id, name, description , percentage} = req.body;
+    const skill = await skillDB.findByIdAndUpdate(_Id, {
+        name: name,
+        description: description,
+        percentage: percentage
+    })
+    await skill.save();
+    res.redirect('/about');
+}

@@ -23,36 +23,45 @@
                 <label for="skillDescription">Description</label>
                 <textarea name="description" id="skillDescription" required></textarea>
                 <label for="skillPercentage">Progress Percentage</label>
-                <input class="inputs" type="number" name="percentage" id="skillPercentage" min="0" max="100"
-                    required>
+                <input class="inputs" type="number" name="percentage" id="skillPercentage" min="0" max="100" required>
                 <button class="btn">Submit</button>
             </form>
         </section>
         <section class="section">
             <h2 class="title">Edit Project</h2>
             <h3>Choose a Project</h3>
-            <div class="projectSelection">
-
-            </div>
+            <div class="projectSelection"></div>
             <form class="form edit" action="/projects?_method=PUT" method="POST">
                 <input type="text" name="_Id" id="projectId" required>
-                <label for="editName">Project Name</label>
-                <input class="inputs" type="text" name="name" id="editName" required>
-                <label for="editDescription">Description</label>
-                <textarea name="description" id="editDescription" required></textarea>
-                <label for="editImage">Image Link</label>
-                <input class="inputs" type="text" name="image" id="editImage" required>
-                <label for="editLink">Project Link</label>
-                <input class="inputs" type="text" name="link" id="editLink" required>
+                <label for="PName">Project Name</label>
+                <input class="inputs" type="text" name="name" id="PName" required>
+                <label for="PDescription">Description</label>
+                <textarea name="description" id="PDescription" required></textarea>
+                <label for="PImage">Image Link</label>
+                <input class="inputs" type="text" name="image" id="PImage" required>
+                <label for="PLink">Project Link</label>
+                <input class="inputs" type="text" name="link" id="PLink" required>
                 <button class="btn">Submit</button>
             </form>
         </section>
         <section class="section">
             <h2 class="title">Edit Skill</h2>
-            <form class="form" action="">
+            <h3>Choose a skill</h3>
+            <div class="skillSelection"></div>
+            <form class="form edit" action="/about?_method=PUT" method="POST">
+                <input type="text" name="_Id" id="skillId" required>
+                <label for="SName">Skill Name</label>
+                <input class="inputs" type="text" name="name" id="SName" required>
+                <label for="SDescription">Description</label>
+                <textarea name="description" id="SDescription" required></textarea>
+                <label for="SPercentage">Progress Percentage</label>
+                <input class="inputs" type="number" name="percentage" id="SPercentage" min="0" max="100" required>
+                <button class="btn">Submit</button>
             </form>
         </section>
 
     </section>
 
+    
     <script src="scripts/component/project-edit.js"></script>
+    <script src="scripts/component/skill-edit.js"></script>

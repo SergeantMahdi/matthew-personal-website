@@ -13,7 +13,7 @@ const { homePageFetch, projectPageFetch, skillCardFetch } = require("./APIs/fetc
 
 /*Functions*/
 const { createProject, editProject } = require("./controller/projectDatabase.js");
-const { createSkill } = require("./controller/skillDatabase.js");
+const { createSkill, editSkill } = require("./controller/skillDatabase.js");
 
 mongoose.connect('mongodb://127.0.0.1:27017/Mahdi')
     .then(() => console.log(color.green("Mongoose is connected")))
@@ -40,6 +40,7 @@ app.get('/about', function(req, res) {
     res.render('pages/about', {title:"About Me"});
 });
 app.post('/about', createSkill)
+app.put('/about', editSkill)
 
 app.get('/contact', function(req, res) {
     res.render('pages/contact', {title:"Contact Me"});

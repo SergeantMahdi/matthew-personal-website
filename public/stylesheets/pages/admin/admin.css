@@ -51,28 +51,32 @@ padding: 10px 5px;
     text-align: center;
     cursor: pointer;
 }
-.section .form #projectId{
+.section .form #projectId, #skillId{
     display: none;
 }
 
 .section .form #percentage{
     width: 100px;
 }
-.section .projectSelection{
+.section .projectSelection, .skillSelection{
     margin: 20px;
     display: flex;
 }
 
-.section .projectSelection .projectContainer{
+.section .projectSelection .projectContainer, .skillSelection .skillContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 5px 10px;
 }
-.section .projectSelection .selection{
+.section .projectSelection .selection, .skillSelection .selection{
     width: 15px;
     height: 15px;
     background-color: #fff;
     border-radius: 50%;
     display: inline-block;
+    margin-right: 10px;
 }
-.section .projectSelection .selection:checked{
+.section .projectSelection .selection:checked, .skillSelection .selection:checked{
     background-color: #c14b09;
 }
