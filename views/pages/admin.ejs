@@ -5,13 +5,13 @@
             <h2 class="title">Add New Projects</h2>
             <form class="form newProject" action="/projects" method="POST">
                 <label for="projectName">Project Name</label>
-                <input class="inputs" type="text" name="projectName" id="projectName" required>
+                <input class="inputs" type="text" name="name" id="projectName" required>
                 <label for="projectDescription">Description</label>
-                <textarea name="projectDescription" id="projectDescription" required></textarea>
+                <textarea name="description" id="projectDescription" required></textarea>
                 <label for="projectImage">Image Link</label>
-                <input class="inputs" type="text" name="projectImage" id="projectImage" required>
+                <input class="inputs" type="text" name="image" id="projectImage" required>
                 <label for="projectLink">Project Link</label>
-                <input class="inputs" type="text" name="projectLink" id="projectLink" required>
+                <input class="inputs" type="text" name="link" id="projectLink" required>
                 <button class="btn">Submit</button>
             </form>
         </section>
@@ -19,11 +19,11 @@
             <h2 class="title">Add New Skill</h2>
             <form class="form newSkill" action="/about" method="POST">
                 <label for="skillName">Skill Name</label>
-                <input class="inputs" type="text" name="skillName" id="skillName" required>
+                <input class="inputs" type="text" name="name" id="skillName" required>
                 <label for="skillDescription">Description</label>
-                <textarea name="skillDescription" id="skillDescription" required></textarea>
+                <textarea name="description" id="skillDescription" required></textarea>
                 <label for="skillPercentage">Progress Percentage</label>
-                <input class="inputs" type="number" name="skillPercentage" id="skillPercentage" min="0" max="100"
+                <input class="inputs" type="number" name="percentage" id="skillPercentage" min="0" max="100"
                     required>
                 <button class="btn">Submit</button>
             </form>
@@ -35,15 +35,15 @@
 
             </div>
             <form class="form edit" action="/projects?_method=PUT" method="POST">
-                <input type="text" name="projectId" id="projectId" required>
+                <input type="text" name="_Id" id="projectId" required>
                 <label for="editName">Project Name</label>
-                <input class="inputs" type="text" name="editName" id="editName" required>
+                <input class="inputs" type="text" name="name" id="editName" required>
                 <label for="editDescription">Description</label>
-                <textarea name="editDescription" id="editDescription" required></textarea>
+                <textarea name="description" id="editDescription" required></textarea>
                 <label for="editImage">Image Link</label>
-                <input class="inputs" type="text" name="editImage" id="editImage" required>
+                <input class="inputs" type="text" name="image" id="editImage" required>
                 <label for="editLink">Project Link</label>
-                <input class="inputs" type="text" name="editLink" id="editLink" required>
+                <input class="inputs" type="text" name="link" id="editLink" required>
                 <button class="btn">Submit</button>
             </form>
         </section>
