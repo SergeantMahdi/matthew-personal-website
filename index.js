@@ -39,9 +39,6 @@ app.get('/', function(req, res) {
 app.get('/about', function(req, res) {
     res.render('pages/about', {title:"About Me"});
 });
-
-const skillDB = require("./models/skillSchema.js");
-
 app.post('/about', createSkill)
 
 app.get('/contact', function(req, res) {
@@ -60,7 +57,6 @@ app.get('/admin', function(req, res) {
 app.get('/api-project/projects', projectPageFetch);
 app.get('/api-project/',homePageFetch );
 app.get('/api-skill/about',skillCardFetch );
-app.get('/api-project/admin', projectPageFetch)
 
 app.all('*', function(req, res) {
     res.render('pages/404page');

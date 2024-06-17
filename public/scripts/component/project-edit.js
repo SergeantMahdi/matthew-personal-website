@@ -36,4 +36,4 @@ function makeCard(data) {
     });
 }
 
-fetchProjects('/api-project/admin');
+fetchProjects('/api-project/projects');
