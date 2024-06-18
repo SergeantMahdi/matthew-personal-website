@@ -8,7 +8,7 @@ module.exports.createProject = async function (req, res) {
         link: req.body.link
     })
     await newProject.save();
-    res.redirect('/projects');
+    res.redirect('/admin');
 }
 
 module.exports.editProject = async function (req, res) {
@@ -20,5 +20,10 @@ module.exports.editProject = async function (req, res) {
         link: link
     })
     await project.save();
-    res.redirect('/projects');
+    res.redirect('/admin');
+}
+module.exports.deleteProject = async function (req, res) {
+    const { _Id, name, description , image, link } = req.body;
+    const project = await projectDB.findByIdAndDelete(_Id)
+    res.redirect('/admin');
 }

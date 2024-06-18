@@ -7,7 +7,7 @@ module.exports.createSkill = async function(req, res) {
         percentage: req.body.percentage
     })
     await newSkill.save();
-    res.redirect('/about');
+    res.redirect('/admin');
 }
 module.exports.editSkill = async function(req, res) {
     const { _Id, name, description , percentage} = req.body;
@@ -17,5 +17,10 @@ module.exports.editSkill = async function(req, res) {
         percentage: percentage
     })
     await skill.save();
-    res.redirect('/about');
+    res.redirect('/admin');
+}
+module.exports.deleteSkill = async function(req, res) {
+    const { _Id, name, description , percentage} = req.body;
+    const skill = await skillDB.findByIdAndDelete(_Id)
+    res.redirect('/admin');
 }
