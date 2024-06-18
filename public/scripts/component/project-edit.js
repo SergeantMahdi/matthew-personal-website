@@ -31,6 +31,7 @@ function makeProjectCard(data) {
             document.querySelector('#PImage').setAttribute('value', element.image);
             document.querySelector('#PLink').setAttribute('value', element.link);
             document.querySelector('#projectId').setAttribute('value', element._id);
+            document.querySelector('#project-delete-Id').setAttribute('value', element._id);
         })
     });
 }

@@ -28,6 +28,8 @@ function makeSkillCard(Data) {
             document.querySelector('#SDescription').innerText = element.description;
             document.querySelector('#SPercentage').setAttribute('value', element.percentage);
             document.querySelector('#skillId').setAttribute('value', element._id);
+            document.querySelector('#skill-delete-Id').setAttribute('value', element._id);
+
         })
     });
 }

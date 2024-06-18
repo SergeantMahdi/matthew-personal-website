@@ -12,8 +12,8 @@ const projectDB = require("./models/projectSchema.js");
 const { homePageFetch, projectPageFetch, skillCardFetch } = require("./APIs/fetchData.js");
 
 /*Functions*/
-const { createProject, editProject } = require("./controller/projectDatabase.js");
-const { createSkill, editSkill } = require("./controller/skillDatabase.js");
+const { createProject, editProject, deleteProject } = require("./controller/projectDatabase.js");
+const { createSkill, editSkill, deleteSkill } = require("./controller/skillDatabase.js");
 
 mongoose.connect('mongodb://127.0.0.1:27017/Mahdi')
     .then(() => console.log(color.green("Mongoose is connected")))
@@ -41,6 +41,7 @@ app.get('/about', function(req, res) {
 });
 app.post('/about', createSkill)
 app.put('/about', editSkill)
+app.delete('/about', deleteSkill)
 
 app.get('/contact', function(req, res) {
     res.render('pages/contact', {title:"Contact Me"});
@@ -50,6 +51,7 @@ app.get('/projects', async function (req, res) {
 });
 app.post('/projects', createProject);
 app.put('/projects', editProject);
+app.delete('/projects', deleteProject);
 
 app.get('/admin', function(req, res) {
     res.render('pages/admin', {title:"Admin"});

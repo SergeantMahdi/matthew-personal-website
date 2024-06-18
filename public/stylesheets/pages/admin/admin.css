@@ -1,3 +1,11 @@
+:root {
+    --form-background-color: rgb(9, 10, 10);
+    --input-color: rgb(177, 177, 177);
+    --text-color: rgb(255, 255, 255);
+    --delete-btn: #ff0505b9;
+
+}
+
 .main{
     width: 80%;
     display: flex;
@@ -7,10 +15,18 @@
 .main .title{
     margin: 20px;
 }
+
+.main .btn{
+    border: 2px solid #1ebe21;
+}
+.main .btn:hover {
+    background-color: #1ebe21;
+}
 .section{
-    background: rgb(9, 10, 10);
+    background: var(--form-background-color);
     width: 40%;
-    margin: 10px;
+    margin: 20px;
+    box-shadow: 0 0 15px #c14b09;
 }
 .section h3{
     margin-left: 20px;
@@ -28,7 +44,7 @@
 }
 
 .section .form input, textarea{
-background-color: rgb(220, 216, 216);
+background-color: var(--input-color);
 color: rgb(0, 3, 9);
 width: 90%;
 border-radius: 10px;
@@ -51,7 +67,7 @@ padding: 10px 5px;
     text-align: center;
     cursor: pointer;
 }
-.section .form #projectId, #skillId{
+.section .form #projectId, #skillId, #skill-delete-Id, #project-delete-Id{
     display: none;
 }
 
@@ -78,5 +94,19 @@ padding: 10px 5px;
     margin-right: 10px;
 }
 .section .projectSelection .selection:checked, .skillSelection .selection:checked{
-    background-color: #c14b09;
+    background-color: var(--text-color);
 }
+
+.form .delete-btn {
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid var(--delete-btn);
+    border-radius: 30px;
+    transition: 0.5s ease-in-out;
+}
+.form .delete-btn:hover {
+    background-color: var(--delete-btn);
+}
+
