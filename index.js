@@ -3,7 +3,10 @@ const color = require('colors');
 const bodyParser = require('body-parser');
 const express = require('express');
 const engine = require('ejs-mate');
-var methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const helmet = require('helmet');
+const mongoSanitize = require("express-mongo-sanitize");
+const {validateProject, validateSkill} = require('./middleware/schemaValidate.js')
 /*Database*/
 const mongoose = require('mongoose');
 const projectDB = require("./models/projectSchema.js");
@@ -28,6 +31,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
+app.use(mongoSanitize());
+app.use(helmet());
 
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
@@ -39,8 +44,8 @@ app.get('/', function(req, res) {
 app.get('/about', function(req, res) {
     res.render('pages/about', {title:"About Me"});
 });
-app.post('/about', createSkill)
-app.put('/about', editSkill)
+app.post('/about', validateSkill, createSkill)
+app.put('/about',validateSkill, editSkill)
 app.delete('/about', deleteSkill)
 
 app.get('/contact', function(req, res) {
@@ -49,8 +54,8 @@ app.get('/contact', function(req, res) {
 app.get('/projects', async function (req, res) {
     res.render('pages/project', {title:"My Projects"});
 });
-app.post('/projects', createProject);
-app.put('/projects', editProject);
+app.post('/projects',validateProject, createProject);
+app.put('/projects',validateProject, editProject);
 app.delete('/projects', deleteProject);
 
 app.get('/admin', function(req, res) {
