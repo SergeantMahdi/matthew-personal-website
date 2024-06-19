@@ -4,9 +4,13 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const engine = require('ejs-mate');
 const methodOverride = require('method-override');
+const dotenv = required('dotenv');
+
+/*Security*/
 const helmet = require('helmet');
 const mongoSanitize = require("express-mongo-sanitize");
-const {validateProject, validateSkill} = require('./middleware/schemaValidate.js')
+const { validateProject, validateSkill } = require('./middleware/schemaValidate.js')
+
 /*Database*/
 const mongoose = require('mongoose');
 const projectDB = require("./models/projectSchema.js");
@@ -17,15 +21,17 @@ const { homePageFetch, projectPageFetch, skillCardFetch } = require("./APIs/fetc
 /*Functions*/
 const { createProject, editProject, deleteProject } = require("./controller/projectDatabase.js");
 const { createSkill, editSkill, deleteSkill } = require("./controller/skillDatabase.js");
+const { required } = require('joi');
 
 mongoose.connect('mongodb://127.0.0.1:27017/Mahdi')
     .then(() => console.log(color.green("Mongoose is connected")))
     .catch(error => console.log(color.bgRed("MONGOOSE ERROR: ", error)));
 
 
-
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
+dotenv.config();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
