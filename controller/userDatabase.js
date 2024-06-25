@@ -1,10 +1,14 @@
 const userDB = require('../models/userSchema.js')
+const bcrypt = require('bcrypt');
 
 module.exports.checkUser = async function (req, res) {
     const { username, password } = req.body;
-    const user = await userDB.findOne({ username: username })
-    if (user.password === password && user.username === username) {
-        res.redirect('/admin21ma8')
+    const user = await userDB.findOne({ username: username.toLowerCase() })
+    const result = await bcrypt.compare(password, user.password)
+        if (result === true) {
+            res.redirect('/admin21ma8')
     }
-        res.redirect('/admin21ma8login')
-}
+        else {
+            return res.send("NO")
+    }
+};

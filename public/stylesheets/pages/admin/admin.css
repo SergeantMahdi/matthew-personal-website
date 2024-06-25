@@ -2,6 +2,7 @@
     --form-background-color: rgb(9, 10, 10);
     --input-color: rgb(177, 177, 177);
     --text-color: rgb(255, 255, 255);
+    --radio-color: #c14b09;
     --delete-btn: #ff0505b9;
 
 }
@@ -94,7 +95,7 @@ padding: 10px 5px;
     margin-right: 10px;
 }
 .section .projectSelection .selection:checked, .skillSelection .selection:checked{
-    background-color: var(--text-color);
+    background-color: var(--radio-color);
 }
 
 .form .delete-btn {
