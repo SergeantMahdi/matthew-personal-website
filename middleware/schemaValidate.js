@@ -23,17 +23,6 @@ module.exports.validateProject = (req, res, next) => {
     }
 }
 
-module.exports.validateUser = (req, res, next) => {
-    const { error } = userSchema.validate(req.body);
-    if (error) {
-        const message = error.details.map(el => el.message).join(',');
-        throw new ExpressError(message, 400);
-    }
-    else {
-        next();
-    }
-}
-
 module.exports.isLoggedIn = (req, res, next) => {
     if (req.session.loggedIn){
         return next();

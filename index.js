@@ -6,8 +6,9 @@ const engine = require('ejs-mate');
 const methodOverride = require('method-override');
 const dotenv = require('dotenv');
 const session = require('express-session');
-const bcrypt = require('bcrypt');
+const limitReq = require('express-rate-limit');
 const mongoStore = require('connect-mongo');
+
 /*Security*/
 const helmet = require('helmet');
 const mongoSanitize = require("express-mongo-sanitize");
@@ -33,6 +34,10 @@ const port = process.env.PORT || 3000;
 
 dotenv.config()
 
+const requestLimition = limitReq({
+    windowsMs: 15 * 60 * 1000,
+    max: 30
+})
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -40,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 app.use(mongoSanitize());
 app.use(helmet());
-
+app.use(requestLimition)
 const sessionOption = {
     store: mongoStore.create({
         mongoUrl: process.env.DB_URL,
@@ -89,7 +94,7 @@ app.get('/admin21ma8login', function (req, res) {
     res.render('pages/login', { title: "Login" });
 });
 const userDB = require('./models/userSchema.js')
-app.post('/admin21ma8login', checkUser);
+app.post('/admin21ma8login',checkUser);
 
 app.get('/admin21ma8', isLoggedIn, function (req, res) {
     res.render('pages/admin', { title: "Admin" })
