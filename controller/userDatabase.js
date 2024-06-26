@@ -6,9 +6,8 @@ module.exports.checkUser = async function (req, res) {
     const user = await userDB.findOne({ username: username.toLowerCase() })
     const result = await bcrypt.compare(password, user.password)
     if (result) {
-        req.session.user_id = user._id
+        req.session.user_id = user._id;
         req.session.loggedIn = true;
-        console.log(req.session.loggedIn, req.session.user_id)
         res.redirect('/admin21ma8')
     }
     else {

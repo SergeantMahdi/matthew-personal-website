@@ -91,7 +91,12 @@ app.delete('/projects', deleteProject);
 
 
 app.get('/admin21ma8login', function (req, res) {
-    res.render('pages/login', { title: "Login" });
+    if (!req.session.loggedIn) {
+        res.render('pages/login', { title: "Login" });
+    }
+    else {
+        res.redirect('/admin21ma8')
+    }
 });
 const userDB = require('./models/userSchema.js')
 app.post('/admin21ma8login',checkUser);
