@@ -33,3 +33,13 @@ module.exports.validateUser = (req, res, next) => {
         next();
     }
 }
+
+module.exports.isLoggedIn = (req, res, next) => {
+    if (req.session.loggedIn){
+        return next();
+    }
+    else {
+        return res.redirect('/admin21ma8login')
+    }
+    next()
+}

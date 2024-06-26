@@ -6,16 +6,15 @@ const engine = require('ejs-mate');
 const methodOverride = require('method-override');
 const dotenv = require('dotenv');
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
 const bcrypt = require('bcrypt');
+const mongoStore = require('connect-mongo');
 /*Security*/
 const helmet = require('helmet');
 const mongoSanitize = require("express-mongo-sanitize");
-const { validateProject, validateSkill, validateUser } = require('./middleware/schemaValidate.js');
+const { validateProject, validateSkill, validateUser, isLoggedIn } = require('./middleware/schemaValidate.js');
 
 /*Database*/
 const mongoose = require('mongoose');
-
 /*APIs*/
 const { homePageFetch, projectPageFetch, skillCardFetch } = require("./APIs/fetchData.js");
 
@@ -34,6 +33,7 @@ const port = process.env.PORT || 3000;
 
 dotenv.config()
 
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -41,8 +41,24 @@ app.use(methodOverride("_method"));
 app.use(mongoSanitize());
 app.use(helmet());
 
-app.use(session({secret: 'InTheNameOfGod'}))
+const sessionOption = {
+    store: mongoStore.create({
+        mongoUrl: process.env.DB_URL,
+        collectionName: "userSession",
+        secret: process.env.SESSION_SECRET
+    }),
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        expires: (Date.now() + 7 * 24 * 60 * 60 * 1000),
+        maxAge: 7 * 24 * 60 * 60 * 1000, //Expire in 7 Days
+        sameSite: 'lax',
+        httpOnly: true
+    }
+}
 
+app.use(session(sessionOption))
 
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
@@ -72,22 +88,12 @@ app.delete('/projects', deleteProject);
 app.get('/admin21ma8login', function (req, res) {
     res.render('pages/login', { title: "Login" });
 });
+const userDB = require('./models/userSchema.js')
 app.post('/admin21ma8login', checkUser);
 
-app.get('/admin21ma8', function (req, res) {
-        res.render('pages/admin', { title: "Admin" })
+app.get('/admin21ma8', isLoggedIn, function (req, res) {
+    res.render('pages/admin', { title: "Admin" })
 });
-// app.get('/create', async function (req, res) {
-//     const hash = await bcrypt.hash("21ma8di79mh", 12);
-//     const user = new userDB({
-//         username: "sergeant_mahdi",
-//         password: hash,
-//         email: "mahdi.sartipzadeh@gmail.com"
-//     })
-
-//     await user.save();
-//     res.send("Created")
-// })
 
 app.get('/api-project/projects', projectPageFetch);
 app.get('/api-project/', homePageFetch);

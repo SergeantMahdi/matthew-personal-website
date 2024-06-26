@@ -38,7 +38,6 @@ module.exports.skillSchema = Joi.object({
 })
 
 module.exports.userSchema = Joi.object({
-    username: Joi.string().escapeHTML(),
-    passowrd: Joi.string().escapeHTML(),
-    email: Joi.string().escapeHTML()
+    username: Joi.string().required().escapeHTML(),
+    passowrd: Joi.string().required().escapeHTML(),
 })
