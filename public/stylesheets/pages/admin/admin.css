@@ -6,6 +6,33 @@
     --delete-btn: #ff0505b9;
 
 }
+.contactData{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactData .section{
+    width: 77%;
+    height: 500px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.contactData .container{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 20px;
+}
+
+.contactData .name{
+    width: 30ch;
+}
+.contactData .info{
+    width: 400px;
+    text-wrap: wrap;
+}
 
 .main{
     width: 80%;

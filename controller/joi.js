@@ -36,3 +36,9 @@ module.exports.skillSchema = Joi.object({
         description: Joi.string().required().escapeHTML(),
         percentage: Joi.number().required().min(0),
 })
+
+module.exports.contactSchema = Joi.object({
+        fullName: Joi.string().required().escapeHTML(),
+        email: Joi.string().required().escapeHTML(),
+        message: Joi.string().required().escapeHTML(),
+})

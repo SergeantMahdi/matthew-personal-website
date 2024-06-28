@@ -12,7 +12,7 @@ const mongoStore = require('connect-mongo');
 /*Security*/
 const helmet = require('helmet');
 const mongoSanitize = require("express-mongo-sanitize");
-const { validateProject, validateSkill, validateUser, isLoggedIn } = require('./middleware/schemaValidate.js');
+const { validateProject, validateSkill, validateContact, isLoggedIn } = require('./middleware/schemaValidate.js');
 
 /*Database*/
 const mongoose = require('mongoose');
@@ -23,6 +23,7 @@ const { homePageFetch, projectPageFetch, skillCardFetch } = require("./APIs/fetc
 const { createProject, editProject, deleteProject } = require("./controller/projectDatabase.js");
 const { createSkill, editSkill, deleteSkill } = require("./controller/skillDatabase.js");
 const { checkUser } = require("./controller/userDatabase.js");
+const { createContact } = require("./controller/contactDatabase.js");
 
 mongoose.connect(process.env.DB_URL || 'mongodb://127.0.0.1:27017/Mahdi')
     .then(() => console.log(color.green("Mongoose is connected")))
@@ -36,7 +37,7 @@ dotenv.config()
 
 const requestLimition = limitReq({
     windowsMs: 15 * 60 * 1000,
-    max: 30
+    max: 1000000
 })
 
 app.use(bodyParser.json());
@@ -82,6 +83,8 @@ app.delete('/about', deleteSkill)
 app.get('/contact', function (req, res) {
     res.render('pages/contact', { title: "Contact Me" });
 });
+app.post("/contact",validateContact, createContact)
+
 app.get('/projects', async function (req, res) {
     res.render('pages/project', { title: "My Projects" });
 });
@@ -101,13 +104,17 @@ app.get('/admin21ma8login', function (req, res) {
 const userDB = require('./models/userSchema.js')
 app.post('/admin21ma8login',checkUser);
 
-app.get('/admin21ma8', isLoggedIn, function (req, res) {
-    res.render('pages/admin', { title: "Admin" })
+const {contactDB} = require("./models/contactSchema.js");
+
+app.get('/admin21ma8', isLoggedIn, async function (req, res) {
+    const contactData = await contactDB.find({}).sort({created_at: -1});
+    res.render('pages/admin', { title: "Admin", contactData })
 });
 
-app.get('/api-project/projects', projectPageFetch);
-app.get('/api-project/', homePageFetch);
-app.get('/api-skill/about', skillCardFetch);
+app.get('/api-project/projects', isLoggedIn ,projectPageFetch);
+app.get('/api-project/', isLoggedIn ,homePageFetch);
+app.get('/api-skill/about', isLoggedIn ,skillCardFetch);
+
 
 app.all('*', function (req, res) {
     res.render('pages/404page');

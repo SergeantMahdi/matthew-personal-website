@@ -1,4 +1,4 @@
-const { projectSchema, skillSchema, userSchema } = require('../controller/joi.js')
+const { projectSchema, skillSchema, contactSchema } = require('../controller/joi.js')
 const ExpressError = require('../utilities/expressError.js');
 
 
@@ -14,6 +14,16 @@ module.exports.validateSkill = (req, res, next) => {
 }
 module.exports.validateProject = (req, res, next) => {
     const { error } = projectSchema.validate(req.body);
+    if (error) {
+        const message = error.details.map(el => el.message).join(',');
+        throw new ExpressError(message, 400);
+    }
+    else {
+        next();
+    }
+}
+module.exports.validateContact = (req, res, next) => {
+    const { error } = contactSchema.validate(req.body)
     if (error) {
         const message = error.details.map(el => el.message).join(',');
         throw new ExpressError(message, 400);
