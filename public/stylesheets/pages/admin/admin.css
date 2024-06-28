@@ -10,28 +10,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .contactData .section{
     width: 77%;
     height: 500px;
-    overflow-y: scroll;
+    overflow: auto;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 }
 .contactData .container{
     margin: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
     gap: 20px;
 }
 
 .contactData .name{
-    width: 30ch;
+    width: 20ch;
 }
 .contactData .info{
-    width: 400px;
+    width: 300px;
     text-wrap: wrap;
+}
+
+.contactData .info:last-child{
+    width: 20ch;
 }
 
 .main{
