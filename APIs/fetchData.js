@@ -12,7 +12,7 @@ module.exports.homePageFetch = async function (req, res) {
 
 module.exports.projectPageFetch =  async function (req, res) {
     try {
-        const data = await projectDB.find({});
+        const data = await projectDB.find({}).sort({createdAt: -1});
         res.json(data);
     } catch (err) {
         res.status(500).send("Error fetching projects");
