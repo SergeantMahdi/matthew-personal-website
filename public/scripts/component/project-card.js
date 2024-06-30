@@ -1,6 +1,3 @@
-let projectCard = document.querySelector('.project-cards');
-let latestCard = document.querySelector('.latest-project-cards');
-
 async function fetchProjects(api, container) {
     try {
         const response = await fetch(api);
@@ -26,9 +23,13 @@ function makeCard(data, container) {
 
         a.appendChild(h3);
         a.appendChild(p);
+        console.log(a)
         container.appendChild(a);
     });
 }
+
+let projectCard = document.querySelector('.project-cards');
+let latestCard = document.querySelector('.latest-project-cards');
 
 fetchProjects('/api-project/',latestCard);
 fetchProjects('/api-project/projects',projectCard);

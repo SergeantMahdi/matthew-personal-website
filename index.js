@@ -45,7 +45,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 app.use(mongoSanitize());
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+            "img-src": ["'self'", "data:", "https:"],
+        },
+    },
+}));
 app.use(requestLimition)
 const sessionOption = {
     store: mongoStore.create({
@@ -83,7 +90,7 @@ app.delete('/about', deleteSkill)
 app.get('/contact', function (req, res) {
     res.render('pages/contact', { title: "Contact Me" });
 });
-app.post("/contact",validateContact, createContact)
+app.post("/contact", validateContact, createContact)
 
 app.get('/projects', async function (req, res) {
     res.render('pages/project', { title: "My Projects" });
@@ -102,18 +109,18 @@ app.get('/admin21ma8login', function (req, res) {
     }
 });
 const userDB = require('./models/userSchema.js')
-app.post('/admin21ma8login',checkUser);
+app.post('/admin21ma8login', checkUser);
 
-const {contactDB} = require("./models/contactSchema.js");
+const { contactDB } = require("./models/contactSchema.js");
 
 app.get('/admin21ma8', isLoggedIn, async function (req, res) {
-    const contactData = await contactDB.find({}).sort({created_at: -1});
+    const contactData = await contactDB.find({}).sort({ created_at: -1 });
     res.render('pages/admin', { title: "Admin", contactData })
 });
 
-app.get('/api-project/projects', isLoggedIn ,projectPageFetch);
-app.get('/api-project/', isLoggedIn ,homePageFetch);
-app.get('/api-skill/about', isLoggedIn ,skillCardFetch);
+app.get('/api-project/projects', isLoggedIn, projectPageFetch);
+app.get('/api-project/', isLoggedIn, homePageFetch);
+app.get('/api-skill/about', isLoggedIn, skillCardFetch);
 
 
 app.all('*', function (req, res) {
