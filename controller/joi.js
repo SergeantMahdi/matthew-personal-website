@@ -25,20 +25,22 @@ const Joi = BaseJoi.extend(HTMLextension);
 
 
 module.exports.projectSchema = Joi.object({
-        name: Joi.string().required().escapeHTML(),
-        description: Joi.string().required().escapeHTML(),
-        image: Joi.string().required(),
-        link: Joi.string().required().escapeHTML()
+    _Id:Joi.string().required(),
+    name: Joi.string().required().escapeHTML(),
+    description: Joi.string().required().escapeHTML(),
+    image: Joi.string().required(),
+    link: Joi.string().required().escapeHTML()
 });
 
 module.exports.skillSchema = Joi.object({
-        name: Joi.string().required().escapeHTML(),
-        description: Joi.string().required().escapeHTML(),
-        percentage: Joi.number().required().min(0),
+    _Id: Joi.string().required(),
+    name: Joi.string().required().escapeHTML(),
+    description: Joi.string().required().escapeHTML(),
+    percentage: Joi.number().required().min(0),
 })
 
 module.exports.contactSchema = Joi.object({
-        fullName: Joi.string().required().escapeHTML(),
-        email: Joi.string().required().escapeHTML(),
-        message: Joi.string().required().escapeHTML(),
+    fullName: Joi.string().required().escapeHTML(),
+    email: Joi.string().required().escapeHTML(),
+    message: Joi.string().required().escapeHTML(),
 })
