@@ -25,7 +25,7 @@ const Joi = BaseJoi.extend(HTMLextension);
 
 
 module.exports.projectSchema = Joi.object({
-    _Id:Joi.string().required(),
+    _Id:Joi.string(),
     name: Joi.string().required().escapeHTML(),
     description: Joi.string().required().escapeHTML(),
     image: Joi.string().required(),
@@ -33,7 +33,7 @@ module.exports.projectSchema = Joi.object({
 });
 
 module.exports.skillSchema = Joi.object({
-    _Id: Joi.string().required(),
+    _Id: Joi.string(),
     name: Joi.string().required().escapeHTML(),
     description: Joi.string().required().escapeHTML(),
     percentage: Joi.number().required().min(0),
