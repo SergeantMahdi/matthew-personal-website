@@ -44,7 +44,7 @@ const requestLimition = limitReq({
 })
 
 
-
+//MIDDLEWARES
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -84,20 +84,16 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 
+//Routes
 app.use(adminRoute);
 app.use(projectRoute);
 app.use(aboutRoute);
 app.use(otherRoute);
 
-
+//APIs
 app.get('/api-project/projects', isLoggedIn, projectPageFetch);
 app.get('/api-project/', isLoggedIn, homePageFetch);
 app.get('/api-skill/about', isLoggedIn, skillCardFetch);
-
-
-app.all('*', function (req, res) {
-    res.render('pages/error', {status: "404", message: "There is no such a directory in this universe"});
-});
 
 app.listen(port, () => {
     console.log(color.green('the app is listening.'))
