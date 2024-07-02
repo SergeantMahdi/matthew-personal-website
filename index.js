@@ -12,7 +12,7 @@ const mongoStore = require('connect-mongo');
 /*Security*/
 const helmet = require('helmet');
 const mongoSanitize = require("express-mongo-sanitize");
-const {isLoggedIn } = require('./middleware/schemaValidate.js');
+const {isLoggedIn , validateAPI} = require('./middleware/schemaValidate.js');
 
 /*Database*/
 const mongoose = require('mongoose');
@@ -88,12 +88,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(adminRoute);
 app.use(projectRoute);
 app.use(aboutRoute);
-app.use(otherRoute);
 
 //APIs
-app.get('/api-project/projects', isLoggedIn, projectPageFetch);
-app.get('/api-project/', isLoggedIn, homePageFetch);
-app.get('/api-skill/about', isLoggedIn, skillCardFetch);
+app.get('/api-project/projects' ,validateAPI, projectPageFetch);
+app.get('/api-project/' ,validateAPI, homePageFetch);
+app.get('/api-skill/about', validateAPI, skillCardFetch);
+app.use(otherRoute);
 
 app.listen(port, () => {
     console.log(color.green('the app is listening.'))
