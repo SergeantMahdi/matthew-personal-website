@@ -57,7 +57,6 @@
     animation-duration: 3s;
     font-size: 1.3rem;
     filter: blur(3px);
-    user-select: none;
 }
 
 /*---------------Skill Overview Section---------------*/
@@ -74,9 +73,6 @@
     width: 50%;
     display: flex;
     justify-content: right;
-    user-select: none;
-
-
 }
 
 .overview-text {
