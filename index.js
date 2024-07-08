@@ -26,6 +26,7 @@ const aboutRoute = require("./router/aboutRoute.js");
 const adminRoute = require("./router/adminRoute.js");
 const otherRoute = require("./router/otherRoute.js");
 
+dotenv.config()
 
 mongoose.connect(process.env.DB_URL || 'mongodb://127.0.0.1:27017/Mahdi')
     .then(() => console.log(color.green("Mongoose is connected")))
@@ -35,7 +36,7 @@ mongoose.connect(process.env.DB_URL || 'mongodb://127.0.0.1:27017/Mahdi')
 const app = express();
 const port = process.env.PORT || 3000;
 
-dotenv.config()
+
 
 //Limited requests
 const requestLimition = limitReq({
