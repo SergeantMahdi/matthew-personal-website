@@ -1,2 +1,0 @@
-global.js Global JavaScript code applicable to the entire website, such as event listeners, utility functions, or initialization code.
-Other global scripts for common functionalities like navigation menus, form validation, AJAX requests, etc.
