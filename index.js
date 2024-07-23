@@ -25,6 +25,7 @@ const projectRoute = require("./router/projectsRoute.js");
 const aboutRoute = require("./router/aboutRoute.js");
 const adminRoute = require("./router/adminRoute.js");
 const otherRoute = require("./router/otherRoute.js");
+const { createUser } = require('./createUser.js');
 
 dotenv.config()
 
@@ -89,6 +90,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(adminRoute);
 app.use(projectRoute);
 app.use(aboutRoute);
+//app.get(createUser);
 
 //APIs
 app.get('/api-project/projects' ,validateAPI, projectPageFetch);
