@@ -4,6 +4,8 @@ This project was my first journey in the Web dev world.
 I mostly used native javascript and css to maintain my knowlege,
 the naming of the css classes are not good but I'll fix it over time.
  
+> [!CAUTION]
+> The reason that the EJS is the majority of written code in this project is using complex SVGs.
 
 ## Packages That I Used
 
