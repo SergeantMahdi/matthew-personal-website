@@ -38,7 +38,7 @@ ADMIN_PASSWORD=yourPassword
 ADMIN_EMAIL=yourEmail
 ```
 4. in the index.js uncomment the create route in the line 93
-![route](media/line92.png)
+![route](media/line93.png)
 5. run this command in your console:
 ```console
 node index.js
@@ -48,6 +48,6 @@ Or
 npm install -g nodemon
 nodemon index.js
 ```
-6. go to the https://localhost:3000/create to create admin username and password
+6. go to the http://localhost:3000/create to create admin username and password
 
 it's done now you have access to the admin section.

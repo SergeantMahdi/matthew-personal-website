@@ -5,7 +5,7 @@ const { validateContact } = require('../middleware/schemaValidate.js');
 const { createContact } = require("../controller/contactDatabase.js");
 
 router.get('/', function (req, res) {
-    res.render('pages/home', { title: "Mahdi Sartipzadeh" });
+    res.render('pages/home', { title: "Home" });
 });
 
 router.route("/contact")
