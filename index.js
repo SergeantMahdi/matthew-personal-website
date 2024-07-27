@@ -39,7 +39,6 @@ const port = process.env.PORT || 3000;
 
 
 
-Limited requests
 const requestLimition = limitReq({
     windowsMs: 5 * 60 * 1000,
     max: 100
@@ -90,6 +89,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(adminRoute);
 app.use(projectRoute);
 app.use(aboutRoute);
+
 //app.get("/create", createUser);
 
 //APIs

@@ -48,6 +48,6 @@ Or
 npm install -g nodemon
 nodemon index.js
 ```
-6. go to the https://localhost:3000/create to create admin username and password
+6. go to the http://localhost:3000/create to create admin username and password
 
 it's done now you have access to the admin section.
