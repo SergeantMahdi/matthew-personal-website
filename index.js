@@ -12,7 +12,7 @@ const mongoStore = require('connect-mongo');
 /*Security*/
 const helmet = require('helmet');
 const mongoSanitize = require("express-mongo-sanitize");
-const {isLoggedIn , validateAPI} = require('./middleware/schemaValidate.js');
+const { isLoggedIn, validateAPI } = require('./middleware/schemaValidate.js');
 
 /*Database*/
 const mongoose = require('mongoose');
@@ -39,7 +39,7 @@ const port = process.env.PORT || 3000;
 
 
 
-//Limited requests
+Limited requests
 const requestLimition = limitReq({
     windowsMs: 5 * 60 * 1000,
     max: 100
@@ -90,11 +90,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(adminRoute);
 app.use(projectRoute);
 app.use(aboutRoute);
-//app.get(createUser);
+//app.get("/create", createUser);
 
 //APIs
-app.get('/api-project/projects' ,validateAPI, projectPageFetch);
-app.get('/api-project/' ,validateAPI, homePageFetch);
+app.get('/api-project/projects', validateAPI, projectPageFetch);
+app.get('/api-project/', validateAPI, homePageFetch);
 app.get('/api-skill/about', validateAPI, skillCardFetch);
 app.use(otherRoute);
 

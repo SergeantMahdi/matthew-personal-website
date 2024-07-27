@@ -1,9 +1,10 @@
 const userDB = require('./models/userSchema.js')
 const bcrypt = require('bcrypt');
+const dotenv = require("dotenv").config();
 
 module.exports.createUser = async function (req, res) {
-    const hash = await bcrypt.hash("123456", 12)
-    const user = new userDB({ username: "test".toLowerCase(), password: hash, email:"mahdi.sartipzadeh@gmail.com" })
+    const hash = await bcrypt.hash(process.env.ADMIN_PASSWORD, 12)
+    const user = new userDB({ username: process.env.ADMIN_USERNAME.toLowerCase(), password: hash, email:process.env.ADMIN_EMAIL })
     const result = await user.save()
     if (result) {
         return res.render("pages/error", {status: 1 , message: "User created successfully"})

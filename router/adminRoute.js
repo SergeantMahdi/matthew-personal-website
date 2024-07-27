@@ -4,20 +4,20 @@ const router = express.Router();
 const { isLoggedIn } = require('../middleware/schemaValidate.js');
 const { checkUser } = require("../controller/userDatabase.js");
 
-router.route("/admin21ma8login")
+router.route("/login")
     .get(function (req, res) {
         if (!req.session.loggedIn) {
             res.render('pages/login', { title: "Login" });
         }
         else {
-            res.redirect('/admin21ma8')
+            res.redirect('/admin')
         }
     })
     .post(checkUser);
 
 const { contactDB } = require("../models/contactSchema.js");
 
-router.get('/admin21ma8', isLoggedIn, async function (req, res) {
+router.get('/admin', isLoggedIn, async function (req, res) {
     const contactData = await contactDB.find({}).sort({ created_at: -1 });
     res.render('pages/admin', { title: "Admin", contactData })
 });

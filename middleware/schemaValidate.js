@@ -39,7 +39,7 @@ module.exports.isLoggedIn = (req, res, next) => {
         return next();
     }
     else {
-        return res.redirect('/admin21ma8login')
+        return res.redirect('/login')
     }
     next()
 }

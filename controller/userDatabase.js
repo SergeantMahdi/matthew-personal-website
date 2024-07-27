@@ -8,9 +8,9 @@ module.exports.checkUser = async function (req, res) {
     if (result) {
         req.session.user_id = user._id;
         req.session.loggedIn = true;
-        res.redirect('/admin21ma8')
+        res.redirect('/admin')
     }
     else {
-        return res.redirect('/admin21ma8login')
+        return res.redirect('/login')
     }
 };
