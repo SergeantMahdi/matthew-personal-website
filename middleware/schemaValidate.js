@@ -39,9 +39,8 @@ module.exports.isLoggedIn = (req, res, next) => {
         return next();
     }
     else {
-        return res.redirect('/login')
+        return res.redirect('/login21ma8')
     }
-    next()
 }
 
 module.exports.validateAPI = (req, res, next) => {
