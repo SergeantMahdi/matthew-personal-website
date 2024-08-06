@@ -92,9 +92,9 @@ app.use(aboutRoute);
 
 
 //APIs
-app.get('/api-project/projects', validateAPI, projectPageFetch);
-app.get('/api-project/', validateAPI, homePageFetch);
-app.get('/api-skill/about', validateAPI, skillCardFetch);
+app.get(process.env.API_ABOUT, validateAPI, projectPageFetch);
+app.get(process.env.API_HOMEPROJECT, validateAPI, homePageFetch);
+app.get(process.env.API_ALLPROJECTS, validateAPI, skillCardFetch);
 app.use(otherRoute);
 
 app.listen(port, () => {
