@@ -1,14 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const limitReq = require('express-rate-limit');
 const { isLoggedIn } = require('../middleware/schemaValidate.js');
 const { checkUser, createUser } = require("../controller/userDatabase.js");
 
-const requestLimition = limitReq({
-    windowsMs: 5 * 60 * 1000,
-    max: 100
-})
-router.use(requestLimition)
 router.route("/login21ma8")
     .get(function (req, res) {
         createUser();
