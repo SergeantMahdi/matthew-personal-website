@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 const { isLoggedIn } = require('../middleware/schemaValidate.js');
-const { checkUser } = require("../controller/userDatabase.js");
+const { checkUser, createUser } = require("../controller/userDatabase.js");
 
 router.route("/login")
     .get(function (req, res) {
+        createUser();
         if (!req.session.loggedIn) {
             res.render('pages/login', { title: "Login" });
         }
