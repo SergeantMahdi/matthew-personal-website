@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
-
+const limitReq = require('express-rate-limit');
 const { isLoggedIn } = require('../middleware/schemaValidate.js');
 const { checkUser, createUser } = require("../controller/userDatabase.js");
 
+const requestLimition = limitReq({
+    windowsMs: 5 * 60 * 1000,
+    max: 100
+})
+router.use(requestLimition)
 router.route("/login21ma8")
     .get(function (req, res) {
         createUser();
@@ -17,6 +22,7 @@ router.route("/login21ma8")
     .post(checkUser);
 
 const { contactDB } = require("../models/contactSchema.js");
+const { route } = require('./projectsRoute.js');
 
 router.get('/admin21ma8', isLoggedIn, async function (req, res) {
     const contactData = await contactDB.find({}).sort({ created_at: -1 });

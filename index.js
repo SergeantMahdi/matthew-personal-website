@@ -6,7 +6,6 @@ const engine = require('ejs-mate');
 const methodOverride = require('method-override');
 const dotenv = require('dotenv');
 const session = require('express-session');
-const limitReq = require('express-rate-limit');
 const mongoStore = require('connect-mongo');
 
 /*Security*/
@@ -38,13 +37,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 
-
-const requestLimition = limitReq({
-    windowsMs: 5 * 60 * 1000,
-    max: 100
-})
-
-
 //MIDDLEWARES
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -59,7 +51,7 @@ app.use(helmet({
         },
     },
 }));
-app.use(requestLimition)
+
 const sessionOption = {
     store: mongoStore.create({
         mongoUrl: process.env.DB_URL,
