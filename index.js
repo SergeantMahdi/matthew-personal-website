@@ -84,9 +84,9 @@ app.use(aboutRoute);
 
 
 //APIs
-app.get(process.env.API_ABOUT, validateAPI, projectPageFetch);
+app.get(process.env.API_ALLPROJECTS, validateAPI, projectPageFetch);
 app.get(process.env.API_HOMEPROJECT, validateAPI, homePageFetch);
-app.get(process.env.API_ALLPROJECTS, validateAPI, skillCardFetch);
+app.get(process.env.API_ABOUT, validateAPI, skillCardFetch);
 app.use(otherRoute);
 
 app.listen(port, () => {

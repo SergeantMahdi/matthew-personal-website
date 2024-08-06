@@ -16,7 +16,7 @@ module.exports.checkUser = async function (req, res) {
 };
 
 module.exports.createUser = async function (req, res) {
-    const userExist = await userDB.findOne({username:`${process.env.ADMIN_USERNAME}`})
+    const userExist = await userDB.findOne({username:process.env.ADMIN_USERNAME})
     if(!userExist){
     const hash = await bcrypt.hash(process.env.ADMIN_PASSWORD, 12)
     const user = new userDB({ username: process.env.ADMIN_USERNAME.toLowerCase(), password: hash, email:process.env.ADMIN_EMAIL })
