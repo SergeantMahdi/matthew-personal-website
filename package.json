@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "22.4.0"
+  },
   "name": "mahdisartipzadeh",
   "version": "1.0.0",
   "description": "",
