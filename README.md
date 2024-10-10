@@ -53,3 +53,27 @@ nodemon index.js
 6. go to the http://localhost:3000/create to create admin username and password
 
 it's done now you have access to the admin section.
+
+# Road Map
+
+## APIs
+this folder contains a JS file which send the data from admin page to the HOME or PROJECTS page and vice versa.
+
+## controler
+this folder contains all the files that manipulate database, doing operation like create, edit or remove
+and ```Joi``` is also included into this file
+
+## Middleware
+this folder contains all types of validation like Login, skill and project validations.
+
+## Public
+this folder contains all images, scripts and css files.
+
+## Router
+this folder contains routes for different pages.
+
+## utilities
+this folder contains a error handler.
+
+## views
+this folder contains all ejs files.
