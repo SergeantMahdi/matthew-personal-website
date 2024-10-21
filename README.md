@@ -21,7 +21,7 @@ the naming of the css classes are not good but I'll fix it over time.
 
 ## How to Run the Code:
 
-1. Run the console command, in the project directory run this command:
+1. execute the below console command in the project directory:
 ```console
 npm i
 ```
@@ -29,7 +29,7 @@ or
 ```console
 npm install
 ```
-2. make file and name it .env
+2. make a file and name it " .env "
 3. inside the env file add these paramater
 ```env
 PORT=3000
@@ -49,9 +49,9 @@ Or
 npm install -g nodemon
 nodemon index.js
 ```
-5. go to the http://localhost:3000/create to create admin username and password
+5. go to the http://localhost:3000/ 
 
-it's done now you have access to the admin section.
+it's done now you also have access to the admin section.
 
 # Road Map
 
