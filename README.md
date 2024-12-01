@@ -48,7 +48,7 @@ ADMIN_PASSWORD=yourPassword
 ADMIN_EMAIL=yourEmail
 ```
 
-5. run this command in your console:
+5. in the dirctory of the project run this command in the console:
 
 ```console
 node index.js
