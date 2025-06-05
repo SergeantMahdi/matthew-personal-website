@@ -1,36 +1,22 @@
 {
-  "engines": {
-    "node": "22.4.0"
-  },
-  "name": "mahdisartipzadeh",
+  "name": "matthew",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "This project was my first journey in the Web dev world.\r I mostly used native javascript and css to maintain my knowlege,\r the naming of the css classes are not good but I'll fix it over time.",
+  "homepage": "https://github.com/SergeantMahdi/MyPersonalWebsite#readme",
+  "bugs": {
+    "url": "https://github.com/SergeantMahdi/MyPersonalWebsite/issues"
   },
-  "author": "\"Mahdi Sartipzadeh\"",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeantMahdi/MyPersonalWebsite.git"
+  },
   "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "body-parser": "^1.20.2",
-    "colors": "^1.4.0",
-    "connect-mongo": "^5.1.0",
-    "cookie-parser": "^1.4.7",
-    "dotenv": "^16.4.5",
-    "ejs": "^3.1.10",
-    "ejs-mate": "^4.0.0",
-    "env": "^0.0.2",
-    "express": "^4.21.2",
-    "express-mongo-sanitize": "^2.2.0",
-    "express-rate-limit": "^7.4.1",
-    "express-session": "^1.18.1",
-    "helmet": "^7.2.0",
-    "joi": "^17.13.3",
-    "method-override": "^3.0.0",
-    "mongoose": "^8.9.5",
-    "passport": "^0.7.0",
-    "sanitize-html": "^2.13.1",
-    "uuid": "^10.0.0"
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   }
 }
