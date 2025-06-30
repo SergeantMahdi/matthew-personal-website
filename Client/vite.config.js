@@ -10,12 +10,12 @@ export default defineConfig({
     outDir: "../Build",
     rollupOptions: {
       input: {
-        main: resolve(root, "View/index.html"),
+        main: resolve(root, "/View/Home/home.html"),
       },
     },
   },
   server: {
-    open: "/View/index.html",
+    open: "/View/Home/home.html",
     port: 3001,
   },
 });
