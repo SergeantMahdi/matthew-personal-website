@@ -1,5 +1,8 @@
 node_modules/
-.vscode/
+vscode/
+AIDocs/
+
 .DS_Store
 .log
 .env
+
