@@ -1,6 +1,8 @@
 node_modules/
 vscode/
 AIDocs/
+dist/
+build/
 
 .DS_Store
 .log
