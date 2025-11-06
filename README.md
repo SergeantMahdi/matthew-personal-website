@@ -10,3 +10,14 @@
 ### Back-end
 
 ![Backend-end structure](docs/images/backendStructure.png)
+
+
+## Database
+
+| Name    | Type  | Library  | host  |
+| ------- | ----- | -------- | ----- |
+| MongoDB | NOSQL | Mongoose | Local |
+
+All the documents about database is in this file
+
+[Database documentation](./docs/database.md)
