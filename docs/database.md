@@ -35,4 +35,24 @@ export default async function setupAndRunDatabase() {
 ```
 
 > [!NOTE]
-> It's going to use local server for development. But for production I will use Mongo Atlas
+> I'm going to use local host for development, but eventually I will use Mongo Atlas
+
+## Models
+I created two models, one for projects and the other for stacks. I could integrate them together but I may use the stacks for skill section so I decided to separate them to avoid duplication.
+
+### Project Model
+
+| Property     | Validation                                                  | Required |
+| ------------ | ----------------------------------------------------------- | -------- |
+| title        | Text is limited to 60 characters                            | true     |
+| description  | Text is limited to 200 characters                           | true     |
+| locationType | Enum contains three fields `Remote`, `On-Site` and `Hybrid` | true     |
+| image        | This will be managed by server                              | true     |
+| liveUrl      | Link must have https protocol and be valid                  | false    |
+| githubUrl    | Link must have https protocol and be valid                  | false    |
+| createdAt    | It has current date default value                           | false    |
+
+### Stack Model
+| Property | Validation        | Required |
+| -------- | ----------------- | -------- |
+| name     | It must be unique | true     |
