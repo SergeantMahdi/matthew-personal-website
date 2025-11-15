@@ -1,5 +1,5 @@
+import "dotenv/config"
 import colors from "colors";
-import dotenv from "dotenv";
 import express from "express";
 import helmet from "helmet"
 import sanitizeMongo from "express-mongo-sanitize"
@@ -14,7 +14,7 @@ await setupAndRunDatabase();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(sanitizeMongo());
+app.use(sanitizeMongo())
 app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
