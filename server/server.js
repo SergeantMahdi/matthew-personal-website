@@ -2,10 +2,7 @@ import "dotenv/config"
 import colors from "colors";
 import express from "express";
 import helmet from "helmet"
-import sanitizeMongo from "express-mongo-sanitize"
 import setupAndRunDatabase from "./configs/database.config.js";
-
-dotenv.config();
 
 
 const app = express();
@@ -14,7 +11,6 @@ await setupAndRunDatabase();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(sanitizeMongo())
 app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
@@ -35,7 +31,7 @@ app.disable('x-powered-by')
 
 
 app.get("/", async (req, res) => {
-    res.send("<h1>Hello World</h1>")
+    res.status(200).json("<h1>Hello World</h1>")
 });
 
 app.listen(port, (error) => {
