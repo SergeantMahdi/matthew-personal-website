@@ -29,9 +29,12 @@ app.use(helmet.contentSecurityPolicy({
 
 app.disable('x-powered-by')
 
+import projectRouter from "./apis/v1/project.api.js"
+
+app.use("/", projectRouter)
 
 app.get("/", async (req, res) => {
-    res.status(200).json("<h1>Hello World</h1>")
+    res.status(200).send("<h1>The server is live</h1>")
 });
 
 app.listen(port, (error) => {
