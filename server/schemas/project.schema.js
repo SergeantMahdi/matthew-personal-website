@@ -1,6 +1,6 @@
 import joi from "joi";
 
-export default projectSchema = joi.object({
+const projectSchema = joi.object({
     title:
         joi.string()
             .max(60)
@@ -49,3 +49,5 @@ export default projectSchema = joi.object({
                 "string.uri": "URL must be a https link"
             })
 })
+
+export default projectSchema;
