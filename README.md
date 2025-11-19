@@ -1,16 +1,4 @@
-# This Repo Is Under Construction, New Structure Will Be Uploaded Soon
-
-
-## Folder Structure
-
-### Front-end
-
-![Front-end structure](docs/images/frontendStructure.png)
-
-### Back-end
-
-![Backend-end structure](docs/images/backendStructure.png)
-
+# This Repo Is Under Construction, New Documents will be uploaded
 
 ## Database
 
@@ -21,3 +9,15 @@
 All the documents about database is in this file
 
 [Database documentation](./docs/database.md)
+
+## Project API Routes
+
+| Package Name | Description                                         |
+| ------------ | --------------------------------------------------- |
+| Joi          | Validate user's input                               |
+| Multer       | Get a image from user                               |
+| ImageKit     | CDN package that upload the image to the cdn server |
+
+this document explains how I structured classes and functions and how each operation is handled
+
+[APIs documentation](./docs/api.md)
