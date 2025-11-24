@@ -37,6 +37,28 @@ class ProjectService {
         }
     }
 
+    async getProjects(limit, skip, filters = {}) {
+        try {
+
+            if (typeof skip !== "number" || typeof limit !== "number") {
+                return { statusCode: 400, message: "Failed to get the projects, Invalid queries", projects: null };
+            }
+
+            if (limit > 50) {
+                limit = 50
+            }
+
+            const projects = await ProjectRepo.find(Math.abs(limit), Math.abs(skip), filters);
+            return { statusCode: 200, message: "Projects sent", projects };
+
+        }
+        catch (error) {
+            console.error(colors.bgYellow("[Project Service][getProjects]: Cannot get the project"));
+            console.error(error.message);
+            return { statusCode: 500, message: "Failed to get projects, try again later" };
+        }
+    }
+
 }
 
 export default new ProjectService();
