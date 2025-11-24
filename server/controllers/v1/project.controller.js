@@ -1,6 +1,14 @@
 import projectService from "../../services/project.service.js";
 import stackService from "../../services/stack.service.js";
 
+export async function getProjects(req, res) {
+    const { skip, limit } = req.query;
+
+    const { statusCode, projects, message } = await projectService.getProjects(parseInt(limit), parseInt(skip));
+    res.status(statusCode).json({ projects, message });
+}
+
+
 export async function createNewProject(req, res) {
 
     const image = await projectService.uploadProjectImage(req.file);
@@ -10,6 +18,7 @@ export async function createNewProject(req, res) {
     }
 
     const { stacks } = req.body;
+
     let createdStacks = [];
     if (!Array.isArray(req.body.stacks)) {
         const result = await stackService.createIfNotExists(stacks)
