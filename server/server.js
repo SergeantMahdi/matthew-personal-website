@@ -2,6 +2,7 @@ import "dotenv/config"
 import colors from "colors";
 import express from "express";
 import helmet from "helmet"
+import cors from "cors"
 import setupAndRunDatabase from "./configs/database.config.js";
 
 
@@ -26,6 +27,18 @@ app.use(helmet.contentSecurityPolicy({
         ]
     }
 }));
+
+const allowedOrigins = process.env.ALLOWED_ORIGINS;
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true,
+}))
 
 app.disable('x-powered-by')
 
