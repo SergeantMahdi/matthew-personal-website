@@ -1,29 +1,9 @@
-import colors from "colors";
+import logger from "../helpers/logger.helper.js";
+import { AppError } from "../helpers/appError.helper.js";
 import ProjectRepo from "../repositories/project.repository.js";
-import imageKit from "../configs/imagekit.config.js"
+import projectRepository from "../repositories/project.repository.js";
 
 class ProjectService {
-
-    async uploadProjectImage(image) {
-        try {
-            const uploadResult = await imageKit.upload({
-                file: image.buffer,
-                fileName: image.originalname,
-                folder: "/matthew-website"
-            })
-
-            if (!uploadResult?.fileId || !uploadResult?.url) {
-                return null;
-            }
-
-            return { filename: uploadResult?.fileId, url: uploadResult?.url };
-        }
-        catch (error) {
-            console.error(colors.bgYellow("[Project Service][uploadProjectImage]: Failed to upload the image"));
-            console.error(error.message);
-            return null;
-        }
-    }
 
     async createProject(data) {
         try {
@@ -31,17 +11,16 @@ class ProjectService {
             return { statusCode: 201, message: "Project created successfully" };
         }
         catch (error) {
-            console.error(colors.bgYellow("[Project Service][createProject]: Cannot create the project"));
-            console.error(error.message);
-            return { statusCode: 500, message: "Failed to create the project, try again later" };
+            logger.error(error, "createProject", "services/ project.service.js");
+            throw new AppError("Failed to create the project", 500, "PROJECT_CREATION_FAILED");
         }
     }
 
     async getProjects(limit, skip, filters = {}) {
         try {
 
-            if (typeof skip !== "number" || typeof limit !== "number") {
-                return { statusCode: 400, message: "Failed to get the projects, Invalid queries", projects: null };
+            if (isNaN(skip) || isNaN(limit)) {
+                throw new AppError("Invalid query parameters", 400, "INVALID_QUERY");
             }
 
             if (limit > 50) {
@@ -49,14 +28,46 @@ class ProjectService {
             }
 
             const projects = await ProjectRepo.find(Math.abs(limit), Math.abs(skip), filters);
-            return { statusCode: 200, message: "Projects sent", projects };
 
+            return { statusCode: 200, message: "success", projects };
         }
         catch (error) {
-            console.error(colors.bgYellow("[Project Service][getProjects]: Cannot get the project"));
-            console.error(error.message);
-            return { statusCode: 500, message: "Failed to get projects, try again later" };
+            logger.error(error, "getProjects", "services/ project.service.js");
+            throw new AppError("Failed to fetch projects, try again later", 500, "PROJECT_FETCH_FAILED");
+
         }
+    }
+
+    async getProjectById(id) {
+        try {
+            const project = await projectRepository.findById(id);
+
+            if (!project) {
+                throw new AppError("Project not found", 404, "PROJECT_NOT_FOUND");
+            }
+            return { statusCode: 200, message: "Project found", project };
+
+        } catch (error) {
+            logger.error(error, "getProjectById", "services/ project.service.js");
+            throw new AppError("Failed to fetch the project", 500, "PROJECT_FETCH_FAILED");
+        }
+    }
+
+    async updateProjectById(id, data) {
+        try {
+            const updatedProject = await ProjectRepo.findAndUpdateById(id, data);
+
+            if (!updatedProject) {
+                throw new AppError("Project not found", 404, "PROJECT_NOT_FOUND");
+            }
+
+            return { statusCode: 200, message: "Project updated successfully", updatedProject };
+        }
+        catch (error) {
+            logger.error(error.message, "updateProjectById", "services/ project.service.js");
+            throw new AppError("Failed to update the project", 500, "PROJECT_FETCH_FAILED");
+        }
+
     }
 
 }
