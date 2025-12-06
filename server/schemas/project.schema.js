@@ -38,6 +38,7 @@ const projectSchema = joi.object({
         joi.string()
             .uri({ scheme: ["https"] })
             .optional()
+            .allow("")
             .messages({
                 "string.uri": "URL must be a https link"
             }),
@@ -45,6 +46,7 @@ const projectSchema = joi.object({
         joi.string()
             .uri({ scheme: ["https"] })
             .optional()
+            .allow("")
             .messages({
                 "string.uri": "URL must be a https link"
             })
