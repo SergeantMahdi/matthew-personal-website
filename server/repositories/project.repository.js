@@ -14,7 +14,7 @@ class ProjectRepository {
         const projects = await ProjectModel.find(filter, { __v: 0 })
             .limit(limit)
             .skip(skip)
-            .populate("stacks")
+            .populate({ path: "stacks", select: "name -_id" })
             .sort({ createdAt: -1 });
 
         return projects;

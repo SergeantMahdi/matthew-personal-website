@@ -1,3 +1,5 @@
+import { AppError } from "../helpers/appError.helper.js";
+import logger from "../helpers/logger.helper.js";
 import StackRepository from "../repositories/stack.repository.js"
 
 class StackService {
@@ -11,9 +13,42 @@ class StackService {
             return { statusCode: 200, message: "Stack already exists", stack: stackExists }
         }
         catch (error) {
-            console.error(colors.bgYellow("[Stack Service][createIfNotExists]: Cannot create the stack"));
-            console.error(error.message);
-            return { statusCode: 500, message: "Failed to create the stack, try again later", stack: null };
+            logger.error(error, "createIfNotExists", "service/ stackService.js");
+            throw new AppError("Failed to create stacks", 500, "STACK_CREATION_FAILED", error)
+        }
+    }
+
+    async find(name) {
+        try {
+            const foundStack = await StackRepository.findOneByName(name);
+
+            if (!foundStack) {
+                throw new AppError("Stack not Found", 404, "STACK_NOT_FOUND", error);
+            }
+
+            return { statusCode: 200, message: "Stack found successfully", foundStack };
+
+        } catch (error) {
+            logger.error(error, "find", "service/ stackService.js");
+            throw new AppError("Failed to fetch the stack", 500, "STACK_FETCH_FAILED", error);
+        }
+
+    }
+
+    async remove(name) {
+        try {
+            const removedStack = StackRepository.findOneByNameAndDelete(name);
+
+            if (!removedStack) {
+                throw new AppError("Stack not Found", 404, "STACK_NOT_FOUND", error);
+            }
+
+            return { statusCode: 200, message: "Stack removed successfully", removedStack };
+        }
+        catch (error) {
+            logger.error(error, "remove", "service/ stackService.js");
+            throw new AppError("Failed to remove the stack", 500, "STACK_REMOVAL_FAILED", error);
+
         }
     }
 }
