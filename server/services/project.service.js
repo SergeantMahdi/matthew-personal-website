@@ -70,6 +70,22 @@ class ProjectService {
 
     }
 
+    async deleteProjectById(id = "") {
+        try {
+            const deletedProject = await ProjectRepo.findAndDeleteById(id);
+
+            if (!deletedProject) {
+                throw new AppError("Project not found", 404, "PROJECT_NOT_FOUND");
+            }
+
+            return { statusCode: 200, message: "Project removed successfully", deletedProject };
+        }
+        catch (error) {
+            logger.error(error.message, "deleteProjectById", "services/ project.service.js");
+            throw new AppError("Failed to delete the project", 500, "PROJECT_DELETION_FAILED");
+        }
+
+    }
 }
 
 export default new ProjectService();
