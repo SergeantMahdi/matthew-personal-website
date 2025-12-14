@@ -86,3 +86,23 @@ export async function updateProject(req, res) {
 
     res.status(statusCode).json({ message, updatedProject });
 }
+
+
+export async function deleteProject(req, res) {
+    const { id } = req.params;
+
+    const { project } = await projectService.getProjectById(id);
+
+    if (!project) {
+        throw new AppError("Project not found", 404, "PROJECT_NOT_FOUND");
+    }
+
+    const isImageRemoved = await ImageKitHelper.deleteImage(project.image?.filename);
+
+    if (!isImageRemoved) {
+        throw new AppError("Failed to delete the image", 500, "IMAGE_DELETION_FAILED");
+    }
+
+    const { statusCode, message } = await projectService.deleteProjectById(id);
+    res.status(statusCode).json({ message });
+}
