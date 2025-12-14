@@ -10,6 +10,10 @@ class FileValidator {
 
     isFileSignatureValid(file) {
 
+        if (!file) {
+            return;
+        }
+
         const buffer = file.buffer
 
         if (file.mimetype !== "image/webp") {

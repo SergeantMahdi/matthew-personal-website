@@ -6,7 +6,7 @@ export default async function uploadSingleFile(req, res, next) {
     multerUpload(req, res, (error) => {
 
         if (!req.file) {
-            res.status(400).json({ message: "Please upload an image" })
+            return next();
         }
 
         if (error instanceof multer.MulterError) {
