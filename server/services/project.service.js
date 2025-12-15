@@ -33,6 +33,9 @@ class ProjectService {
         }
         catch (error) {
             logger.error(error, "getProjects", "services/ project.service.js");
+            if (error instanceof AppError) {
+                throw error;
+            }
             throw new AppError("Failed to fetch projects, try again later", 500, "PROJECT_FETCH_FAILED");
 
         }
@@ -49,6 +52,9 @@ class ProjectService {
 
         } catch (error) {
             logger.error(error, "getProjectById", "services/ project.service.js");
+            if (error instanceof AppError) {
+                throw error;
+            }
             throw new AppError("Failed to fetch the project", 500, "PROJECT_FETCH_FAILED");
         }
     }
@@ -65,6 +71,9 @@ class ProjectService {
         }
         catch (error) {
             logger.error(error.message, "updateProjectById", "services/ project.service.js");
+            if (error instanceof AppError) {
+                throw error;
+            }
             throw new AppError("Failed to update the project", 500, "PROJECT_FETCH_FAILED");
         }
 

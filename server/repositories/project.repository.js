@@ -33,7 +33,7 @@ class ProjectRepository {
 
     async findAndDeleteById(id) {
 
-        const deletedProject = await ProjectModel.findOneAndDelete({ _id: id })
+        const deletedProject = await ProjectModel.findByIdAndDelete(id);
         return deletedProject;
     }
 

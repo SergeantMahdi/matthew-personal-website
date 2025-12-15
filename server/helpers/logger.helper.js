@@ -47,7 +47,7 @@ class Logger {
         const date = new Date();
         const time = `${date.getDay()}-${date.getMonth()}-${date.getFullYear()} | ${date.toLocaleTimeString()}`
 
-        const messageFormat = `${levelColor(`[${levelColor(levelName)}]`)}: \n\n[Time]: ${time} \n[Function]: ${functionName} \n[Location]: ${location} \n[Error Message]: \n${message} \n\n`
+        const messageFormat = `${levelColor(`===[${levelColor(levelName)}]===`)} \n[TIME]: ${time} \n[FUNCTION]: ${functionName} \n[LOCATION]: ${location} \n[MESSAGE]: \n${message} \n\n`
 
         switch (true) {
             case level <= LogLevel.ERROR: {
