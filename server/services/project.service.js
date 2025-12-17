@@ -91,6 +91,9 @@ class ProjectService {
         }
         catch (error) {
             logger.error(error.message, "deleteProjectById", "services/ project.service.js");
+            if (error instanceof AppError) {
+                throw error;
+            }
             throw new AppError("Failed to delete the project", 500, "PROJECT_DELETION_FAILED");
         }
 
