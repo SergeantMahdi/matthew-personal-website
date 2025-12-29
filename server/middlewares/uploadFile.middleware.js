@@ -20,7 +20,7 @@ export default async function uploadSingleFile(req, res, next) {
                 statusCode = 413;
                 errorCode = "LIMIT_FILE_SIZE"
             }
-            throw new AppError(errorMessage, statusCode, errorCode)
+            next(new AppError(errorMessage, statusCode, errorCode))
         }
 
         if (error) {
@@ -28,12 +28,12 @@ export default async function uploadSingleFile(req, res, next) {
                 throw new AppError("File format is not valid", 415, "INVALID_FORMAT")
             }
             logger.error(error.message, "uploadSingleFile", "middlewares/uploadFile.middleware.js")
-            throw new AppError("Something went wrong", 500, "MULTER_FAILURE");
+            next(new AppError("Something went wrong", 500, "MULTER_FAILURE"));
 
         }
 
         if (!FileValidator.isFileSignatureValid(req.file)) {
-            throw new AppError("File format is not valid", 415, "INVALID_FORMAT");
+            next(new AppError("File format is not valid", 415, "INVALID_FORMAT"));
         }
 
         next();
