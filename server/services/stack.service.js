@@ -5,12 +5,12 @@ import StackRepository from "../repositories/stack.repository.js"
 class StackService {
     async createIfNotExists(name) {
         try {
-            const stackExists = await StackRepository.findOneByName(name);
-            if (!stackExists) {
+            const stack = await StackRepository.findOneByName(name);
+            if (!stack) {
                 const stack = await StackRepository.create(name);
-                return { statusCode: 200, message: "Stack created successfully", stack };
+                return stack;
             }
-            return { statusCode: 200, message: "Stack already exists", stack: stackExists }
+            return stack;
         }
         catch (error) {
             logger.error(error, "createIfNotExists", "service/ stackService.js");
@@ -26,7 +26,7 @@ class StackService {
                 throw new AppError("Stack not Found", 404, "STACK_NOT_FOUND", error);
             }
 
-            return { statusCode: 200, message: "Stack found successfully", foundStack };
+            return foundStack;
 
         } catch (error) {
             logger.error(error, "find", "service/ stackService.js");
@@ -46,7 +46,7 @@ class StackService {
                 throw new AppError("Stack not Found", 404, "STACK_NOT_FOUND", error);
             }
 
-            return { statusCode: 200, message: "Stack removed successfully", removedStack };
+            return removedStack;
         }
         catch (error) {
             logger.error(error, "remove", "service/ stackService.js");
