@@ -4,7 +4,7 @@ import fs from "fs";
 class FileValidator {
 
     constructor() {
-        this.allowedSignatures = ["ffD8ff", "89504e470d0a1a0a"]; //JPEG, PNG Signatures
+        this.allowedSignatures = ["ffD8ff", "89504e470d0a1a0a", "ffd8ffe0"]; //JPEG, PNG, JPG Signatures
         this.webpType = { tag: "57454250", riff: "52494646" }
     }
 
