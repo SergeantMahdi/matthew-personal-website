@@ -1,25 +1,25 @@
-import colors from "colors"
+import logger from "../helpers/logger.helper.js"
 import mongoose from "mongoose";
 
 const database = mongoose.connection;
 
 database.on("connected", () => {
-    console.info(colors.green("[Mongoose]: Database successfully connected "));
+    logger.info("Database successfully connected", "Mongoose", "database.config.js");
 })
 
 database.on("disconnected", () => {
-    console.warn(colors.yellow("[Mongoose]: Database disconnected "));
+    logger.warn("Database disconnected", "Mongoose", "database.config.js");
 })
 
 database.on("reconnected", () => {
-    console.info(colors.blue("[Mongoose]: Database reconnected "));
+    logger.info("Database reconnected", "Mongoose", "database.config.js");
 })
 
 export default async function setupAndRunDatabase() {
     try {
         await mongoose.connect(process.env.DB_SERVER)
     } catch (error) {
-        console.error(colors.bgRed("[Mongoose]: Initial connection failed "));
-        console.error(error)
+        logger.error("Initial connection failed", "Mongoose", "database.config.js");
+        console.error(error);
     }
 }

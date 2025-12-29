@@ -6,13 +6,20 @@ import cors from "cors"
 import setupAndRunDatabase from "./configs/database.config.js";
 import projectRouter from "./apis/v1/project.api.js"
 import globalErrorHandler from "./middlewares/globalErrorHandler.middleware.js";
-
+import session from "express-session";
+import sessionConfig from "./configs/session.config.js";
+import passport from "passport";
+import { passportStrategy } from "./configs/authentication.config.js";
 const app = express();
 const port = process.env.PORT || 3000;
 await setupAndRunDatabase();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(session(sessionConfig))
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(passportStrategy)
 
 app.use(helmet.contentSecurityPolicy({
     directives: {

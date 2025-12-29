@@ -1,3 +1,4 @@
+import { AppError } from "../helpers/appError.helper.js"
 import multer from "multer";
 
 const maxFileSize = 1024 * 1024 * 2;
@@ -11,7 +12,7 @@ const multerUpload = multer({
     },
     fileFilter: (req, file, cd) => {
         if (!allowedMimeTypes.includes(file.mimetype)) {
-            return cd(new Error("Invalid format", false));
+            return cd(new AppError("Invalid file format", 400, "INVALID_FILE_FORMAT"));
         }
         cd(null, true);
     }

@@ -30,6 +30,9 @@ class StackService {
 
         } catch (error) {
             logger.error(error, "find", "service/ stackService.js");
+            if (error instanceof AppError) {
+                throw error;
+            }
             throw new AppError("Failed to fetch the stack", 500, "STACK_FETCH_FAILED", error);
         }
 
@@ -47,6 +50,9 @@ class StackService {
         }
         catch (error) {
             logger.error(error, "remove", "service/ stackService.js");
+            if (error instanceof AppError) {
+                throw error;
+            }
             throw new AppError("Failed to remove the stack", 500, "STACK_REMOVAL_FAILED", error);
 
         }
