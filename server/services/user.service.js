@@ -19,7 +19,7 @@ class UserService {
 
             const hashedPassword = await bcrypt.hash(password, 12);
             const newUser = await userRepository.create({ username, email, password: hashedPassword, role });
-            return { statusCode: 200, message: "You signed up successfully" };
+            return newUser;
 
         } catch (error) {
             logger.error(error, "UserService.createUser", "services/ user.service.js");
