@@ -5,7 +5,7 @@ To upload an image for each project I used multer to get and validate image file
 ## Multer
 | Storage | size limit | allowed file type/format | Multiple Files | field name    |
 | ------- | ---------- | ------------------------ | -------------- | ------------- |
-| Memory  | 2MB        | JPEG - PNG - WEBP        | false          | uploadedImage |
+| Memory  | 2MB        | JPEG - PNG - WEBP - JPG  | false          | uploadedImage |
 
 All images are going to be uploaded to our CDN which is ImageKit so we don't need hard disk storage in our case.
 
