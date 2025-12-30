@@ -4,6 +4,14 @@ This project is being build for my portfolio. It's a 3D full-stack website that 
 
 Express, MongoDB, Joi and many other technologies are being used in this project that I'll explain them in depth in the document.
 
+## Error Handling
+
+I provided my own error class with the name of `AppError`. And an global error handler as a middleware which is being used to get the custom errors and throw an appropriate message to the client.
+
+See [AppError Class](/server/helpers/appError.helper.js)
+
+See [Global Error Handler Middleware](/server/middlewares/globalErrorHandler.middleware.js)
+
 ## Database
 
 | Name    | Type  | Library  | Development Host | Production Host |
@@ -25,3 +33,16 @@ All the documents about database is in this file
 this document explains how I structured classes and functions and how each operation is handled
 
 [Project's API documentation](./docs/projectApi.md)
+
+## Authentication
+
+| Package name    | Description                    |
+| --------------- | ------------------------------ |
+| express-session | to save user's sessions        |
+| connect-mongo   | as the main storage on session |
+| passport        | for authentication             |
+| passport-local  | for local strategy             |
+
+in the document below, it's explained the necessary information about how the server authenticate user.
+
+[Authentication documentation](./docs/authentication.md)

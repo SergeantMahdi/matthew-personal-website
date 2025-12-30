@@ -20,7 +20,7 @@ As the whole operation wrapped inside a function `setupAndRunDatabase` for bette
 > In development, I will use local server `mongodb://localhost:27017` but for production I'll use Mongo Atlas.
 
 ## Models
-There is only three database models designed for this project. One for `projects` and one for `users` which is used for authentication and the last one is for `stacks`. `projects` and `stacks` could be integrated together but `stacks` can also be used for skill section which I eventually show my skills.
+There is only three database models designed for this project. One for `projects` and one for `users` which is used for authentication and the last one is for `stacks`. `projects` and `stacks` could be integrated together but `stacks` can also be used for skill section where I eventually show my skills.
 
 ### Project Model
 
@@ -40,4 +40,14 @@ There is only three database models designed for this project. One for `projects
 | -------- | -------------- | -------- |
 | name     | Must be unique | true     |
 
-### Users (Has't been implemented)
+### User Model
+
+| Property               | Validation                                       | Required |
+| ---------------------- | ------------------------------------------------ | -------- |
+| username               | Must be `unique`, converts letters to lowercase  | true     |
+| password               | Minimum length: `10 characters`                  | true     |
+| email                  | Must be `unique`,  converts letters to lowercase | true     |
+| passwordResetToken     |                                                  | false    |
+| role                   | Enum: `User`, `Admin`, default: `User`           | true     |
+| createdAt (timestamps) |                                                  | true     |
+| updatedAt (timestamps) |                                                  | true     |
