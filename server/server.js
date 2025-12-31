@@ -4,12 +4,14 @@ import express from "express";
 import helmet from "helmet"
 import cors from "cors"
 import setupAndRunDatabase from "./configs/database.config.js";
-import projectRouter from "./apis/v1/project.api.js"
 import globalErrorHandler from "./middlewares/globalErrorHandler.middleware.js";
 import session from "express-session";
 import sessionConfig from "./configs/session.config.js";
 import passport from "passport";
+import projectRouter from "./apis/v1/project.api.js"
+import stackRouter from "./apis/v1/stack.api.js"
 import { passportStrategy } from "./configs/authentication.config.js";
+
 const app = express();
 const port = process.env.PORT || 3000;
 await setupAndRunDatabase();
@@ -53,14 +55,18 @@ app.disable('x-powered-by')
 
 
 //=========ROUTES & APIs==========
-app.use("/api/v1", projectRouter)
+app.use("/api/v1", projectRouter);
+app.use("/api/v1", stackRouter);
+app.use(globalErrorHandler);
 
 app.get("/", async (req, res) => {
     res.status(200).send("<h1>The server is live</h1>")
 });
+app.all(/.*/, (req, res) => {
+    res.status(404).send('<h1>404! Page not found</h1>');
+});
 
 // Global Error handler for custom errors thrown by AppError
-app.use(globalErrorHandler)
 
 app.listen(port, (error) => {
     if (error) {
