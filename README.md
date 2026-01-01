@@ -34,6 +34,12 @@ this document explains how I structured classes and functions and how each opera
 
 [Project's API documentation](./docs/projectApi.md)
 
+## Stack API Routes
+
+Stack api is responsible for adding, removing and updating stacks from database manually. in case I wanted to add something that is not part of any project but it's withing my expertise.
+
+[Stack's API documentation](./docs/stackApi.md)
+
 ## Authentication
 
 | Package name    | Description                    |
