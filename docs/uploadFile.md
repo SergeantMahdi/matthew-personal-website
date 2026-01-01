@@ -21,6 +21,6 @@ This middleware is created to validate uploaded images and send a user-friendly 
 
 FileValidator is a class that includes a method which checks images signatures to prevent user upload malicious files (files that are not originally an image).
 
->For example: if you make `malicious.js` file and add some malicious code in it you can change the format to png and upload it to the website but `isSignatureValid` will check if the file is an actual image by reading its buffer.
+>For example: if you make `malicious.js` file and add some malicious code in it you can change the format to png and upload it to the website but `isSignatureValid` will check whether the file is an actual image by reading its buffer.
 
-The reason I made class for this single function is that I might add more methods to it later on.
+The reason I made a class for this single function is that I may add more methods to it later on.
