@@ -24,21 +24,21 @@ There is only three database models designed for this project. One for `projects
 
 ### Project Model
 
-| Property     | Validation                                              | Required |
-| ------------ | ------------------------------------------------------- | -------- |
-| title        | Text limit: `60  characters`                            | true     |
-| description  | Text limit: `200 characters`                            | true     |
-| locationType | Enum: `Remote`, `On-Site` and `Hybrid`                  | true     |
-| image        | Max-size: `2MB`, allowed formats: `JPEG`, `PNG`, `WEBP` | true     |
-| Stacks       | Must be an array `Object IDs` from `stacks`             | true     |
-| liveUrl      | Link must starts with `https`                           | false    |
-| githubUrl    | Link must starts with `https`                           | false    |
-| createdAt    | Date will be created automatically                      | false    |
+| Property     | Validation                                                     | Required |
+| ------------ | -------------------------------------------------------------- | -------- |
+| title        | Text limit: `60  characters`                                   | true     |
+| description  | Text limit: `200 characters`                                   | true     |
+| locationType | Enum: `Remote`, `On-Site` and `Hybrid`                         | true     |
+| image        | Max-size: `2MB`, allowed formats: `JPEG`, `PNG`, `WEBP`, `jpg` | true     |
+| Stacks       | Must be an array `Object IDs` from `stacks`                    | true     |
+| liveUrl      | Link must starts with `https`                                  | false    |
+| githubUrl    | Link must starts with `https`                                  | false    |
+| createdAt    | Date will be created automatically                             | false    |
 
 ### Stack Model
-| Property | Validation     | Required |
-| -------- | -------------- | -------- |
-| name     | Must be unique | true     |
+| Property | Validation                            | Required |
+| -------- | ------------------------------------- | -------- |
+| name     | Must be unique, converts to uppercase | true     |
 
 ### User Model
 
