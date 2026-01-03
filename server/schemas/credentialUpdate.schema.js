@@ -1,7 +1,7 @@
 import joi from "joi";
 
 const usernameUpdateSchema = joi.object({
-    username: joi.string().required().messages({
+    newUsername: joi.string().required().messages({
         "any.required": "Username is required",
     }),
     password: joi.string().required().messages({
@@ -10,9 +10,6 @@ const usernameUpdateSchema = joi.object({
 })
 
 const passwordUpdateSchema = joi.object({
-    username: joi.string().required().messages({
-        "any.required": "Username is required",
-    }),
     newPassword: joi.string().min(10).pattern(/^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])/).required().messages({
         "any.required": "The new password is required",
         "string.min": "Password must be at least 10 characters long",
