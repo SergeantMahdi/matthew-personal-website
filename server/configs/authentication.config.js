@@ -1,5 +1,6 @@
 import { Strategy } from "passport-local";
 import { AppError } from "../helpers/appError.helper.js";
+import logger from "../helpers/logger.helper.js";
 import userService from "../services/user.service.js";
 import bcrypt from "bcrypt";
 import passport from "passport";
