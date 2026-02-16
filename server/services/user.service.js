@@ -26,7 +26,7 @@ class UserService {
             if (error instanceof AppError) {
                 throw error;
             }
-            throw new AppError("Failed to sign up, please try again later", 500, "SIGNUP_FAILURE");
+            throw new AppError("Failed to sign up, please try again later", 500, "SIGNUP_FAILED");
         }
     }
 
@@ -43,7 +43,7 @@ class UserService {
             if (error instanceof AppError) {
                 throw error;
             }
-            throw new AppError("Failed to to find the user, please try again later", 500, "USER_SEARCH_FAILURE");
+            throw new AppError("Failed to to find the user, please try again later", 500, "USER_SEARCH_FAILED");
         }
     }
 
@@ -60,7 +60,7 @@ class UserService {
             if (error instanceof AppError) {
                 throw error;
             }
-            throw new AppError("Failed to to find the user, please try again later", 500, "USER_SEARCH_FAILURE");
+            throw new AppError("Failed to to find the user, please try again later", 500, "USER_SEARCH_FAILED");
         }
     }
 
@@ -77,7 +77,63 @@ class UserService {
             if (error instanceof AppError) {
                 throw error;
             }
-            throw new AppError("Failed to to find the user, please try again later", 500, "USER_SEARCH_FAILURE");
+            throw new AppError("Failed to to find the user, please try again later", 500, "USER_SEARCH_FAILED");
+        }
+    }
+
+    async updatePassword(id, newPassword, currentPassword) {
+        try {
+            const user = await userRepository.findById(id);
+            if (!user) {
+                throw new AppError("User not found", 404, "USER_NOT_FOUND");
+            }
+
+            const isPasswordMatched = await bcrypt.compare(currentPassword, user.password);
+            if (!isPasswordMatched) {
+                throw new AppError("Invalid password", 400, "INVALID_PASSWORD");
+            }
+
+            const hashedPassword = await bcrypt.hash(newPassword, 12);
+            const updatedUser = await userRepository.updatePassword(id, hashedPassword);
+            return updatedUser;
+
+        }
+        catch (error) {
+            logger.error(error, "UserService.updateUserPassword", "services/ user.service.js");
+            if (error instanceof AppError) {
+                throw error;
+            }
+            throw new AppError("Failed to change the password, please try again later", 500, "UPDATE_PASSWORD_FAILED");
+        }
+    }
+
+    async updateUsername(id, newUsername, password) {
+        try {
+            const user = await userRepository.findById(id);
+            if (!user) {
+                throw new AppError("User not found", 404, "USER_NOT_FOUND");
+            }
+
+            const usernameExists = await userRepository.findByUsername(newUsername)
+            if (usernameExists) {
+                throw new AppError("The username is taken", 409, "USERNAME_EXISTS");
+            }
+
+            const isPasswordMatched = await bcrypt.compare(password, user.password);
+            if (!isPasswordMatched) {
+                throw new AppError("Invalid password", 400, "INVALID_PASSWORD");
+            }
+
+            const updatedUser = await userRepository.updateUsername(id, newUsername);
+            return updatedUser;
+
+        }
+        catch (error) {
+            logger.error(error, "UserService.updateUserPassword", "services/ user.service.js");
+            if (error instanceof AppError) {
+                throw error;
+            }
+            throw new AppError("Failed to change the password, please try again later", 500, "UPDATE_PASSWORD_FAILED");
         }
     }
 

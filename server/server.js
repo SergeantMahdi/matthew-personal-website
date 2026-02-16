@@ -8,8 +8,10 @@ import globalErrorHandler from "./middlewares/globalErrorHandler.middleware.js";
 import session from "express-session";
 import sessionConfig from "./configs/session.config.js";
 import passport from "passport";
-import projectRouter from "./apis/v1/project.api.js"
-import stackRouter from "./apis/v1/stack.api.js"
+import projectApiRouter from "./apis/v1/project.api.js"
+import stackApiRouter from "./apis/v1/stack.api.js"
+import privacyApiRoute from "./apis/v1/privacy.api.js"
+import authenticationApiRoute from "./apis/v1/authentication.api.js"
 import { passportStrategy } from "./configs/authentication.config.js";
 
 const app = express();
@@ -55,8 +57,10 @@ app.disable('x-powered-by')
 
 
 //=========ROUTES & APIs==========
-app.use("/api/v1", projectRouter);
-app.use("/api/v1", stackRouter);
+app.use("/api/v1", projectApiRouter);
+app.use("/api/v1", stackApiRouter);
+app.use("/api/v1", privacyApiRoute);
+app.use("/api/v1", authenticationApiRoute);
 app.use(globalErrorHandler);
 
 app.get("/", async (req, res) => {
