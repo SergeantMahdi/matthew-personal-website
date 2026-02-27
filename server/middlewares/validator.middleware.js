@@ -1,5 +1,5 @@
 import projectSchema from "../schemas/project.schema.js";
-import { loginSchema, signupSchema } from "../schemas/authentication.schema.js";
+import { loginSchema, signupSchema, forgetPasswordSchema } from "../schemas/authentication.schema.js";
 import { passwordUpdateSchema, usernameUpdateSchema } from "../schemas/credentialUpdate.schema.js";
 import stackSchema from "../schemas/stack.schema.js";
 
@@ -47,6 +47,14 @@ export function validateNewPasswordCredential(req, res, next) {
 
 export function validateNewUsernameCredential(req, res, next) {
     const { error } = usernameUpdateSchema.validate(req.body);
+    if (error) {
+        return res.status(400).json({ message: error.message });
+    }
+    next();
+}
+
+export function validateEmail(req, res, next) {
+    const { error } = forgetPasswordSchema.validate(req.body);
     if (error) {
         return res.status(400).json({ message: error.message });
     }

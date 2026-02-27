@@ -29,4 +29,15 @@ const signupSchema = joi.object({
     }),
 })
 
-export { loginSchema, signupSchema };
+const forgetPasswordSchema = joi.object({
+    email: joi.string().email().required().messages({
+        "string.email": "Email must be a valid email address",
+        "any.required": "Email is required",
+    }),
+    confirmEmail: joi.string().email().required().valid(joi.ref('email')).messages({
+        "any.only": "Confirm email must match the email",
+        "any.required": "Confirm email is required",
+    }),
+})
+
+export { loginSchema, signupSchema, forgetPasswordSchema };
