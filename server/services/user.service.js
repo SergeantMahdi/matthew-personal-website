@@ -2,6 +2,8 @@ import userRepository from "../repositories/user.repository.js";
 import { AppError } from "../helpers/appError.helper.js";
 import logger from "../helpers/logger.helper.js";
 import bcrypt from "bcrypt";
+import JWT from "jsonwebtoken";
+import sendTokenEmailTo from "../helpers/mailer.helper.js";
 
 class UserService {
 
@@ -137,6 +139,25 @@ class UserService {
         }
     }
 
+    async generatePasswordResetToken(email) {
+        try {
+            const user = userRepository.findByEmail(email);
+            if (!user) {
+                throw new AppError("The email doesn't exist", 404, "USER_NOT_FOUND")
+            }
+
+            const token = await JWT.sign({ id: user._id, username: user.username, email: user.email }, process.env.JWT_SECRET, { expiresIn: "10m" });
+            userRepository.setPasswordResetToken(user._id, token);
+            await sendTokenEmailTo(email, token);
+
+        } catch (error) {
+            logger.error(error, "UserService.generatePasswordResetToken", "services/ user.service.js");
+            if (error instanceof AppError) {
+                throw error;
+            }
+            throw new AppError("Failed, please try again later", 500, "GENERATE_TOKEN_FAILED")
+        }
+    }
 }
 
 export default new UserService();
